@@ -40,7 +40,8 @@
                   * AUTO   : 투입 가능한 데이터 및 의존성에 맞추어 모든 가용 단계 실행
                   * PUBLIC : 공개 집계 단계(14, 21, 99, 31 및 CAS)만 실행, 비공개 단계 비활성화
                   * FULL   : 분석 시작 전 필수 비공개 데이터 및 01 감사 후 OOF 검증 필수 강제
-  - sl_run_cas  : CAS 인메모리 테이블 적재 및 글로벌 승격 여부 (0: 비활성 [기본값], 1: 활성)
+  - sl_run_cas  : CAS 인메모리 테이블 적재 및 글로벌 승격 여부 (0: 비활성, 1: 활성)
+                  미지정 기본값은 SAS Viya 1, SAS 9.4 0. 호출자의 명시적 설정은 유지한다.
   - sl_run_text : 04_korean_text_model.sas 실행 여부 (0: 건너뜀 [기본값], 1: 실행)
   - sl_run_zip  : 21 후속 진단 결과 ZIP 압축 패키징 여부 (1: 압축 실행 [기본값], 0: 비활성)
 
@@ -122,11 +123,16 @@
     %put ERROR: [ScamLens] 유효하지 않은 sl_profile 값입니다 (&sl_profile.). AUTO, PUBLIC, FULL 중 하나여야 합니다.;
     %abort cancel;
   %end;
-  %if %length(%superq(sl_run_cas))=0 %then %let sl_run_cas=0;
+  /* Viya 기본 실행에는 CAS 게시를 포함하고, 명시적 0/1은 유지한다. */
+  %if %length(%superq(sl_run_cas))=0 %then %do;
+    %if "%substr(%upcase(&sysvlong.),1,2)"="V." %then %let sl_run_cas=1;
+    %else %let sl_run_cas=0;
+  %end;
   %if "&sl_run_cas." ne "0" and "&sl_run_cas." ne "1" %then %do;
     %put ERROR: [ScamLens] sl_run_cas 값은 0 또는 1이어야 합니다 (&sl_run_cas.).;
     %abort cancel;
   %end;
+  %put NOTE: [ScamLens] CAS 게시 옵션: sl_run_cas=&sl_run_cas. SAS=&sysvlong.;
   %if %length(%superq(sl_run_text))=0 %then %let sl_run_text=0;
   %if "&sl_run_text." ne "0" and "&sl_run_text." ne "1" %then %do;
     %put ERROR: [ScamLens] sl_run_text 값은 0 또는 1이어야 합니다 (&sl_run_text.).;
@@ -693,7 +699,8 @@
 
 /* 14. 최종 요약 집계 및 검수 안내 보고 매크로 */
 %macro sl_print_summary;
-  %local n_total n_completed n_review n_failed n_running n_skipped overall_state;
+  %local n_total n_completed n_review n_failed n_running n_skipped overall_state
+         _summary_err _summary_cc;
 
   proc sql noprint;
     select count(*) into :n_total trimmed from work.scamlens_run_status;
@@ -716,6 +723,7 @@
   %put NOTE: 실행 식별자 (RUN_ID)   : &sl_run_id.;
   %put NOTE: 산출물 디렉터리        : &sl_output_root.;
   %put NOTE: 실행 프로파일 (PROFILE): &sl_profile.;
+  %put NOTE: CAS 게시 옵션          : sl_run_cas=&sl_run_cas.;
   %put NOTE: 전체 등록 단계 수     : &n_total.;
   %put NOTE: 정상 완료 단계         : &n_completed.;
   %put NOTE: 검토 필요 단계 (경고)  : &n_review.;
@@ -729,12 +737,32 @@
   %put NOTE: 각 단계별 상세 로그(ERROR/WARNING 여부) 및 수치 반환값에 대한 연구자의 검수가 필요합니다.;
   %put NOTE: ===============================================================================;
 
+  /* 31 등 자체 보고서가 모든 ODS 목적지를 닫아도 요약은 독립적으로 저장한다. */
+  ods html(id=sl_summary) path="&sl_output_root." (url=none)
+    file="run_summary.html" style=HTMLBlue;
+  %if &syscc. > 4 %then %do;
+    %put ERROR: [ScamLens] 요약 HTML 출력 목적지를 열지 못했습니다.;
+    %abort cancel;
+  %end;
   title1 "ScamLens SAS 전체 파이프라인 실행 요약표";
   title2 "RUN_ID: &sl_run_id. | PROFILE: &sl_profile. | VERDICT: &overall_state.";
   proc print data=work.scamlens_run_status noobs;
     var step stage program state syscc syserr details;
   run;
+  %let _summary_err=&syserr.;
+  %let _summary_cc=&syscc.;
   title;
+  ods html(id=sl_summary) close;
+  %if &_summary_err. ne 0 or &_summary_cc. ne 0 or &syscc. > 4 %then %do;
+    %put ERROR: [ScamLens] 요약표 출력 실패 (SYSERR=&_summary_err. SYSCC=&_summary_cc.).;
+    %abort cancel;
+  %end;
+  %sl_expect_nonempty(&sl_output_root./run_summary.html, master_summary_html);
+  %put NOTE: SUMMARY_HTML=&sl_output_root./run_summary.html;
+  %if &slkc_complete. = 1 %then
+    %put NOTE: CAS_KCBERT_TABLES=&slkc_caslib..va_kcbert_*_&slkc_suffix.;
+  %if &sv_cas_complete. = 1 %then
+    %put NOTE: CAS_FINAL_TABLES=CASUSER.slf_*_&sv_suffix.;
 
   data _null_;
     file "&sl_output_root./master_run.log" mod;
@@ -742,6 +770,8 @@
     put 'EXECUTION SUMMARY:';
     put "RUN_ID        : &sl_run_id";
     put "PROFILE       : &sl_profile";
+    put "CAS_ENABLED   : &sl_run_cas";
+    put "SUMMARY_HTML  : &sl_output_root./run_summary.html";
     put "TOTAL_STEPS   : &n_total";
     put "COMPLETED     : &n_completed";
     put "REVIEW        : &n_review";

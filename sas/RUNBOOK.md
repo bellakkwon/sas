@@ -12,7 +12,7 @@
 | 설정 | 기본값 | 동작 |
 |---|---|---|
 | `sl_profile` | `AUTO` | 가능한 모든 분석. `PUBLIC`은 공개 집계만, `FULL`은 기존 분석 입력이 빠지면 중단 |
-| `sl_run_cas` | `0` | `1`이면 분석 후 CAS 게시·읽기 대조. SAS Viya와 게시 권한 필요 |
+| `sl_run_cas` | Viya `1`, SAS 9.4 `0` | `1`이면 분석 후 CAS 게시·읽기 대조. 명시적 `0`/`1` 유지. SAS Viya와 게시 권한 필요 |
 | `sl_run_text` | `0` | `1`이면 04 SAS 문자 모델 보조 실험. 비공개 본문 입력 필요 |
 | `sl_run_zip` | `1` | 후속 분석 결과를 SAS 자체 ZIP 기능으로 포장 |
 
@@ -26,6 +26,10 @@
 ```
 
 실행마다 `outputs/run_<UUID>/`를 새로 만듭니다. `run_status.csv`, 로그, 단계별 HTML, `followup/`의 후속 진단과 ZIP, `final/`의 최종 시각화와 선택 CAS 반환 파일을 확인합니다. 이전 출력은 덮어쓰지 않습니다. 상태가 `RUNNING`에서 끝났으면 중간 중단으로 보고 로그를 확인합니다. 로그·집계 값 검수 전에는 실행 완료를 연구 결과 검증으로 해석하지 않습니다.
+
+전체 요약표는 `run_summary.html`로 저장하며 마지막 로그의 `SUMMARY_HTML=` 경로에서 확인합니다. CAS 게시가 완료되면 `CAS_KCBERT_TABLES=`와 `CAS_FINAL_TABLES=`에 해당 CASUSER 테이블 이름과 이번 실행 접미사를 출력합니다. VA에서는 본인 CASUSER의 `va_kcbert_*_<접미사>`, `slf_*_<접미사>`를 찾습니다. 원본 입력이 없는 A/B 테이블은 게시를 건너뜁니다.
+
+기존 세션에서 `sl_run_cas=0`이 설정돼 있으면 새 기본값으로 덮어쓰지 않습니다. CAS를 켜려면 위 예시처럼 `%let sl_run_cas=1;`을 지정하거나 새 Compute 세션에서 실행합니다. 분석만 실행하려면 `%let sl_run_cas=0;`을 지정합니다.
 
 기존 분석 입력은 `data/processed/sas/`에 별도 비공개로 준비합니다. 본문·행별 예측·가중치를 Git에 올리지 않습니다. KcBERT 재학습은 이 실행기의 범위에 포함되지 않으며, 자원 한도로 중단했던 옛 Compute 인계 코드는 보관본입니다.
 

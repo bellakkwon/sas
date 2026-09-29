@@ -81,6 +81,30 @@ def verify_zip_return_contract(entry: str, module: str) -> None:
         raise ValueError("ZIP return is read before the producer executes")
 
 
+def verify_cas_and_summary_contract(entry: str) -> None:
+    code = re.sub(r"/\*.*?\*/", "", entry, flags=re.S)
+    options = re.search(r"%macro sl_validate_options;(.*?)%mend sl_validate_options;", code, re.S).group(1)
+    compact = re.sub(r"\s+", "", options).lower()
+    default = ('%if%length(%superq(sl_run_cas))=0%then%do;'
+               '%if"%substr(%upcase(&sysvlong.),1,2)"="v."%then%letsl_run_cas=1;'
+               '%else%letsl_run_cas=0;%end;')
+    if default not in compact:
+        raise ValueError("CAS default must preserve caller options and enable Viya only")
+    if re.findall(r"%letsl_run_cas=[^;]*;", compact) != ["%letsl_run_cas=1;", "%letsl_run_cas=0;"]:
+        raise ValueError("CAS option is overwritten outside the guarded default")
+    summary = re.search(r"%macro sl_print_summary;(.*?)%mend sl_print_summary;", code, re.S).group(1)
+    required = ['ods html(id=sl_summary) path=', 'file="run_summary.html"',
+                'proc print data=work.scamlens_run_status', '%let _summary_err=&syserr.;',
+                '%let _summary_cc=&syscc.;', 'ods html(id=sl_summary) close;',
+                '%sl_expect_nonempty(&sl_output_root./run_summary.html, master_summary_html);']
+    if any(token not in summary for token in required):
+        raise ValueError("Summary needs its own ODS destination, captured result and output check")
+    if [summary.index(token) for token in required] != sorted(summary.index(token) for token in required):
+        raise ValueError("Summary ODS lifecycle must enclose printing and preserve its result")
+    if '%if &_summary_err. ne 0 or &_summary_cc. ne 0 or &syscc. > 4 %then %do;' not in summary:
+        raise ValueError("Summary output errors must stop execution")
+
+
 def verify(root: Path = ROOT) -> dict:
     root = root.resolve()
     manifest = json.loads((root / MANIFEST).read_text())
@@ -147,6 +171,7 @@ def verify(root: Path = ROOT) -> dict:
             < ordinary.index("%let _cur_err") < ordinary.index("ods html close;")):
         raise ValueError("Runner loses stage/checkpoint status before cleanup")
     verify_status_detail_arguments(entry)
+    verify_cas_and_summary_contract(entry)
     verify_zip_return_contract(entry, sources["99_ZIP_FOLLOWUP_OUTPUTS.sas"])
     cas15 = re.sub(r"/\*.*?\*/", "", sources["15_publish_kcbert_to_cas.sas"], flags=re.S)
     cas_statements = "\n".join(re.findall(r"proc casutil\b.*?quit;", cas15, re.I | re.S))

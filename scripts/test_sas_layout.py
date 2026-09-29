@@ -95,6 +95,42 @@ class LayoutRegression(unittest.TestCase):
             layout.verify_zip_return_contract(wrong, producer)
 
 
+class CasAndSummaryRegression(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.entry = (ROOT / "sas/00_RUN_ALL.sas").read_text()
+
+    def test_cas_default_not_silently_disabled_in_viya(self):
+        wrong = self.entry.replace('%then %let sl_run_cas=1;', '%then %let sl_run_cas=0;', 1)
+        self.assertNotEqual(wrong, self.entry)
+        with self.assertRaisesRegex(ValueError, "CAS default"):
+            layout.verify_cas_and_summary_contract(wrong)
+
+    def test_sas94_not_implicitly_enabled(self):
+        wrong = self.entry.replace('%else %let sl_run_cas=0;', '%else %let sl_run_cas=1;', 1)
+        with self.assertRaisesRegex(ValueError, "CAS default"):
+            layout.verify_cas_and_summary_contract(wrong)
+
+    def test_caller_cas_opt_out_preserved(self):
+        wrong = self.entry.replace('%if %length(%superq(sl_run_cas))=0 %then %do;', '%if 1 %then %do;', 1)
+        with self.assertRaisesRegex(ValueError, "CAS default"):
+            layout.verify_cas_and_summary_contract(wrong)
+        wrong = self.entry.replace('%mend sl_validate_options;', '%let sl_run_cas=1;\n%mend sl_validate_options;', 1)
+        with self.assertRaisesRegex(ValueError, "overwritten"):
+            layout.verify_cas_and_summary_contract(wrong)
+
+    def test_missing_summary_destination_rejected(self):
+        wrong = self.entry.replace('ods html(id=sl_summary) path=', '/* destination removed */', 1)
+        with self.assertRaisesRegex(ValueError, "own ODS destination"):
+            layout.verify_cas_and_summary_contract(wrong)
+
+    def test_summary_capture_after_close_rejected(self):
+        wrong = self.entry.replace('%let _summary_err=&syserr.;', '', 1).replace(
+            'ods html(id=sl_summary) close;', 'ods html(id=sl_summary) close;\n%let _summary_err=&syserr.;', 1)
+        with self.assertRaisesRegex(ValueError, "ODS lifecycle"):
+            layout.verify_cas_and_summary_contract(wrong)
+
+
 class StatusArgumentRegression(unittest.TestCase):
     def test_runner_disabled_options_cannot_lose_masking(self):
         entry = (ROOT / "sas/00_RUN_ALL.sas").read_text()
