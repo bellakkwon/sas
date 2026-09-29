@@ -1,3 +1,5 @@
+> **2026-09-29 안내:** 아래는 이전 실행 이력입니다. 현재 실행 파일은 [00_RUN_ALL.sas](../sas/00_RUN_ALL.sas) 하나이며 [RUNBOOK](../sas/RUNBOOK.md)을 따릅니다. 옛 실행기는 `archive/sas_cleanup_20260929/`에 보존했습니다.
+
 # ScamLens: KcBERT SAS 시각화 명세서 및 가이드라인 (2026-09-18)
 
 > 최신 발표용 Studio·VA 작업은 [2026-09-21 실행 안내](../visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md)를 따릅니다. 아래 내용은 이전 판의 기록이며, 공개본에 없는 행별 입력을 요구할 수 있습니다.

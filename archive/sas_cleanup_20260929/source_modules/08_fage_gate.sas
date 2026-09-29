@@ -28,11 +28,7 @@
   선행: data/processed/sas/sas_fage_abc_rows.csv
 ---------------------------------------------------------------------------*/
 
-%global projroot;
-%macro sl08_root;
-  %if %length(%superq(projroot))=0 %then %let projroot=/home/student/github;
-%mend;
-%sl08_root;
+%let projroot = /home/student/github;
 %let sasdata  = &projroot./data/processed/sas;
 %let fpr_ceiling = 0.01;
 %let seed_list = 42 101 202 303 404;
@@ -456,16 +452,16 @@ data _null_;
 run;
 
 proc export data=work.fage_thresholds
-    outfile="&sl_output_root./fage_thresholds.csv" dbms=csv replace;
+    outfile="&projroot./outputs/fage_thresholds.csv" dbms=csv replace;
 run;
 proc export data=work.fage_readout_nourl
-    outfile="&sl_output_root./fage_readout_nourl.csv" dbms=csv replace;
+    outfile="&projroot./outputs/fage_readout_nourl.csv" dbms=csv replace;
 run;
 proc export data=work.fage_readout_fpr
-    outfile="&sl_output_root./fage_readout_fpr.csv" dbms=csv replace;
+    outfile="&projroot./outputs/fage_readout_fpr.csv" dbms=csv replace;
 run;
 proc export data=work.fage_readout_scored
-    outfile="&sl_output_root./fage_readout_scored.csv" dbms=csv replace;
+    outfile="&projroot./outputs/fage_readout_scored.csv" dbms=csv replace;
 run;
 
 %put NOTE: Python FAGE 수치가 SAS 08 결과를 대신하지 않습니다. 로그와 ODS를 검수하십시오.;

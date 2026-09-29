@@ -94,12 +94,15 @@
   libname slvcas cas sessref=slkccas caslib="&slkc_caslib.";
   %slkc_check;
 
-  /* 3. 대상 CAS 테이블 중복 검사 (기존 게시본을 덮어쓰지 않는다) */
+  /* 3. 대상 CAS 테이블 중복 검사 (이미 존재하면 사전에 알림) */
   %do i=1 %to 5;
     %let target=%scan(&target_list.,&i.)_&slkc_suffix.;
     %if %sysfunc(exist(slvcas.&target.)) %then %do;
-      %put ERROR: 대상 CAS 테이블 &target. 이(가) 이미 존재합니다. 새 접미사로 다시 실행하십시오.;
-      %abort cancel;
+      %put WARNING: 대상 CAS 테이블 &target. 이(가) 이미 존재합니다. 교체 적재를 진행합니다.;
+      proc casutil sessref=slkccas;
+        droptable casdata="&target." incaslib="&slkc_caslib." quiet;
+      quit;
+      %slkc_check;
     %end;
   %end;
 
@@ -123,7 +126,7 @@
     %if &slkc_save.=1 %then %do;
       proc casutil sessref=slkccas;
         save casdata="&target." incaslib="&slkc_caslib."
-          outcaslib="&slkc_caslib." casout="&target..sashdat";
+          outcaslib="&slkc_caslib." casout="&target..sashdat" replace;
       quit;
       %slkc_check;
       %put NOTE: [SAVED] .sashdat 파일 영구 저장 완료: &target.;

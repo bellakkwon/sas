@@ -58,7 +58,7 @@ def build(data: dict) -> str:
 **정상 문자의 오탐과 스미싱의 미탐을 함께 검증하는 한국어 문자 탐지 연구**
 
 ScamLens는 문자 분류기가 정상 안내문을 스미싱으로 잘못 경보하는지(오탐, FP)와
-스미싱을 정상으로 놓치는지(미탐, FN)를 같은 평가 틀에서 함께 살펴본 프로젝트입니다.
+스미싱을 정상으로 놓치는지(미탐, FN)를 같은 평가 틀에서 함께 살펴본 프로젝트입니다.<br>
 정상 문자를 스미싱으로 잘못 판단하면 정상 안내를 놓치거나 불필요한 경고를 받게 되고,
 스미싱을 놓치면 피해를 막지 못할 수 있습니다. 문자 내용은 Python KcBERT로 분류하고, URL은
 외부에 접속하거나 본문을 가져오지 않고 오프라인 문자열 특징으로만 다루었습니다.
@@ -194,7 +194,7 @@ JEV(외부 판정/특징)를 활용한 실험은 판정 대체와 특징 결합�
 
 ## SAS의 역할
 
-근거: [SAS 최종 시각화·가이드](visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md).
+근거: [SAS 최종 시각화·가이드](archive/sas_cleanup_20260929/visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md).
 
 이번 후속 SAS 집계 검증은 모델을 새로 학습하지 않고, Python 결과의 집계 재계산과
 반환물 검수에 집중했습니다. 집계 반환 {runtime['stages_ok']}단계(U5 진단, JEV 비교, JEV 결합, KISA 진단)를
@@ -225,7 +225,8 @@ JEV(외부 판정/특징)를 활용한 실험은 판정 대체와 특징 결합�
 |---|---|
 | 최신 발표 PPT/PDF·대본 | [최신 발표 폴더](materials/20260921_final_v1/presentation/) |
 | 결과·그림·해석 HTML | [결과 설명 문서](materials/20260921/explain/scamlens_results_explained_20260921.html) |
-| 최신 SAS Studio·VA 가이드 | [SAS 최종 시각화·실행 준비](visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md) |
+| SAS 한 번에 실행 | [00_RUN_ALL.sas](sas/00_RUN_ALL.sas), [설정·실행 안내](sas/RUNBOOK.md) |
+| 폴더 정리 이력 | [SAS 프로그램·보관본 안내](docs/SAS_ORGANIZATION_20260929.md) |
 | 폴더·자료 안내 | [자료 모음 안내](materials/20260921/README.md), [저장소 구성과 공개 범위](docs/REPOSITORY_ORGANIZATION_20260921.md) |
 | 이전 실행·반환 안내 | [이전 반환 실행 가이드](docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md) |
 

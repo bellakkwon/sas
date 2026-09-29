@@ -427,7 +427,4 @@ run;
 /*---------------------------------------------------------------------------
   ★ 원클릭 실행 트리거 ★
 ---------------------------------------------------------------------------*/
-/* CAS is controlled separately by 00_RUN_ALL.sas and stage 15. */
-%scamlens_kcbert_pipeline(run_cas=0);
-%global slkc_visuals_complete;
-%let slkc_visuals_complete=1;
+%scamlens_kcbert_pipeline;

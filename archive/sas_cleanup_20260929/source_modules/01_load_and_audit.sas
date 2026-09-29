@@ -12,11 +12,7 @@
   독립적으로 재현하고 통계적 유의성과 신뢰구간을 붙이는 것이 목적이다.
 ---------------------------------------------------------------------------*/
 
-%global projroot;
-%macro sl01_root;
-  %if %length(%superq(projroot))=0 %then %let projroot=/home/student/github;
-%mend;
-%sl01_root;       /* SAS 서버 기본 프로젝트 경로 */
+%let projroot = /home/student/github;       /* SAS 서버 기본 프로젝트 경로 */
 %let sasdata  = &projroot./data/processed/sas;
 %let sas_oof_ready = 0;
 %let sas_meta_fit_completed = 0;

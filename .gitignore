@@ -1,14 +1,14 @@
 .DS_Store
 
 # User-side SAS follow-up evidence stays local.
-/followup_20260921_v1/outputs/
+/archive/sas_cleanup_20260929/followup_20260921_v1/outputs/
 
 # Raw inputs and fresh runtime evidence are local only. Existing allowlisted
 # aggregate CSVs remain tracked; review any new aggregate before force-adding.
 /data/**
 !/data/README.md
 /outputs/
-/visualization_20260921_v1/outputs/
+/archive/sas_cleanup_20260929/visualization_20260921_v1/outputs/
 /archive/bank_csv/
 /archive/shop_csv/
 /archive/shop_db/

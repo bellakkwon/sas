@@ -1,14 +1,15 @@
 /*---------------------------------------------------------------------------
   S99 — Follow-up run evidence ZIP packaging helper.
 
-  Called by 00_RUN_ALL.sas after the follow-up stages. Start with:
+  Usage (three lines in SAS Studio / Enterprise Guide):
     %let projroot = /home/student/github;
-    %include "&projroot./sas/00_RUN_ALL.sas";
+    %let zip_run  = run_01234567-89ab-cdef-0123-456789abcdef;
+    %include "&projroot./sas/99_ZIP_FOLLOWUP_OUTPUTS.sas";
 
   Purpose:
     Enumerate existing evidence artifacts (step logs, HTML reports, CSV readbacks,
     ODS graphics PNG images, status records) from an existing follow-up run and
-    bundle them into a single ZIP archive under &sl_output_root./followup/
+    bundle them into a single ZIP archive under &projroot./followup_20260921_v1/outputs/
     without rerunning any analysis, model fitting, or external network calls.
     Designed for SAS Studio / Enterprise Guide users where direct folder downloads
     are not supported by the web UI.
@@ -39,9 +40,7 @@
     - Requires SAS 9.4 or SAS Viya with native FILENAME ZIP access method.
     - Packages existing run outputs on disk; does not assert analysis validity.
 ---------------------------------------------------------------------------*/
-%global projroot zip_run sl_followup_zip_path sl_followup_zip_complete;
-%let sl_followup_zip_path=;
-%let sl_followup_zip_complete=0;
+%global projroot zip_run;
 
 /* Portable projroot default if not already set */
 data _null_;
@@ -52,8 +51,8 @@ run;
   %local pkg outputs_dir rundir zipfile n_files i cur_src cur_rel
          _err _cc;
 
-  %let pkg = &sl_output_root.;
-  %let outputs_dir = &pkg./followup;
+  %let pkg = &projroot./followup_20260921_v1;
+  %let outputs_dir = &pkg./outputs;
 
   /* Step 1: Validate required zip_run macro variable */
   data _null_;
@@ -342,8 +341,6 @@ run;
   %if &syserr > 0 or &syscc > 4 %then %abort cancel;
 
   /* Step 9: Print full path only after packaging and reconciliation checks pass */
-  %let sl_followup_zip_path=&zipfile.;
-  %let sl_followup_zip_complete=1;
   %put NOTE: [ScamLens 99] SCAMLENS_FOLLOWUP_ZIP_COMPLETE: Evidence archive created at &zipfile.;
   %put NOTE: [ScamLens 99] Packaged &n_files evidence artifact(s) from &rundir.;
 %mend zip_followup_outputs;

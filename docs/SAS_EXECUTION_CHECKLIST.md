@@ -1,3 +1,5 @@
+> **2026-09-29 안내:** 아래는 이전 실행 이력입니다. 현재 실행 파일은 [00_RUN_ALL.sas](../sas/00_RUN_ALL.sas) 하나이며 [RUNBOOK](../sas/RUNBOOK.md)을 따릅니다. 옛 실행기는 `archive/sas_cleanup_20260929/`에 보존했습니다.
+
 # SAS 실행 체크리스트
 
 현재 완료 범위와 결과 수치는 [SAS 현황](SAS_STATUS_20260914.md)을 따른다.

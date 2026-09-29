@@ -1,0 +1,11 @@
+metric,value,description
+total_test_records,2317,Total KcBERT U5 unused test set size
+normal_records,1665,Benign normal messages (label 0)
+smishing_records,652,Smishing attack messages (label 1)
+url_present_records,896,Records with metadata has_url=1
+url_absent_records,1421,Records with metadata has_url=0
+bare_ip_discrepancy_records,1,Records with has_url=0 but containing raw IPv4 address
+truncated_records_total,331,Records exceeding MAXLEN=128 tokens (including specials)
+truncated_records_normal,274,Normal records exceeding MAXLEN=128 tokens
+truncated_records_smishing,57,Smishing records exceeding MAXLEN=128 tokens
+truncation_rate_pct,14.29,Percentage of test set truncated at 128 tokens
