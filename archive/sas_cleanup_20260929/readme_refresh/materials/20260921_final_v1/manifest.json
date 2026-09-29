@@ -1,8 +1,8 @@
 {
   "files": {
     "README.md": {
-      "sha256": "e7af4c7a134f2f46824a638149c550d9dee7b1e6dbb10b52c9218ee7b5764e6e",
-      "size_bytes": 548
+      "sha256": "5d07ac75dc93da5223a734414bdd269aeacd473e3242e672aba074695da27753",
+      "size_bytes": 569
     },
     "evidence/submission_final_20260921.json": {
       "sha256": "4b448d8c0f2af3efb4f3c7547f4ffbe75edb2c49a3c118f80c227452ed391934",
@@ -101,8 +101,8 @@
       "size_bytes": 1370
     },
     "presentation/README.md": {
-      "sha256": "94978eea9e9993c6c3d18c6d371817a97f0cd7783f346611fb00aa2440614371",
-      "size_bytes": 1207
+      "sha256": "9a6778c2d3f1cd5d957a50a117688b54c1b2a51b85e0723ef898ea90c3c5a706",
+      "size_bytes": 1247
     },
     "presentation/RESEARCH_REPORT.md": {
       "sha256": "c6c67517bd44ed1d93fdba0f87184fcbcdf2e708de4ad2f7529a044a905847e3",
@@ -150,15 +150,6 @@
     {
       "file": "materials/20260921_final_v1/presentation/README.md",
       "kind": "public_delivery_scope_note"
-    },
-    {
-      "kind": "current_execution_links",
-      "date": "2026-09-29",
-      "files": [
-        "README.md",
-        "presentation/README.md"
-      ],
-      "scope": "README links only; other package file bytes unchanged"
     }
   ],
   "version": "scamlens.final_delivery.20260921.v2"

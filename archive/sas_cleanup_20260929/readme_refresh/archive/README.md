@@ -4,7 +4,6 @@
 - [전달본 manifest 보존](manifests_20260914/README.md): 2026-09-14 전달 시점의 목록·해시.
 - [A 단독 분석 코드](sas_reviewer_a_only_20260912/README.md): 후속 A/B 분석 이전 코드.
 
-이전 실행기·분석 코드와 전달 패키지는 [SAS 정리 보관 폴더](sas_cleanup_20260929/README.md)에 있다.
-현재 실행은 [단일 실행기와 RUNBOOK](../sas/RUNBOOK.md)을 따른다.
+루트에 남아 있는 이전 실습용 SAS 파일은 당시 코드 보존본이다.
 실습용 bank/shop 행 데이터와 SAS 데이터셋은 공개 추적에서 제외하고 로컬에 보존했다.
 최신 발표·설명은 [자료 모음](../materials/20260921/README.md)을 따른다.

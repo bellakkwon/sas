@@ -3,8 +3,8 @@
   "destination": "materials/20260921 (relative to destination repo root)",
   "files": {
     "README.md": {
-      "sha256": "3d94e80d9d88b5c7103fe6bd9c47264b1e902908fabaf730352615e20de2bbf0",
-      "size_bytes": 2916,
+      "sha256": "1428a08495c167c8f0f43791bf4d0db8c270e8f2a0cf3b53c990d85a245cd37c",
+      "size_bytes": 2474,
       "src": null,
       "src_sha256": null
     },
@@ -1071,14 +1071,6 @@
       "count": 1,
       "file": "evidence/KISA_FOLLOWUP_COMPLETION_20260921.md",
       "kind": "delink"
-    },
-    {
-      "file": "README.md",
-      "kind": "current_execution_links",
-      "date": "2026-09-29",
-      "original_sha256": "1428a08495c167c8f0f43791bf4d0db8c270e8f2a0cf3b53c990d85a245cd37c",
-      "original_manifest": "../../archive/sas_cleanup_20260929/readme_refresh/materials/20260921/manifest.json",
-      "scope": "README navigation only; other package file bytes unchanged"
     }
   ],
   "verified_links": [

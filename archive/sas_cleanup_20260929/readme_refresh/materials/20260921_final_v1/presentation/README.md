@@ -1,4 +1,4 @@
-> 아래 빌드·검사 명령은 원본 연구 작업공간에서 실행합니다. 이 공개 전달본의 수치는 [발표 정본 JSON](../evidence/submission_final_20260921.json), SAS 실행은 [현재 안내서](../../../sas/RUNBOOK.md)를 보세요.
+> 아래 빌드·검사 명령은 원본 연구 작업공간에서 실행합니다. 이 공개 전달본의 수치는 [발표 정본 JSON](../evidence/submission_final_20260921.json), SAS 실행은 [안내서](../../../visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md)를 보세요.
 
 # 최종 발표 패키지 (2026-09-21)
 

@@ -11,8 +11,8 @@
   덱은 당시 판이며 최신 결과가 자동 반영된 것이 아니다.
 - `poster/`: 포스터(PDF·PNG·HTML·쉬운 설명, 2026-09-20). 이후 결과 반영 여부는 제출 전 확인.
 - `explain/`: 프로젝트 설명 페이지와 최신 결과 해설 2종(2026-09-21).
-- `diagnostics/`: U5 진단·후속 대조·JEV 비교·JEV 결합 집계(검증 SAS 코드는 제외).
-  현재 코드는 [후속 진단 안내](../../docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md)와 [단일 실행기](../../sas/00_RUN_ALL.sas)를 따른다.
+- `diagnostics/`: U5 진단·후속 대조·JEV 비교·JEV 결합 집계(검증 SAS 코드는 제외,
+  SAS 저장소의 `followup_20260921_v1` 폴더 참조).
 - `diagnostics/historical/`: 과거판 보고서 2종. 최신 결과 해설과 후속 해석이 우선한다.
 - `sas-results/`: 실제 검증된 SAS 4단계 실행 반환물(HTML·그림 35개·집계 재출력 CSV).
 - `evidence/`: 본문 수치가 계산된 공개 집계 정본(JSON)과 해석 문서.
@@ -31,7 +31,7 @@
 
 ## 재생성
 
-아래 명령은 원본 작업공간에서 당시 전달판을 재현한다(디스크 쓰기는 아래 패키지 폴더에만 발생). 현재 GitHub 사본의 README 실행 링크는 폴더 정리 후 갱신했으며, [이전 README 원본](../../archive/sas_cleanup_20260929/readme_refresh/materials/20260921/README.md)을 보존했다. 현재 사본의 무결성은 저장소 루트에서 `python3 scripts/verify_materials.py`로 확인한다.
+원본 작업공간에서 실행한다(디스크 쓰기는 아래 패키지 폴더에만 발생).
 
 ```sh
 python3 scripts/build_sas_materials_20260921.py
