@@ -358,13 +358,15 @@
     %abort cancel;
   %end;
 
-  %sl_append_master_log(&stage., &program., &state., &result_cc., &result_err., &details.);
+  %sl_append_master_log(&stage., &program., &state., &result_cc., &result_err., %superq(details));
 %mend sl_record_step;
 
-/* 8. 단계 건너뜀 기록 헬퍼 */
+/* 8. 단계 건너뜀 기록 헬퍼
+   설명문은 %superq로 전달한다. 등호가 있는 문구는 호출부에서 %nrstr로,
+   실행 결과 매크로 변수를 포함한 문구는 %bquote로 감싸 키워드 인자 오해석을 막는다. */
 %macro sl_skip_step(step, stage, program, state, details);
-  %sl_record_step(&step., &stage., &program., &state., ., ., &details.);
-  %put NOTE: [ScamLens 건너뜀] 단계=&stage. (&program.) 상태=&state. 사유=&details.;
+  %sl_record_step(&step., &stage., &program., &state., ., ., %superq(details));
+  %put NOTE: [ScamLens 건너뜀] 단계=&stage. (&program.) 상태=&state. 사유=%superq(details);
 %mend sl_skip_step;
 
 /* 9. 일반 모듈 실행 매크로 (사전 RUNNING 체크포인트 저장 및 독립 상태 포착) */
@@ -413,7 +415,7 @@
     %let _step_state = requires_review;
     /* 경고 발생 상태 포착 완료. 기록기 자체 I/O 상태 검증을 위해 SYSCC 일시 리셋 */
     %let syscc = 0;
-    %sl_record_step(&step_idx., &stage_id., &prog_name., &_step_state., &_cur_cc., &_cur_err., 경고 발생(SYSCC=4) 수동 검수 필요);
+    %sl_record_step(&step_idx., &stage_id., &prog_name., &_step_state., &_cur_cc., &_cur_err., %nrstr(경고 발생(SYSCC=4) 수동 검수 필요));
     %put ERROR: [ScamLens] 단계 &stage_id. (&prog_name.) 에서 경고(SYSCC=4)가 발생했습니다.;
     %put ERROR- 로그를 검토하십시오: &sl_output_root./&stage_id..log;
     %put ERROR- 검토 필요/실패 단계 발생으로 하위 파이프라인 실행을 중단합니다.;
@@ -427,7 +429,7 @@
        상태 기록기 자체의 오류(I/O 실패 등)를 정확히 판별하기 위해 SYSCC를 일시 0으로 재설정합니다.
        기록 완료 직후 어떠한 추가 분석 단계도 실행하지 않고 즉시 %abort cancel 처리합니다. */
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., &stage_id., &prog_name., &_step_state., &_cur_cc., &_cur_err., 실행 오류 발생(SYSERR=&_cur_err. SYSCC=&_cur_cc. COMP=&_comp_val.));
+    %sl_record_step(&step_idx., &stage_id., &prog_name., &_step_state., &_cur_cc., &_cur_err., %bquote(실행 오류 발생(SYSERR=&_cur_err. SYSCC=&_cur_cc. COMP=&_comp_val.)));
     %put ERROR: [ScamLens] 단계 &stage_id. (&prog_name.) 실행이 실패했습니다 (SYSERR=&_cur_err. SYSCC=&_cur_cc. COMP=&_comp_val.).;
     %put ERROR- 로그를 확인하십시오: &sl_output_root./&stage_id..log;
     %put ERROR- 오류 발생으로 하위 파이프라인 실행을 중단합니다.;
@@ -464,14 +466,14 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 21_followup, 21_followup_diagnostics.sas, &_step_state., &_cur_cc., &_cur_err., 후속 진단 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 21_followup, 21_followup_diagnostics.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(후속 진단 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 21_followup 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
   %else %do;
     %let _step_state = failed;
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., 21_followup, 21_followup_diagnostics.sas, &_step_state., &_cur_cc., &_cur_err., 후속 진단 실행 실패(COMP=&sl_followup_complete.));
+    %sl_record_step(&step_idx., 21_followup, 21_followup_diagnostics.sas, &_step_state., &_cur_cc., &_cur_err., %bquote(후속 진단 실행 실패(COMP=&sl_followup_complete.)));
     %put ERROR: [ScamLens] 21_followup 실행 실패 (COMP=&sl_followup_complete.).;
     %abort cancel;
   %end;
@@ -508,7 +510,7 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 99_zip_followup, 99_ZIP_FOLLOWUP_OUTPUTS.sas, &_step_state., &_cur_cc., &_cur_err., ZIP 압축 중 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 99_zip_followup, 99_ZIP_FOLLOWUP_OUTPUTS.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(ZIP 압축 중 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 99_ZIP 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
@@ -551,14 +553,14 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 31_final_visuals, 31_final_visualization.sas, &_step_state., &_cur_cc., &_cur_err., 최종 시각화 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 31_final_visuals, 31_final_visualization.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(최종 시각화 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 31_final_visuals 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
   %else %do;
     %let _step_state = failed;
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., 31_final_visuals, 31_final_visualization.sas, &_step_state., &_cur_cc., &_cur_err., 최종 시각화 실패(COMP=&sv_report_complete.));
+    %sl_record_step(&step_idx., 31_final_visuals, 31_final_visualization.sas, &_step_state., &_cur_cc., &_cur_err., %bquote(최종 시각화 실패(COMP=&sv_report_complete.)));
     %put ERROR: [ScamLens] 31_final_visuals 실행 실패 (COMP=&sv_report_complete.).;
     %abort cancel;
   %end;
@@ -594,14 +596,14 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 13_cas_ab, 13_publish_ab_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., A/B CAS 적재 중 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 13_cas_ab, 13_publish_ab_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(A/B CAS 적재 중 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 13_cas_ab 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
   %else %do;
     %let _step_state = failed;
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., 13_cas_ab, 13_publish_ab_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., A/B CAS 적재 실패(COMP=&slva_complete.));
+    %sl_record_step(&step_idx., 13_cas_ab, 13_publish_ab_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %bquote(A/B CAS 적재 실패(COMP=&slva_complete.)));
     %put ERROR: [ScamLens] 13_cas_ab 실패 (COMP=&slva_complete.).;
     %abort cancel;
   %end;
@@ -636,14 +638,14 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., KcBERT CAS 적재 중 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(KcBERT CAS 적재 중 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 15_cas_kcbert 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
   %else %do;
     %let _step_state = failed;
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., KcBERT CAS 적재 실패(COMP=&slkc_complete.));
+    %sl_record_step(&step_idx., 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %bquote(KcBERT CAS 적재 실패(COMP=&slkc_complete.)));
     %put ERROR: [ScamLens] 15_cas_kcbert 실패 (COMP=&slkc_complete.).;
     %abort cancel;
   %end;
@@ -676,14 +678,14 @@
   %else %if &_cur_err. = 0 and &_cur_cc. = 4 %then %do;
     %let _step_state = requires_review;
     %let syscc = 0;
-    %sl_record_step(&step_idx., 32_cas_final, 32_publish_final_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., 최종 CAS 적재 중 경고 발생(SYSCC=4));
+    %sl_record_step(&step_idx., 32_cas_final, 32_publish_final_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %nrstr(최종 CAS 적재 중 경고 발생(SYSCC=4)));
     %put ERROR: [ScamLens] 32_cas_final 경고 발생. 중단합니다.;
     %abort cancel;
   %end;
   %else %do;
     %let _step_state = failed;
     %if &syscc. > 4 %then %let syscc = 0;
-    %sl_record_step(&step_idx., 32_cas_final, 32_publish_final_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., 최종 CAS 적재 실패(COMP=&sv_cas_complete.));
+    %sl_record_step(&step_idx., 32_cas_final, 32_publish_final_to_cas.sas, &_step_state., &_cur_cc., &_cur_err., %bquote(최종 CAS 적재 실패(COMP=&sv_cas_complete.)));
     %put ERROR: [ScamLens] 32_cas_final 실패 (COMP=&sv_cas_complete.).;
     %abort cancel;
   %end;
@@ -832,7 +834,7 @@
     %sl_skip_step(3, 02_meta, 02_meta_classifier.sas, skipped_missing_upstream, 01 감사 모듈 미완료);
   %end;
   %else %if &sas_oof_ready. ne 1 %then %do;
-    %sl_skip_step(3, 02_meta, 02_meta_classifier.sas, skipped_missing_input, 검증된 OOF 입력 부적격(sas_oof_ready=0));
+    %sl_skip_step(3, 02_meta, 02_meta_classifier.sas, skipped_missing_input, %nrstr(검증된 OOF 입력 부적격(sas_oof_ready=0)));
   %end;
   %else %do;
     %sl_run_ordinary(3, 02_meta, 02_meta_classifier.sas, completion_var=sas_meta_fit_completed);
@@ -891,7 +893,7 @@
     %sl_skip_step(7, 04_text, 04_korean_text_model.sas, skipped_disabled_by_profile, PUBLIC 프로파일: 비공개 데이터 모듈 비활성화);
   %end;
   %else %if &sl_run_text. ne 1 %then %do;
-    %sl_skip_step(7, 04_text, 04_korean_text_model.sas, skipped_disabled_by_option, sl_run_text=0 (선택적 텍스트 모형 비활성화));
+    %sl_skip_step(7, 04_text, 04_korean_text_model.sas, skipped_disabled_by_option, %nrstr(sl_run_text=0 (선택적 텍스트 모형 비활성화)));
   %end;
   %else %if &sc01_complete. ne 1 %then %do;
     %sl_skip_step(7, 04_text, 04_korean_text_model.sas, skipped_missing_upstream, 01 감사 모듈 미완료);
@@ -967,7 +969,7 @@
     %sl_skip_step(11, 13_cas_ab, 13_publish_ab_to_cas.sas, skipped_missing_upstream, 11 또는 12 단계 미완료);
   %end;
   %else %if &sl_run_cas. ne 1 %then %do;
-    %sl_skip_step(11, 13_cas_ab, 13_publish_ab_to_cas.sas, skipped_disabled_by_option, sl_run_cas=0 (CAS 배포 비활성화));
+    %sl_skip_step(11, 13_cas_ab, 13_publish_ab_to_cas.sas, skipped_disabled_by_option, %nrstr(sl_run_cas=0 (CAS 배포 비활성화)));
   %end;
   %else %do;
     %sl_run_cas_13(11);
@@ -985,7 +987,7 @@
     %sl_skip_step(13, 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, skipped_missing_upstream, 14 KcBERT 시각화 미완료);
   %end;
   %else %if &sl_run_cas. ne 1 %then %do;
-    %sl_skip_step(13, 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, skipped_disabled_by_option, sl_run_cas=0 (CAS 배포 비활성화));
+    %sl_skip_step(13, 15_cas_kcbert, 15_publish_kcbert_to_cas.sas, skipped_disabled_by_option, %nrstr(sl_run_cas=0 (CAS 배포 비활성화)));
   %end;
   %else %do;
     %sl_run_cas_15(13);
@@ -1000,7 +1002,7 @@
      Step 15: 99_ZIP_FOLLOWUP_OUTPUTS.sas (후속 진단 산출물 ZIP 패키징)
      ------------------------------------------------------------------------- */
   %if &sl_run_zip. ne 1 %then %do;
-    %sl_skip_step(15, 99_zip_followup, 99_ZIP_FOLLOWUP_OUTPUTS.sas, skipped_disabled_by_option, sl_run_zip=0 (ZIP 압축 비활성화));
+    %sl_skip_step(15, 99_zip_followup, 99_ZIP_FOLLOWUP_OUTPUTS.sas, skipped_disabled_by_option, %nrstr(sl_run_zip=0 (ZIP 압축 비활성화)));
   %end;
   %else %if &sl_followup_complete. ne 1 %then %do;
     %sl_skip_step(15, 99_zip_followup, 99_ZIP_FOLLOWUP_OUTPUTS.sas, skipped_missing_upstream, 21 후속 진단 모듈 미완료);
@@ -1021,7 +1023,7 @@
     %sl_skip_step(17, 32_cas_final, 32_publish_final_to_cas.sas, skipped_missing_upstream, 31 최종 시각화 미완료);
   %end;
   %else %if &sl_run_cas. ne 1 %then %do;
-    %sl_skip_step(17, 32_cas_final, 32_publish_final_to_cas.sas, skipped_disabled_by_option, sl_run_cas=0 (CAS 배포 비활성화));
+    %sl_skip_step(17, 32_cas_final, 32_publish_final_to_cas.sas, skipped_disabled_by_option, %nrstr(sl_run_cas=0 (CAS 배포 비활성화)));
   %end;
   %else %do;
     %sl_run_cas_32(17);

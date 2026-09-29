@@ -24,3 +24,9 @@ git diff --check
 ```
 
 검사기는 활성 파일 목록, 과거 파일·집계 해시, include 경로, 실행 계약, 현재 안내 링크를 대조합니다. 코드·폴더 정리 검증이며 새 SAS Studio·CAS·VA 실행 증거를 대신하지 않습니다. 비공개 데이터와 기존 반환 결과·발표 자료는 수정하지 않았습니다.
+
+## SAS Studio 상태 기록 오류 수정
+
+사용자 실행 로그에서 `The keyword parameter SL_RUN_TEXT was not defined with the macro.` 오류를 확인했습니다. 비활성화 이유의 `sl_run_text=0`이 매크로 키워드 인자로 해석된 원인입니다. 텍스트 모델·CAS·ZIP 안내의 등호 문구는 `%nrstr`, 실행 결과 변수를 포함한 문구는 `%bquote`, 함수 간 설명문 전달은 `%superq`로 보호했습니다. 이전 실패 호출과 마스킹 누락은 `python3 scripts/test_sas_layout.py -q`로 검사합니다.
+
+SAS 서버의 `/home/student/github`에서 `git pull --ff-only origin main` 후 새 Compute 세션에서 `sas/00_RUN_ALL.sas`를 실행하면 됩니다. 사용자 로그의 비공개 CSV 누락 상태는 AUTO의 건너뜀이며, 전체 원본 분석에는 해당 입력이 별도로 필요합니다. 이 수정의 로컬 검증은 오프라인 검사이고 실제 SAS 재실행은 대기 중입니다.

@@ -18,6 +18,55 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def verify_status_detail_arguments(entry: str) -> None:
+    """Check balanced status calls and explicit masking, without emulating SAS."""
+    code = re.sub(r"/\*.*?\*/", "", entry, flags=re.S)
+    arities = {"sl_skip_step": 5, "sl_record_step": 7, "sl_append_master_log": 6}
+    calls = re.finditer(r"%(sl_skip_step|sl_record_step|sl_append_master_log)\s*\(", code, re.I)
+    for call in calls:
+        name = call.group(1).lower()
+        start = call.end()
+        depth = 1
+        arguments = []
+        for pos in range(start, len(code)):
+            char = code[pos]
+            if char == "(":
+                depth += 1
+            elif char == ")":
+                depth -= 1
+                if depth == 0:
+                    arguments.append(code[start:pos].strip())
+                    break
+            elif char == "," and depth == 1:
+                arguments.append(code[start:pos].strip())
+                start = pos + 1
+        else:
+            raise ValueError(f"Unbalanced status call: {name}")
+        if len(arguments) != arities[name]:
+            raise ValueError(f"Wrong status argument count: {name}")
+        details = arguments[-1]
+        if re.search(r"&details\b", details, re.I):
+            raise ValueError(f"Status details forwarding must use %superq(details): {name}")
+        if "=" not in details:
+            continue
+        quote = re.match(r"%(nrstr|bquote)\(", details, re.I)
+        if not quote:
+            raise ValueError(f"Unquoted status details can become a keyword argument: {name}")
+        # The quote must enclose the entire description, not just a prefix.
+        depth = 1
+        for pos in range(quote.end(), len(details)):
+            if details[pos] == "(":
+                depth += 1
+            elif details[pos] == ")":
+                depth -= 1
+                if depth == 0:
+                    break
+        if depth != 0 or pos != len(details) - 1:
+            raise ValueError(f"Status details quoting does not enclose the description: {name}")
+        if quote.group(1).lower() == "nrstr" and re.search(r"&\w+", details):
+            raise ValueError("Dynamic status details need %bquote to resolve result values")
+
+
 def verify_zip_return_contract(entry: str, module: str) -> None:
     caller = re.search(r"%macro sl_run_99\b(.*?)%mend sl_run_99;", entry, re.S).group(1)
     caller = re.sub(r"/\*.*?\*/", "", caller, flags=re.S)
@@ -97,6 +146,7 @@ def verify(root: Path = ROOT) -> dict:
     if not (ordinary.index("%sl_record_step") < ordinary.index("%include")
             < ordinary.index("%let _cur_err") < ordinary.index("ods html close;")):
         raise ValueError("Runner loses stage/checkpoint status before cleanup")
+    verify_status_detail_arguments(entry)
     verify_zip_return_contract(entry, sources["99_ZIP_FOLLOWUP_OUTPUTS.sas"])
     cas15 = re.sub(r"/\*.*?\*/", "", sources["15_publish_kcbert_to_cas.sas"], flags=re.S)
     cas_statements = "\n".join(re.findall(r"proc casutil\b.*?quit;", cas15, re.I | re.S))
