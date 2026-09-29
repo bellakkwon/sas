@@ -194,7 +194,7 @@ JEV(외부 판정/특징)를 활용한 실험은 판정 대체와 특징 결합�
 
 ## SAS의 역할
 
-현재 실행: [단일 실행기·CAS·출력 안내](sas/RUNBOOK.md). 기존 근거: [이전 SAS 최종 시각화 안내](archive/sas_cleanup_20260929/visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md).
+근거: [SAS 최종 시각화·가이드](archive/sas_cleanup_20260929/visualization_20260921_v1/SAS_FINAL_VISUALIZATION_20260921.md).
 
 이번 후속 SAS 집계 검증은 모델을 새로 학습하지 않고, Python 결과의 집계 재계산과
 반환물 검수에 집중했습니다. 집계 반환 {runtime['stages_ok']}단계(U5 진단, JEV 비교, JEV 결합, KISA 진단)를
@@ -228,7 +228,7 @@ JEV(외부 판정/특징)를 활용한 실험은 판정 대체와 특징 결합�
 | SAS 한 번에 실행 | [00_RUN_ALL.sas](sas/00_RUN_ALL.sas), [설정·실행 안내](sas/RUNBOOK.md) |
 | 폴더 정리 이력 | [SAS 프로그램·보관본 안내](docs/SAS_ORGANIZATION_20260929.md) |
 | 폴더·자료 안내 | [자료 모음 안내](materials/20260921/README.md), [저장소 구성과 공개 범위](docs/REPOSITORY_ORGANIZATION_20260921.md) |
-| 현재 실행·반환 안내 | [통합 실행·후속 반환 가이드](docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md) |
+| 이전 실행·반환 안내 | [이전 반환 실행 가이드](docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md) |
 
 저장소 루트에서 재현성·링크·이미지와 README 정본 일치를 확인합니다.
 

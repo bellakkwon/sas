@@ -1,4 +1,4 @@
-/* Optional adapter: run AFTER the updated sas/00_RUN_ALL.sas in the SAME Compute session.
+/* Optional adapter: run AFTER the updated 00_RUN_AB in the SAME Compute session.
    Default: prepare aggregate WORK tables only; do not connect to CAS.
    To upload, explicitly set slva_upload=1, slva_caslib and a fresh slva_suffix.
    Promotion and persistent SAVE each require their own explicit 1 flag.
@@ -65,7 +65,7 @@
   %end;
   %if not %symexist(sc11_complete) or not %symexist(sc12_complete)
       or not %symexist(run_tag) %then %do;
-    %put ERROR: Run updated sas/00_RUN_ALL.sas first in this Compute session.;
+    %put ERROR: Run updated 00_RUN_AB first in this Compute session.;
     %abort cancel;
   %end;
   %if &sc11_complete. ne 1 or &sc12_complete. ne 1 %then %do;

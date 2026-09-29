@@ -18,6 +18,34 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def verify_current_guide(source: str, label: str) -> None:
+    current = source.split("<!-- SAS_HISTORICAL_RECORD -->", 1)[0]
+    for line in current.splitlines():
+        if "archive/" in line and "%include" not in line.lower():
+            continue
+        if re.search(r"\b00_RUN_(?!ALL\.sas\b)[A-Z0-9_]+(?:\.sas)?\b", line):
+            raise ValueError(f"Retired SAS entrypoint in current guide: {label}")
+        if re.search(r"(?:&projroot\.?/|/home/student/github/)(?:followup|visualization)_20260921_v1/", line):
+            raise ValueError(f"Deleted package root in current guide: {label}")
+        if re.search(r"\bStep\s*30\b", line, re.I):
+            raise ValueError(f"Loader module 30 is not a master step: {label}")
+        if "sl_followup_zip_path" in line and "마스터 실행 로그" in line:
+            raise ValueError(f"ZIP path is returned and printed in the SAS log, not master_run.log: {label}")
+        if re.search(r"CAS_(?:KCBERT|FINAL)_TABLES", line) and re.search(r"마스터 실행 로그|master_run\.log", line):
+            raise ValueError(f"CAS table patterns are printed in the SAS Studio log: {label}")
+        if "31_final_visualization.log" in line:
+            raise ValueError(f"Final visualization uses the SAS Studio log, not a separate stage log: {label}")
+        if "11 및 12 단계는 `skipped_missing_input`" in line:
+            raise ValueError(f"Missing A/B inputs skip 11 for input and 12 for upstream: {label}")
+        if label == "docs/SAS_STATUS_20260914.md":
+            if "14_kcbert_visuals.sas" in line and re.search(r"\bStep\s*2\b", line):
+                raise ValueError("Public KcBERT visuals do not depend on audit step 2")
+            if re.search(r"활성 프로그램.*\(\d+개", line):
+                raise ValueError("Active program counts must reference the generated manifest")
+    if "file://" in current or "/Users/" in current:
+        raise ValueError(f"Nonportable current guide link: {label}")
+
+
 def verify_status_detail_arguments(entry: str) -> None:
     """Check balanced status calls and explicit masking, without emulating SAS."""
     code = re.sub(r"/\*.*?\*/", "", entry, flags=re.S)
@@ -188,6 +216,8 @@ def verify(root: Path = ROOT) -> dict:
         raise ValueError("Original entrypoint was not preserved")
     for path in manifest["current_guides"]:
         source = (root / path).read_text()
+        if "archive" not in Path(path).parts:
+            verify_current_guide(source, path)
         for link in re.findall(r"\]\(([^)]+)\)", source):
             if link.startswith(("http:", "https:", "#", "mailto:")):
                 continue

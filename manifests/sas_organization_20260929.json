@@ -152,7 +152,15 @@
     "archive/sas_cleanup_20260929/source_modules/README.md": "2ac35f60e7f1138b10b76e8aa9e88a736a77de5787e6fba6a12ab5289a371801",
     "archive/sas_cleanup_20260929/source_modules/RUNBOOK.md": "be5b7c4c1cad1f1a195e94c0949542bcf6df3e19bb9232d18755ab36b4be338e",
     "archive/sas_cleanup_20260929/source_modules/99_ZIP_FOLLOWUP_OUTPUTS.sas": "7a34672cadd33df4f7625547a15a0c80a48b246b400c6005cf39153250f928c5",
-    "archive/sas_cleanup_20260929/source_modules/15_publish_kcbert_to_cas.sas": "7a80165507280b61e296410ee5f86c6e9e62d326a1c6fd06d94189db054ab0c1"
+    "archive/sas_cleanup_20260929/source_modules/15_publish_kcbert_to_cas.sas": "7a80165507280b61e296410ee5f86c6e9e62d326a1c6fd06d94189db054ab0c1",
+    "archive/sas_cleanup_20260929/docs_refresh/docs/SAS_EXECUTION_CHECKLIST.md": "96b0fd6059f6a50a7f2d37270e446c0614041c49b2460db0258c0390ae953dcc",
+    "archive/sas_cleanup_20260929/docs_refresh/docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md": "4543090b0af465aee013835d66c27369acf595935b1b781ce9ab20012f2d2581",
+    "archive/sas_cleanup_20260929/docs_refresh/docs/SAS_AB_CAS_HANDOFF_20260915.md": "1205343f7519b55d9d8dd1335102f40b7e317e2a84cb69360f95fc3c0d10c95e",
+    "archive/sas_cleanup_20260929/docs_refresh/docs/SAS_KCBERT_VISUALIZATION_GUIDE_20260918.md": "c314d91d5dde43a111bad5ccd4b75d7ae3fcb3e218a880fed391c6374056d7dd",
+    "archive/sas_cleanup_20260929/docs_refresh/docs/SAS_STATUS_20260914.md": "38fa0bda946b217698d5bc54ecede34331ea2a870e750dfb0fd37c6f4046906e",
+    "archive/sas_cleanup_20260929/docs_refresh/sas/11_reviewer_ab_agreement.sas": "03b32362a682a8d1ed0e5f9414c89a7ef0f9b3cb7773b9d6ecb96214648cc15a",
+    "archive/sas_cleanup_20260929/docs_refresh/sas/13_publish_ab_to_cas.sas": "119a8ab5bf087f5fd628ad80d72feed9fed5102a8366750925dbad91dce3e51f",
+    "archive/sas_cleanup_20260929/docs_refresh/scripts/build_project_readme.py": "7959c7de7beb2ad719c14b9f2a0fe300b02e2a2651d98e99e27777bc8197462e"
   },
   "preserved_sha256": {
     "archive/README.md": "a29f88e4d6b92af8a8f668caa9a06d787d504ce9127d857ccb487522136bb696",
@@ -384,7 +392,6 @@
     "data/processed/sas/sas_robustness.csv": "d6e5ebcce5ca4fa79d8b41a0c8b9eb358228088a68472860c0aeb6c614f348af",
     "docs/FAILURE_MAP.md": "7e6269e60bfacaff3a9adef9823fd615e0342186ea125b1d915436dd548509c0",
     "docs/REPOSITORY_ORGANIZATION_20260921.md": "1ae2778d7cda4677d436697b5cbe0e48e653a342853de4ef4b06716bd608d9ed",
-    "docs/SAS_STATUS_20260914.md": "38fa0bda946b217698d5bc54ecede34331ea2a870e750dfb0fd37c6f4046906e",
     "docs/SCAMLENS_ANALYTICAL_METHODS_AND_DESIGN_RATIONALE_20260918.md": "279ecb3bae5094e31fdfa5bdb416f507fb2c51b7ed8ca8f4b7b4aeef63ebe002",
     "manifests/ab_cas_20260915_v1.json": "65e44f3bc3b26324768ce93afa6cc423cbf9899f81dbb63a1f8abb30415853ca",
     "manifests/repository_organization_20260921.json": "fc39f88a4123e81f138bea196a51f7f9f9605b776d2037bc196752e296644626",
@@ -569,7 +576,12 @@
     "sas/RUNBOOK.md",
     "docs/SAS_ORGANIZATION_20260929.md",
     "data/aggregates/README.md",
-    "archive/sas_cleanup_20260929/README.md"
+    "archive/sas_cleanup_20260929/README.md",
+    "docs/SAS_EXECUTION_CHECKLIST.md",
+    "docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md",
+    "docs/SAS_AB_CAS_HANDOFF_20260915.md",
+    "docs/SAS_KCBERT_VISUALIZATION_GUIDE_20260918.md",
+    "docs/SAS_STATUS_20260914.md"
   ],
   "active_sha256": {
     "sas/00_RUN_ALL.sas": "9e620513cb26df1b4d21991c2d520c0a6b2810c236d555685198431e00a4ea7d",
@@ -581,9 +593,9 @@
     "sas/06_transformer_contrast.sas": "be75fbf926bc37db72f9825dc826c61ebdaa4e1afe31cda4011179dea6421b01",
     "sas/07_composition_and_novelty.sas": "b1b10a076e35459ae215e6422b8a300f6eedec0e120db0cc27a3498cbbd391d3",
     "sas/08_fage_gate.sas": "3ef5a3c534e3d976863099ddcb20dfca8459ab514a7e3e3c5f756f9db1495c46",
-    "sas/11_reviewer_ab_agreement.sas": "03b32362a682a8d1ed0e5f9414c89a7ef0f9b3cb7773b9d6ecb96214648cc15a",
+    "sas/11_reviewer_ab_agreement.sas": "04c483115a8a7af37a4de90bda4c72898c933cfcb2b83c0aa3bb49737cfbd665",
     "sas/12_consensus_model_comparison.sas": "08f0e6aa73e87ef47d14af3482e75a73f9a728cde5415511c17e879918b05da4",
-    "sas/13_publish_ab_to_cas.sas": "119a8ab5bf087f5fd628ad80d72feed9fed5102a8366750925dbad91dce3e51f",
+    "sas/13_publish_ab_to_cas.sas": "4ed404b89ee01655eff20c9637629f4a784d3a4cc64c4a77558a7b8d2306c218",
     "sas/14_kcbert_visuals.sas": "e8be4843e11b797a7bd234238dca8da274eaad99f85026ccc6a18930b695dc5f",
     "sas/15_publish_kcbert_to_cas.sas": "5d55f4d3947fb2d53c718b34570dcd8f0b17160a4fd2c143a1c12a5309e284ca",
     "sas/16_u5_error_diagnostics.sas": "d5fac0198d4c155cd157ae7a087008c9b72f16e72671ec6b0d586a24eefdcc0c",

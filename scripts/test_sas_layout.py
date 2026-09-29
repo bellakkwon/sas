@@ -131,6 +131,47 @@ class CasAndSummaryRegression(unittest.TestCase):
             layout.verify_cas_and_summary_contract(wrong)
 
 
+class GuidePathRegression(unittest.TestCase):
+    def test_cas_patterns_not_in_master_file(self):
+        with self.assertRaisesRegex(ValueError, "SAS Studio log"):
+            layout.verify_current_guide('마스터 실행 로그의 `CAS_FINAL_TABLES=`를 확인.', 'synthetic.md')
+
+    def test_nonexistent_final_stage_log_rejected(self):
+        with self.assertRaisesRegex(ValueError, "not a separate stage log"):
+            layout.verify_current_guide('Open `31_final_visualization.log`.', 'synthetic.md')
+
+    def test_ab_input_and_upstream_skips_distinguished(self):
+        with self.assertRaisesRegex(ValueError, "12 for upstream"):
+            layout.verify_current_guide('입력 CSV가 결측된 경우 11 및 12 단계는 `skipped_missing_input`으로 기록.', 'synthetic.md')
+
+    def test_loader_number_not_master_step(self):
+        with self.assertRaisesRegex(ValueError, "not a master step"):
+            layout.verify_current_guide('Requires Step 30.', 'synthetic.md')
+
+    def test_wrong_zip_log_location_rejected(self):
+        with self.assertRaisesRegex(ValueError, "not master_run.log"):
+            layout.verify_current_guide('마스터 실행 로그에 출력된 sl_followup_zip_path', 'synthetic.md')
+
+    def test_public_visuals_not_tied_to_private_audit(self):
+        with self.assertRaisesRegex(ValueError, "do not depend"):
+            layout.verify_current_guide('14_kcbert_visuals.sas | Step 2/사전 점검', 'docs/SAS_STATUS_20260914.md')
+
+    def test_old_runner_in_current_instruction_rejected(self):
+        with self.assertRaisesRegex(ValueError, "Retired SAS entrypoint"):
+            layout.verify_current_guide('Execute `sas/00_RUN_AB_CAS.sas`.', 'synthetic.md')
+
+    def test_deleted_package_include_rejected(self):
+        with self.assertRaisesRegex(ValueError, "Deleted package root"):
+            layout.verify_current_guide('%include "&projroot./visualization_20260921_v1/sas/module.sas";', 'synthetic.md')
+
+    def test_preserved_history_not_current_instruction(self):
+        layout.verify_current_guide('Execute `sas/00_RUN_ALL.sas`.\n<!-- SAS_HISTORICAL_RECORD -->\nOld `sas/00_RUN_AB.sas`.', 'synthetic.md')
+
+    def test_local_file_uri_rejected_in_public_guide(self):
+        with self.assertRaisesRegex(ValueError, "Nonportable"):
+            layout.verify_current_guide('[source](file:///Users/synthetic/report.json)', 'synthetic.md')
+
+
 class StatusArgumentRegression(unittest.TestCase):
     def test_runner_disabled_options_cannot_lose_masking(self):
         entry = (ROOT / "sas/00_RUN_ALL.sas").read_text()

@@ -12,7 +12,7 @@
   %if %length(%superq(projroot))=0 %then %let projroot=/home/student/github;
   %if %length(%superq(sasdata))=0 %then %let sasdata=&projroot./data/processed/sas;
   %if %length(%superq(runout))=0 %then %do;
-    %put ERROR: Run sas/00_RUN_ALL.sas to define a fresh output directory.;
+    %put ERROR: Run sas/00_RUN_AB.sas to define a fresh output directory.;
     %abort cancel;
   %end;
   %if not %sysfunc(fileexist(&sasdata./sas_reviewer_ab_20260914.csv)) %then %do;
