@@ -1,0 +1,40 @@
+{
+  "evaluation_role": "unused_original_test_one_shot",
+  "group_overlap_with_train": 0,
+  "id_overlap_with_matched_input": 0,
+  "limitations": [
+    "Unused test uses normalize_text(text_raw_masked); train fit used an extra name-token review mask.",
+    "Raw unused-eval text is private and must not be committed."
+  ],
+  "lock_sha256": "45f4b0494efd8ea1cf6860e05e48e1c2c52cbd4e05890a6cf2774a6334b8e721",
+  "private_csv_rows": 4673,
+  "private_csv_sha256": "55ffea2ce665059b6db8cea62cd2ed08aba5c3c652c01ddde33241aa312dc2b4",
+  "safe_input_sha256": "1e80db35025842ef7a6322ed92939cdd9798f0f909aec55f94ebd7747f71e07b",
+  "split_sha256": "2451b94b6918e4362f1fb03fa7ba99d60297e3e9b63e16e24c03d952859551f4",
+  "status": "unused_eval_prepared_text_private",
+  "test": {
+    "groups": 1830,
+    "has_url": {
+      "0": 1421,
+      "1": 896
+    },
+    "label": {
+      "normal": 1665,
+      "smishing": 652
+    },
+    "n": 2317
+  },
+  "validation": {
+    "groups": 1835,
+    "has_url": {
+      "0": 1424,
+      "1": 932
+    },
+    "label": {
+      "normal": 1670,
+      "smishing": 686
+    },
+    "n": 2356
+  },
+  "validation_not_primary": true
+}

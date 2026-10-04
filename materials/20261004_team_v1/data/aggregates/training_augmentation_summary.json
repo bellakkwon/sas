@@ -1,0 +1,50 @@
+{
+  "source": "DimensionV/KR-MOB-SMISHING-v2",
+  "license": "CC BY-NC 4.0",
+  "real_or_synthetic": "synthetic",
+  "label_policy": {
+    "benign": "normal",
+    "benign_lookalike": "smishing",
+    "malicious": "smishing",
+    "reason": "benign_lookalike contains an attack lure; user interruption changes the outcome, not the message-level smishing label"
+  },
+  "input_incidents": 100,
+  "input_message_samples": 111,
+  "written_unique_messages": 109,
+  "exact_source_duplicates_removed": 2,
+  "conflicting_text_groups_excluded": 0,
+  "conflicting_rows_excluded": 0,
+  "missing_training_watermark_rows": 0,
+  "label_distribution": {
+    "normal": 33,
+    "smishing": 76
+  },
+  "case_type_distribution": {
+    "benign": 33,
+    "benign_lookalike": 40,
+    "malicious": 36
+  },
+  "exact_overlap_with_existing": 0,
+  "near_heldout_excluded": 0,
+  "heldout_similarity_threshold": 0.9,
+  "training_rows_added": 109,
+  "added_label_distribution": {
+    "normal": 33,
+    "smishing": 76
+  },
+  "base_rows": 16773,
+  "augmented_rows": 16882,
+  "base_train_rows": 12100,
+  "augmented_train_rows": 12209,
+  "validation_rows": 2356,
+  "test_rows": 2317,
+  "heldout_rows_unchanged": true,
+  "residual_direct_identifier_flags": {
+    "active_url": 0,
+    "phone": 0,
+    "long_number": 0
+  },
+  "network_access": false,
+  "auxiliary_output": "data/processed/kr_mob_smishing_v2_messages.csv",
+  "augmented_output": "data/processed/messages_split_augmented.csv"
+}

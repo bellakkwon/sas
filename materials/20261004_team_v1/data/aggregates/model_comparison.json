@@ -1,0 +1,308 @@
+{
+  "input": "data/processed/messages_split.csv",
+  "test_rows": 2317,
+  "bootstrap_resamples": 10000,
+  "seed": 42,
+  "threshold_policy": "each model keeps its own validation-selected threshold",
+  "models": {
+    "word_tfidf_lr": {
+      "threshold": 0.47,
+      "precision": 0.9793977812995246,
+      "recall": 0.9478527607361963,
+      "f1": 0.9633671083398285,
+      "false_positive_rate": 0.007807807807807808
+    },
+    "char_tfidf_lr": {
+      "threshold": 0.515,
+      "precision": 0.9935379644588045,
+      "recall": 0.9432515337423313,
+      "f1": 0.9677419354838709,
+      "false_positive_rate": 0.0024024024024024023
+    },
+    "char_tfidf_url_neutral_lr": {
+      "threshold": 0.405,
+      "precision": 0.9917898193760263,
+      "recall": 0.9263803680981595,
+      "f1": 0.95796986518636,
+      "false_positive_rate": 0.003003003003003003
+    },
+    "kcbert": {
+      "threshold": 0.95,
+      "precision": 0.9937694704049844,
+      "recall": 0.9785276073619632,
+      "f1": 0.9860896445131375,
+      "false_positive_rate": 0.0024024024024024023
+    }
+  },
+  "comparisons": [
+    {
+      "left": "char_tfidf_lr",
+      "right": "word_tfidf_lr",
+      "mcnemar": {
+        "only_left_correct": 15,
+        "only_right_correct": 9,
+        "discordant": 24,
+        "p_value": 0.30745625495910645,
+        "test": "exact binomial (McNemar)",
+        "reason": null
+      },
+      "bootstrap": {
+        "f1": {
+          "observed_difference": 0.004375,
+          "ci_95": [
+            -0.003192,
+            0.012046
+          ],
+          "bootstrap_p": 0.2584,
+          "excludes_zero": false
+        },
+        "recall": {
+          "observed_difference": -0.004601,
+          "ci_95": [
+            -0.015749,
+            0.006154
+          ],
+          "bootstrap_p": 0.4878,
+          "excludes_zero": false
+        },
+        "false_positive_rate": {
+          "observed_difference": -0.005405,
+          "ci_95": [
+            -0.00957,
+            -0.001791
+          ],
+          "bootstrap_p": 0.0034,
+          "excludes_zero": true
+        },
+        "precision": {
+          "observed_difference": 0.01414,
+          "ci_95": [
+            0.004598,
+            0.024988
+          ],
+          "bootstrap_p": 0.003,
+          "excludes_zero": true
+        }
+      }
+    },
+    {
+      "left": "char_tfidf_lr",
+      "right": "char_tfidf_url_neutral_lr",
+      "mcnemar": {
+        "only_left_correct": 26,
+        "only_right_correct": 14,
+        "discordant": 40,
+        "p_value": 0.0806904677519924,
+        "test": "exact binomial (McNemar)",
+        "reason": null
+      },
+      "bootstrap": {
+        "f1": {
+          "observed_difference": 0.009772,
+          "ci_95": [
+            -9.8e-05,
+            0.019908
+          ],
+          "bootstrap_p": 0.061,
+          "excludes_zero": false
+        },
+        "recall": {
+          "observed_difference": 0.016871,
+          "ci_95": [
+            -0.001524,
+            0.035088
+          ],
+          "bootstrap_p": 0.0796,
+          "excludes_zero": false
+        },
+        "false_positive_rate": {
+          "observed_difference": -0.000601,
+          "ci_95": [
+            -0.002931,
+            0.001217
+          ],
+          "bootstrap_p": 0.7872,
+          "excludes_zero": false
+        },
+        "precision": {
+          "observed_difference": 0.001748,
+          "ci_95": [
+            -0.003242,
+            0.007572
+          ],
+          "bootstrap_p": 0.3888,
+          "excludes_zero": false
+        }
+      }
+    },
+    {
+      "left": "char_tfidf_lr",
+      "right": "kcbert",
+      "mcnemar": {
+        "only_left_correct": 3,
+        "only_right_correct": 26,
+        "discordant": 29,
+        "p_value": 1.5236437320709229e-05,
+        "test": "exact binomial (McNemar)",
+        "reason": null
+      },
+      "bootstrap": {
+        "f1": {
+          "observed_difference": -0.018348,
+          "ci_95": [
+            -0.026972,
+            -0.01021
+          ],
+          "bootstrap_p": 0.0,
+          "excludes_zero": true
+        },
+        "recall": {
+          "observed_difference": -0.035276,
+          "ci_95": [
+            -0.051245,
+            -0.020407
+          ],
+          "bootstrap_p": 0.0,
+          "excludes_zero": true
+        },
+        "false_positive_rate": {
+          "observed_difference": 0.0,
+          "ci_95": [
+            -0.001796,
+            0.001797
+          ],
+          "bootstrap_p": 1.0,
+          "excludes_zero": false
+        },
+        "precision": {
+          "observed_difference": -0.000232,
+          "ci_95": [
+            -0.004977,
+            0.004434
+          ],
+          "bootstrap_p": 0.6788,
+          "excludes_zero": false
+        }
+      }
+    }
+  ],
+  "network_access": false,
+  "limitations": [
+    "McNemar 과 paired bootstrap 은 학습된 모델을 고정한 채 테스트 표본의 불확실성만 다룬다. 학습 자체의 변동은 시드 스윕이 따로 답한다.",
+    "KcBERT 는 단일 학습(약 988초) 결과이며 시드 스윕에 포함되지 않는다. 따라서 KcBERT 관련 차이에는 학습 변동이 반영되어 있지 않다. 선형 모델은 고정 분할에서 결정적이라 학습 변동이 0 이므로, 시드 스윕이 실제로 필요한 모델은 KcBERT 뿐이다.",
+    "세 비교를 동시에 하므로 다중 비교 보정을 하지 않았다. p 값은 개별 비교 기준으로 읽는다.",
+    "테스트셋 악성 비율 28.14% 는 실제 문자 흐름보다 높다. 차이의 방향은 유지되지만 절대값은 배포 환경에서 달라진다."
+  ],
+  "seed_sweep": {
+    "word_tfidf_lr": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "threshold": [
+        0.4699999999999999,
+        0.4699999999999999,
+        0.4699999999999999,
+        0.4699999999999999,
+        0.4699999999999999
+      ],
+      "f1": [
+        0.963367,
+        0.963367,
+        0.963367,
+        0.963367,
+        0.963367
+      ],
+      "recall": [
+        0.947853,
+        0.947853,
+        0.947853,
+        0.947853,
+        0.947853
+      ],
+      "false_positive_rate": [
+        0.007808,
+        0.007808,
+        0.007808,
+        0.007808,
+        0.007808
+      ],
+      "f1_mean": 0.963367,
+      "f1_std": 0.0,
+      "f1_range": [
+        0.963367,
+        0.963367
+      ],
+      "recall_mean": 0.947853,
+      "recall_std": 0.0,
+      "recall_range": [
+        0.947853,
+        0.947853
+      ],
+      "false_positive_rate_mean": 0.007808,
+      "false_positive_rate_std": 0.0,
+      "false_positive_rate_range": [
+        0.007808,
+        0.007808
+      ]
+    },
+    "char_tfidf_lr": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "threshold": [
+        0.5149999999999999,
+        0.5149999999999999,
+        0.5149999999999999,
+        0.5149999999999999,
+        0.5149999999999999
+      ],
+      "f1": [
+        0.967742,
+        0.967742,
+        0.967742,
+        0.967742,
+        0.967742
+      ],
+      "recall": [
+        0.943252,
+        0.943252,
+        0.943252,
+        0.943252,
+        0.943252
+      ],
+      "false_positive_rate": [
+        0.002402,
+        0.002402,
+        0.002402,
+        0.002402,
+        0.002402
+      ],
+      "f1_mean": 0.967742,
+      "f1_std": 0.0,
+      "f1_range": [
+        0.967742,
+        0.967742
+      ],
+      "recall_mean": 0.943252,
+      "recall_std": 0.0,
+      "recall_range": [
+        0.943252,
+        0.943252
+      ],
+      "false_positive_rate_mean": 0.002402,
+      "false_positive_rate_std": 0.0,
+      "false_positive_rate_range": [
+        0.002402,
+        0.002402
+      ]
+    }
+  }
+}

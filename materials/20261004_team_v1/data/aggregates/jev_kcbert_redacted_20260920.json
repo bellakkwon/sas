@@ -1,0 +1,663 @@
+{
+  "cohort_counts": {
+    "by_label": {
+      "normal": 36,
+      "smishing": 52
+    },
+    "correct_controls": 44,
+    "error_union": 44,
+    "total": 88
+  },
+  "input_audit": {
+    "changed_text_rows": 18,
+    "per_seed": [
+      {
+        "changed_predictions": 2,
+        "new_by_redaction": 0,
+        "original_errors": 18,
+        "redacted_errors": 16,
+        "resolved_by_redaction": 2,
+        "seed": 42
+      },
+      {
+        "changed_predictions": 2,
+        "new_by_redaction": 0,
+        "original_errors": 19,
+        "redacted_errors": 17,
+        "resolved_by_redaction": 2,
+        "seed": 101
+      },
+      {
+        "changed_predictions": 1,
+        "new_by_redaction": 0,
+        "original_errors": 22,
+        "redacted_errors": 21,
+        "resolved_by_redaction": 1,
+        "seed": 202
+      },
+      {
+        "changed_predictions": 1,
+        "new_by_redaction": 0,
+        "original_errors": 26,
+        "redacted_errors": 25,
+        "resolved_by_redaction": 1,
+        "seed": 303
+      },
+      {
+        "changed_predictions": 2,
+        "new_by_redaction": 0,
+        "original_errors": 21,
+        "redacted_errors": 19,
+        "resolved_by_redaction": 2,
+        "seed": 404
+      }
+    ],
+    "total_rows": 88
+  },
+  "limitations": [
+    "U5 unused-test를 이미 열람한 사후 진단이며 독립 시험이나 실제 사기 확인이 아니다.",
+    "오류군을 과대표집했으므로 전체 코퍼스 정확도나 실서비스 오탐률로 일반화하지 않는다.",
+    "다섯 시드는 같은 메시지의 반복이며 독립 표본으로 합산하지 않는다.",
+    "Jev 범주는 본문 요구 기반 대리 분류이며 사기 확정 판정이 아니다.",
+    "direct_transfer_request 확률은 사기 확률이나 결합 기준으로 쓰지 않는다.",
+    "가상 대체(오류 해소·신규 오류)는 가정 계산이며 사람이 검토해 고쳤다는 뜻이 아니다.",
+    "검토 큐는 불일치 또는 보류 후보 집계일 뿐 실제 사람 수정이 아니다.",
+    "출처 코퍼스는 jmjmjm3/kor-smishing-message, CC BY-NC-SA 4.0, 실제/합성 불명으로 기록돼 있으며 개별 메시지 비식별이나 외부 전송 완료의 증거가 아니다.",
+    "정규식 후보 건수는 비식별 인증이 아니다. 패킷 원문 검수와 패킷 해시 결합 승인이 외부 전송 전제다.",
+    "TypeSafe 정책상 입력 수집·보관과 처리위탁이 가능하므로 무보관 서비스로 취급하지 않는다.",
+    "v2 입력은 메인 검수 치환을 적용한 126토큰 접두어이며 원본 v1 패킷은 전송하지 않는다.",
+    "치환은 AI 직접 검수 기록이며 사람 검수나 완전 비식별 인증이 아니다.",
+    "주 기준 판정은 치환 후 문자열에 대한 저장 DUP 재추론이다. 원래 저장 확률은 보존만 한다.",
+    "오류군/대조군은 원래 선택 표본이며 치환 후 오류 여부로 다시 뽑지 않는다."
+  ],
+  "per_seed": [
+    {
+      "cohorts": {
+        "all": {
+          "baseline": {
+            "fn": 8,
+            "fp": 8,
+            "tn": 28,
+            "tp": 44
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 49,
+            "fp": 0,
+            "tn": 36,
+            "tp": 2
+          },
+          "n": 88,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 8,
+            "new_fn": 41,
+            "new_fp": 0,
+            "persistent_fn": 8,
+            "persistent_fp": 0,
+            "retained_correct": 30
+          },
+          "triage": {
+            "caught_error": 8,
+            "missed_error": 8,
+            "review_count": 50,
+            "unnecessary_review": 42
+          }
+        },
+        "correct_controls": {
+          "baseline": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 22,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 0,
+            "fn": 21,
+            "fp": 0,
+            "tn": 22,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 0,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 0,
+            "new_fn": 21,
+            "new_fp": 0,
+            "persistent_fn": 0,
+            "persistent_fp": 0,
+            "retained_correct": 23
+          },
+          "triage": {
+            "caught_error": 0,
+            "missed_error": 0,
+            "review_count": 21,
+            "unnecessary_review": 21
+          }
+        },
+        "error_union": {
+          "baseline": {
+            "fn": 8,
+            "fp": 8,
+            "tn": 6,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 28,
+            "fp": 0,
+            "tn": 14,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 8,
+            "new_fn": 20,
+            "new_fp": 0,
+            "persistent_fn": 8,
+            "persistent_fp": 0,
+            "retained_correct": 7
+          },
+          "triage": {
+            "caught_error": 8,
+            "missed_error": 8,
+            "review_count": 29,
+            "unnecessary_review": 21
+          }
+        }
+      },
+      "seed": 42
+    },
+    {
+      "cohorts": {
+        "all": {
+          "baseline": {
+            "fn": 10,
+            "fp": 7,
+            "tn": 29,
+            "tp": 42
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 49,
+            "fp": 0,
+            "tn": 36,
+            "tp": 2
+          },
+          "n": 88,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 7,
+            "new_fn": 39,
+            "new_fp": 0,
+            "persistent_fn": 10,
+            "persistent_fp": 0,
+            "retained_correct": 31
+          },
+          "triage": {
+            "caught_error": 7,
+            "missed_error": 10,
+            "review_count": 47,
+            "unnecessary_review": 40
+          }
+        },
+        "correct_controls": {
+          "baseline": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 22,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 0,
+            "fn": 21,
+            "fp": 0,
+            "tn": 22,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 0,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 0,
+            "new_fn": 21,
+            "new_fp": 0,
+            "persistent_fn": 0,
+            "persistent_fp": 0,
+            "retained_correct": 23
+          },
+          "triage": {
+            "caught_error": 0,
+            "missed_error": 0,
+            "review_count": 21,
+            "unnecessary_review": 21
+          }
+        },
+        "error_union": {
+          "baseline": {
+            "fn": 10,
+            "fp": 7,
+            "tn": 7,
+            "tp": 20
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 28,
+            "fp": 0,
+            "tn": 14,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 7,
+            "new_fn": 18,
+            "new_fp": 0,
+            "persistent_fn": 10,
+            "persistent_fp": 0,
+            "retained_correct": 8
+          },
+          "triage": {
+            "caught_error": 7,
+            "missed_error": 10,
+            "review_count": 26,
+            "unnecessary_review": 19
+          }
+        }
+      },
+      "seed": 101
+    },
+    {
+      "cohorts": {
+        "all": {
+          "baseline": {
+            "fn": 17,
+            "fp": 4,
+            "tn": 32,
+            "tp": 35
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 49,
+            "fp": 0,
+            "tn": 36,
+            "tp": 2
+          },
+          "n": 88,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 1,
+            "corrected_fp": 4,
+            "new_fn": 33,
+            "new_fp": 0,
+            "persistent_fn": 16,
+            "persistent_fp": 0,
+            "retained_correct": 33
+          },
+          "triage": {
+            "caught_error": 5,
+            "missed_error": 16,
+            "review_count": 39,
+            "unnecessary_review": 34
+          }
+        },
+        "correct_controls": {
+          "baseline": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 22,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 0,
+            "fn": 21,
+            "fp": 0,
+            "tn": 22,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 0,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 0,
+            "new_fn": 21,
+            "new_fp": 0,
+            "persistent_fn": 0,
+            "persistent_fp": 0,
+            "retained_correct": 23
+          },
+          "triage": {
+            "caught_error": 0,
+            "missed_error": 0,
+            "review_count": 21,
+            "unnecessary_review": 21
+          }
+        },
+        "error_union": {
+          "baseline": {
+            "fn": 17,
+            "fp": 4,
+            "tn": 10,
+            "tp": 13
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 28,
+            "fp": 0,
+            "tn": 14,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 1,
+            "corrected_fp": 4,
+            "new_fn": 12,
+            "new_fp": 0,
+            "persistent_fn": 16,
+            "persistent_fp": 0,
+            "retained_correct": 10
+          },
+          "triage": {
+            "caught_error": 5,
+            "missed_error": 16,
+            "review_count": 18,
+            "unnecessary_review": 13
+          }
+        }
+      },
+      "seed": 202
+    },
+    {
+      "cohorts": {
+        "all": {
+          "baseline": {
+            "fn": 16,
+            "fp": 9,
+            "tn": 27,
+            "tp": 36
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 49,
+            "fp": 0,
+            "tn": 36,
+            "tp": 2
+          },
+          "n": 88,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 9,
+            "new_fn": 33,
+            "new_fp": 0,
+            "persistent_fn": 16,
+            "persistent_fp": 0,
+            "retained_correct": 29
+          },
+          "triage": {
+            "caught_error": 9,
+            "missed_error": 16,
+            "review_count": 43,
+            "unnecessary_review": 34
+          }
+        },
+        "correct_controls": {
+          "baseline": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 22,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 0,
+            "fn": 21,
+            "fp": 0,
+            "tn": 22,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 0,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 0,
+            "new_fn": 21,
+            "new_fp": 0,
+            "persistent_fn": 0,
+            "persistent_fp": 0,
+            "retained_correct": 23
+          },
+          "triage": {
+            "caught_error": 0,
+            "missed_error": 0,
+            "review_count": 21,
+            "unnecessary_review": 21
+          }
+        },
+        "error_union": {
+          "baseline": {
+            "fn": 16,
+            "fp": 9,
+            "tn": 5,
+            "tp": 14
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 28,
+            "fp": 0,
+            "tn": 14,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 9,
+            "new_fn": 12,
+            "new_fp": 0,
+            "persistent_fn": 16,
+            "persistent_fp": 0,
+            "retained_correct": 6
+          },
+          "triage": {
+            "caught_error": 9,
+            "missed_error": 16,
+            "review_count": 22,
+            "unnecessary_review": 13
+          }
+        }
+      },
+      "seed": 303
+    },
+    {
+      "cohorts": {
+        "all": {
+          "baseline": {
+            "fn": 10,
+            "fp": 9,
+            "tn": 27,
+            "tp": 42
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 49,
+            "fp": 0,
+            "tn": 36,
+            "tp": 2
+          },
+          "n": 88,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 9,
+            "new_fn": 39,
+            "new_fp": 0,
+            "persistent_fn": 10,
+            "persistent_fp": 0,
+            "retained_correct": 29
+          },
+          "triage": {
+            "caught_error": 9,
+            "missed_error": 10,
+            "review_count": 49,
+            "unnecessary_review": 40
+          }
+        },
+        "correct_controls": {
+          "baseline": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 22,
+            "tp": 22
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 0,
+            "fn": 21,
+            "fp": 0,
+            "tn": 22,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 0,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 0,
+            "new_fn": 21,
+            "new_fp": 0,
+            "persistent_fn": 0,
+            "persistent_fp": 0,
+            "retained_correct": 23
+          },
+          "triage": {
+            "caught_error": 0,
+            "missed_error": 0,
+            "review_count": 21,
+            "unnecessary_review": 21
+          }
+        },
+        "error_union": {
+          "baseline": {
+            "fn": 10,
+            "fp": 9,
+            "tn": 5,
+            "tp": 20
+          },
+          "jev": {
+            "abstain_neg": 0,
+            "abstain_pos": 1,
+            "fn": 28,
+            "fp": 0,
+            "tn": 14,
+            "tp": 1
+          },
+          "n": 44,
+          "transitions": {
+            "abstain_from_correct": 1,
+            "abstain_from_error": 0,
+            "corrected_fn": 0,
+            "corrected_fp": 9,
+            "new_fn": 18,
+            "new_fp": 0,
+            "persistent_fn": 10,
+            "persistent_fp": 0,
+            "retained_correct": 6
+          },
+          "triage": {
+            "caught_error": 9,
+            "missed_error": 10,
+            "review_count": 28,
+            "unnecessary_review": 19
+          }
+        }
+      },
+      "seed": 404
+    }
+  ],
+  "privacy_gate": {
+    "reviewed_count": 88,
+    "status": "approved",
+    "total_count": 88
+  },
+  "protocol": {
+    "conditions": {
+      "arm": "DUP",
+      "direct_transfer_request_used": false,
+      "identifier_redaction": true,
+      "jev_input": "126-body-token prefix with retokenized ID equality",
+      "jev_mapping": {
+        "insufficient_context": "abstain",
+        "ordinary_notice_or_conversation_possible": "negative",
+        "promotion_without_clear_scam_request": "negative",
+        "risky_request_visible": "positive"
+      },
+      "kcbert_body_tokens": 126,
+      "labels_sent_to_jev": false,
+      "new_kcbert_inference": true,
+      "original_probabilities_preserved": true,
+      "primary_baseline": "redacted_kcbert",
+      "selection": "error union = any-seed DUP unused-test error; controls = all-seed correct, exclude error-union groups, 22 normal and 22 smishing, one per group, SHA-256('jev-kcbert-20260920-v1:'+message_id) order",
+      "weights_unchanged": true
+    },
+    "hash": "f781099acacda0d5a08bb25216b7e4135f644c7fd516667243bacc884156dc78",
+    "limitations": [
+      "U5 unused-test를 이미 열람한 사후 진단이며 독립 시험이나 실제 사기 확인이 아니다.",
+      "오류군을 과대표집했으므로 전체 코퍼스 정확도나 실서비스 오탐률로 일반화하지 않는다.",
+      "다섯 시드는 같은 메시지의 반복이며 독립 표본으로 합산하지 않는다.",
+      "Jev 범주는 본문 요구 기반 대리 분류이며 사기 확정 판정이 아니다.",
+      "direct_transfer_request 확률은 사기 확률이나 결합 기준으로 쓰지 않는다.",
+      "가상 대체(오류 해소·신규 오류)는 가정 계산이며 사람이 검토해 고쳤다는 뜻이 아니다.",
+      "검토 큐는 불일치 또는 보류 후보 집계일 뿐 실제 사람 수정이 아니다.",
+      "출처 코퍼스는 jmjmjm3/kor-smishing-message, CC BY-NC-SA 4.0, 실제/합성 불명으로 기록돼 있으며 개별 메시지 비식별이나 외부 전송 완료의 증거가 아니다.",
+      "정규식 후보 건수는 비식별 인증이 아니다. 패킷 원문 검수와 패킷 해시 결합 승인이 외부 전송 전제다.",
+      "TypeSafe 정책상 입력 수집·보관과 처리위탁이 가능하므로 무보관 서비스로 취급하지 않는다.",
+      "v2 입력은 메인 검수 치환을 적용한 126토큰 접두어이며 원본 v1 패킷은 전송하지 않는다.",
+      "치환은 AI 직접 검수 기록이며 사람 검수나 완전 비식별 인증이 아니다.",
+      "주 기준 판정은 치환 후 문자열에 대한 저장 DUP 재추론이다. 원래 저장 확률은 보존만 한다.",
+      "오류군/대조군은 원래 선택 표본이며 치환 후 오류 여부로 다시 뽑지 않는다."
+    ],
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "version": "jev-kcbert-20260920-v2"
+  },
+  "schema_version": 1,
+  "status": "completed"
+}

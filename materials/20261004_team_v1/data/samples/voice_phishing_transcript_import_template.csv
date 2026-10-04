@@ -1,0 +1,4 @@
+conversation_id,turn_index,speaker_role,text,label,scam_type,source,license,collection_basis,real_or_synthetic,consent_record_id
+EXAMPLE_CALL_001,1,caller,[합성예시] 법원 등기 반송 건이라며 개인정보 확인을 요구합니다.,voice_phishing,court_registered_mail,project_template,project-created,project_synthetic,synthetic,
+EXAMPLE_CALL_001,2,recipient,[합성예시] 공식 대표번호를 직접 확인하겠습니다.,suspicious,court_registered_mail,project_template,project-created,project_synthetic,synthetic,
+EXAMPLE_NORMAL_001,1,agent,[합성예시] 개인정보를 묻지 않으며 공식 고객센터에서 직접 확인해 주세요.,normal,not_applicable,project_template,project-created,project_synthetic,synthetic,

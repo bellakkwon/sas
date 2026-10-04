@@ -1,0 +1,552 @@
+{
+  "arms": {
+    "K": {
+      "paired_transitions": {
+        "corrected_fn": 0,
+        "corrected_fp": 0,
+        "new_fn": 0,
+        "new_fp": 0,
+        "persistent_fn": 0,
+        "persistent_fp": 0
+      },
+      "readout_url_subgroups": {
+        "url_absent": {
+          "brier": 0.00035607040526424284,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.010869565217391304,
+          "n": 98,
+          "normal_denominator": 92,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 6,
+          "tn": 92,
+          "tp": 6
+        },
+        "url_present": {
+          "brier": 0.001058210451822834,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.0625,
+          "n": 44,
+          "normal_denominator": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 28,
+          "tn": 16,
+          "tp": 28
+        }
+      },
+      "roles": {
+        "calibration": {
+          "brier": 0.009492885730264779,
+          "f1": 0.967741935483871,
+          "fn": 1,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009345794392523364,
+          "n": 123,
+          "normal_denominator": 107,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "smishing_denominator": 16,
+          "tn": 107,
+          "tp": 15
+        },
+        "meta_fit": {
+          "brier": 0.0073444235928493105,
+          "f1": 0.989399293286219,
+          "fn": 3,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.004761904761904762,
+          "n": 353,
+          "normal_denominator": 210,
+          "precision": 1.0,
+          "recall": 0.9790209790209791,
+          "smishing_denominator": 143,
+          "tn": 210,
+          "tp": 140
+        },
+        "readout": {
+          "brier": 0.0005736349267331021,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009259259259259259,
+          "n": 142,
+          "normal_denominator": 108,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 34,
+          "tn": 108,
+          "tp": 34
+        }
+      },
+      "threshold": {
+        "calibration_fn": 1,
+        "calibration_fp": 0,
+        "calibration_fpr": 0.0,
+        "calibration_recall": 0.9375,
+        "calibration_tp": 15,
+        "normal_denominator": 107,
+        "threshold": 0.7855205743430773
+      }
+    },
+    "KJ": {
+      "paired_transitions": {
+        "corrected_fn": 0,
+        "corrected_fp": 0,
+        "new_fn": 0,
+        "new_fp": 0,
+        "persistent_fn": 0,
+        "persistent_fp": 0
+      },
+      "readout_url_subgroups": {
+        "url_absent": {
+          "brier": 0.000348571824884031,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.010869565217391304,
+          "n": 98,
+          "normal_denominator": 92,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 6,
+          "tn": 92,
+          "tp": 6
+        },
+        "url_present": {
+          "brier": 0.0038602685718139877,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.0625,
+          "n": 44,
+          "normal_denominator": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 28,
+          "tn": 16,
+          "tp": 28
+        }
+      },
+      "roles": {
+        "calibration": {
+          "brier": 0.010499376946812551,
+          "f1": 0.967741935483871,
+          "fn": 1,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009345794392523364,
+          "n": 123,
+          "normal_denominator": 107,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "smishing_denominator": 16,
+          "tn": 107,
+          "tp": 15
+        },
+        "meta_fit": {
+          "brier": 0.005001619820802276,
+          "f1": 0.989399293286219,
+          "fn": 3,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.004761904761904762,
+          "n": 353,
+          "normal_denominator": 210,
+          "precision": 1.0,
+          "recall": 0.9790209790209791,
+          "smishing_denominator": 143,
+          "tn": 210,
+          "tp": 140
+        },
+        "readout": {
+          "brier": 0.0014367032112566932,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009259259259259259,
+          "n": 142,
+          "normal_denominator": 108,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 34,
+          "tn": 108,
+          "tp": 34
+        }
+      },
+      "threshold": {
+        "calibration_fn": 1,
+        "calibration_fp": 0,
+        "calibration_fpr": 0.0,
+        "calibration_recall": 0.9375,
+        "calibration_tp": 15,
+        "normal_denominator": 107,
+        "threshold": 0.8015340995819955
+      }
+    },
+    "KJU": {
+      "paired_transitions": {
+        "corrected_fn": 0,
+        "corrected_fp": 0,
+        "new_fn": 0,
+        "new_fp": 0,
+        "persistent_fn": 0,
+        "persistent_fp": 0
+      },
+      "readout_url_subgroups": {
+        "url_absent": {
+          "brier": 0.0004335735297110637,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.010869565217391304,
+          "n": 98,
+          "normal_denominator": 92,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 6,
+          "tn": 92,
+          "tp": 6
+        },
+        "url_present": {
+          "brier": 0.0026975064024812915,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.0625,
+          "n": 44,
+          "normal_denominator": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 28,
+          "tn": 16,
+          "tp": 28
+        }
+      },
+      "roles": {
+        "calibration": {
+          "brier": 0.016216192221519217,
+          "f1": 0.967741935483871,
+          "fn": 1,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009345794392523364,
+          "n": 123,
+          "normal_denominator": 107,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "smishing_denominator": 16,
+          "tn": 107,
+          "tp": 15
+        },
+        "meta_fit": {
+          "brier": 0.004745547563581651,
+          "f1": 0.9929577464788732,
+          "fn": 2,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.004761904761904762,
+          "n": 353,
+          "normal_denominator": 210,
+          "precision": 1.0,
+          "recall": 0.986013986013986,
+          "smishing_denominator": 143,
+          "tn": 210,
+          "tp": 141
+        },
+        "readout": {
+          "brier": 0.0011350738564849373,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009259259259259259,
+          "n": 142,
+          "normal_denominator": 108,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 34,
+          "tn": 108,
+          "tp": 34
+        }
+      },
+      "threshold": {
+        "calibration_fn": 1,
+        "calibration_fp": 0,
+        "calibration_fpr": 0.0,
+        "calibration_recall": 0.9375,
+        "calibration_tp": 15,
+        "normal_denominator": 107,
+        "threshold": 0.5222122167557824
+      }
+    },
+    "KU": {
+      "paired_transitions": {
+        "corrected_fn": 0,
+        "corrected_fp": 0,
+        "new_fn": 0,
+        "new_fp": 1,
+        "persistent_fn": 0,
+        "persistent_fp": 0
+      },
+      "readout_url_subgroups": {
+        "url_absent": {
+          "brier": 0.00022518369532624203,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.010869565217391304,
+          "n": 98,
+          "normal_denominator": 92,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 6,
+          "tn": 92,
+          "tp": 6
+        },
+        "url_present": {
+          "brier": 0.014662539153940638,
+          "f1": 0.9824561403508771,
+          "fn": 0,
+          "fp": 1,
+          "fpr": 0.0625,
+          "fpr_quantization": 0.0625,
+          "n": 44,
+          "normal_denominator": 16,
+          "precision": 0.9655172413793104,
+          "recall": 1.0,
+          "smishing_denominator": 28,
+          "tn": 15,
+          "tp": 28
+        }
+      },
+      "roles": {
+        "calibration": {
+          "brier": 0.012046170375318825,
+          "f1": 0.967741935483871,
+          "fn": 1,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009345794392523364,
+          "n": 123,
+          "normal_denominator": 107,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "smishing_denominator": 16,
+          "tn": 107,
+          "tp": 15
+        },
+        "meta_fit": {
+          "brier": 0.007425827073148862,
+          "f1": 0.989399293286219,
+          "fn": 3,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.004761904761904762,
+          "n": 353,
+          "normal_denominator": 210,
+          "precision": 1.0,
+          "recall": 0.9790209790209791,
+          "smishing_denominator": 143,
+          "tn": 210,
+          "tp": 140
+        },
+        "readout": {
+          "brier": 0.004698730457150422,
+          "f1": 0.9855072463768115,
+          "fn": 0,
+          "fp": 1,
+          "fpr": 0.009259259259259259,
+          "fpr_quantization": 0.009259259259259259,
+          "n": 142,
+          "normal_denominator": 108,
+          "precision": 0.9714285714285714,
+          "recall": 1.0,
+          "smishing_denominator": 34,
+          "tn": 107,
+          "tp": 34
+        }
+      },
+      "threshold": {
+        "calibration_fn": 1,
+        "calibration_fp": 0,
+        "calibration_fpr": 0.0,
+        "calibration_recall": 0.9375,
+        "calibration_tp": 15,
+        "normal_denominator": 107,
+        "threshold": 0.6612159865789777
+      }
+    },
+    "rawK": {
+      "readout_url_subgroups": {
+        "url_absent": {
+          "brier": 1.915577168686732e-07,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.010869565217391304,
+          "n": 98,
+          "normal_denominator": 92,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 6,
+          "tn": 92,
+          "tp": 6
+        },
+        "url_present": {
+          "brier": 1.8460564731903674e-06,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.0625,
+          "n": 44,
+          "normal_denominator": 16,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 28,
+          "tn": 16,
+          "tp": 28
+        }
+      },
+      "roles": {
+        "calibration": {
+          "brier": 0.008445642395202,
+          "f1": 0.967741935483871,
+          "fn": 1,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009345794392523364,
+          "n": 123,
+          "normal_denominator": 107,
+          "precision": 1.0,
+          "recall": 0.9375,
+          "smishing_denominator": 16,
+          "tn": 107,
+          "tp": 15
+        },
+        "meta_fit": {
+          "brier": 0.008357024262517453,
+          "f1": 0.989399293286219,
+          "fn": 3,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.004761904761904762,
+          "n": 353,
+          "normal_denominator": 210,
+          "precision": 1.0,
+          "recall": 0.9790209790209791,
+          "smishing_denominator": 143,
+          "tn": 210,
+          "tp": 140
+        },
+        "readout": {
+          "brier": 7.042193033345504e-07,
+          "f1": 1.0,
+          "fn": 0,
+          "fp": 0,
+          "fpr": 0.0,
+          "fpr_quantization": 0.009259259259259259,
+          "n": 142,
+          "normal_denominator": 108,
+          "precision": 1.0,
+          "recall": 1.0,
+          "smishing_denominator": 34,
+          "tn": 108,
+          "tp": 34
+        }
+      },
+      "threshold": {
+        "calibration_fn": 1,
+        "calibration_fp": 0,
+        "calibration_fpr": 0.0,
+        "calibration_recall": 0.9375,
+        "calibration_tp": 15,
+        "normal_denominator": 107,
+        "threshold": 0.8857495188713074
+      }
+    }
+  },
+  "design": {
+    "arms": [
+      "rawK",
+      "K",
+      "KJ",
+      "KU",
+      "KJU"
+    ],
+    "classifier": "StandardScaler + LogisticRegression(C=1,max_iter=2000,random_state=42)",
+    "labels": [
+      "normal",
+      "smishing"
+    ],
+    "logit_clip": [
+      1e-06,
+      0.999999
+    ],
+    "roles": [
+      "meta_fit",
+      "calibration",
+      "readout"
+    ],
+    "test_used_for_fit_or_threshold": false,
+    "threshold_rule": "calibration FPR <= 1%; max recall, min FP, highest threshold"
+  },
+  "limitations": [
+    "검증 자료를 재사용한 탐색 파일럿이며 새로운 독립 시험이나 서비스 성능 증거가 아니다.",
+    "새로운 독립 시험 자료가 없으며 readout은 검증 자료 재사용이다.",
+    "Jev API 사용량·지연 수치는 검증된 성공 응답 체크포인트 합산값만 표시한다. 합성 사전점검과 실패 호출은 제외하며 재사용 동일 요청은 1회만 집계한다.",
+    "정상 분모가 유한하여 FPR은 양자화된다. readout의 FPR 1% 이하 달성을 보장하지 않는다.",
+    "KcBERT 확률과 Jev 특징은 고정 입력이며 설명문·원문은 제외한다.",
+    "URL 특징은 전체 SMS에서 추출되어 K/J 접두어 밖 정보를 포함할 수 있다."
+  ],
+  "provenance": {
+    "api": {
+      "completed_rows": 618,
+      "successful_requests": 510,
+      "total_latency_seconds": 319.418,
+      "usage": {
+        "input_tokens": 295680,
+        "output_tokens": 56100,
+        "total_tokens": 351780
+      }
+    },
+    "exclusion": {
+      "base_group_overlap": 0,
+      "base_id_overlap": 0,
+      "role_group_overlap": 0,
+      "role_token_overlap": 0,
+      "source_split": "validation",
+      "test_group_overlap": 0,
+      "test_id_overlap": 0
+    },
+    "features_sha256": "8b7492e1720210febb915885b36562489a8a6d01a4e6b451d5aec646ef420306",
+    "packet_sha256": "6f1a4ab93d4ee71bb2de4b8ac7246cc8288ba64781c85fd537606e6406b39ab7",
+    "privacy": {
+      "review_sha256": "a1c9f2bf3843e88df023623c5b1c4b0d36c36afaf7c955e5799c5624ad0ec646",
+      "status": "main_reviewed_and_approved"
+    },
+    "protocol_sha256": "49fa40b3ddac9d0437a0ec16bb85ccb8e99d928efdd7cdabeb87f260b3d92086",
+    "row_count": 618,
+    "schema_version": 1,
+    "status": "completed"
+  },
+  "status": "complete",
+  "version": "jev-kcbert-fusion-20260920-v1"
+}

@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "experiment_id": "kisa_all_models_neural_20261004_v1",
+  "purpose": "Extend the one-known-example diagnostic to every saved historically evaluated KcBERT checkpoint",
+  "role": "post_hoc_known_case_diagnostic_not_independent_test",
+  "private_root": "~/scamlens_private",
+  "input_dir": "kisa_ocr_diagnostics_20260921_v1",
+  "output_dir": "kisa_all_models_neural_20261004_v1",
+  "support_template_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "support_policy": "Same K01-K09 for all models; cases already detected at baseline are NOT counted as recovered; all nine support choices reported",
+  "design": {
+    "seed_for_updates": 42,
+    "optimizer": "AdamW",
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "gradient_clip_norm": 1.0,
+    "updates": 10,
+    "checkpoints": [
+      1,
+      5,
+      10
+    ],
+    "primary_step": 10,
+    "max_length": 128,
+    "padding": "max_length",
+    "inference_batch_size": 16,
+    "training_batch_size": 1,
+    "replay_examples": 0,
+    "label": 1,
+    "reset": "fresh original weights, optimizer and RNG every support fold",
+    "save_full_adapted_weights": false,
+    "persistence": "private per-case probabilities for baseline and every checkpoint plus final in-memory state SHA256 and update diagnostics; immutable source weights hashed; full adapted weights discarded to avoid >100GB output"
+  },
+  "models": [
+    {
+      "id": "kcbert",
+      "family": "kcbert",
+      "seed": 13,
+      "model_dir": "models/text/kcbert",
+      "threshold": 0.95,
+      "threshold_source": "reports/generated/kcbert_baseline.json",
+      "threshold_key": "validation_selected.threshold",
+      "seed_note": "Original checkpoint is the stored seed_13 entry in kcbert_seed_sweep; additional update RNG remains 42"
+    },
+    {
+      "id": "kcbert_cf",
+      "family": "kcbert_cf",
+      "seed": null,
+      "model_dir": "models/text/kcbert_cf",
+      "threshold": 0.195,
+      "threshold_source": "reports/generated/kcbert_counterfactual.json",
+      "threshold_key": "validation_selected.threshold",
+      "seed_note": "Historical CF result lacks recorded training seed; do not infer it from CLI default; additional update RNG remains 42"
+    },
+    {
+      "id": "kcbert_A_s42",
+      "family": "kcbert_A",
+      "seed": 42,
+      "model_dir": "models/research/kcbert_url_free_development_20260909/A",
+      "threshold": 0.11020907014608383,
+      "threshold_source": "reports/generated/kcbert_url_free_development_20260909.json",
+      "threshold_key": "arms.A.threshold"
+    },
+    {
+      "id": "kcbert_C_s42",
+      "family": "kcbert_C",
+      "seed": 42,
+      "model_dir": "models/research/kcbert_url_free_development_20260909/C",
+      "threshold": 0.051725756376981735,
+      "threshold_source": "reports/generated/kcbert_url_free_development_20260909.json",
+      "threshold_key": "arms.C.threshold"
+    },
+    {
+      "id": "kcbert_A_s101",
+      "family": "kcbert_A",
+      "seed": 101,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_101/A",
+      "threshold": 0.12523914873600006,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_101.json",
+      "threshold_key": "arms.A.threshold"
+    },
+    {
+      "id": "kcbert_C_s101",
+      "family": "kcbert_C",
+      "seed": 101,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_101/C",
+      "threshold": 0.06666234880685806,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_101.json",
+      "threshold_key": "arms.C.threshold"
+    },
+    {
+      "id": "kcbert_A_s202",
+      "family": "kcbert_A",
+      "seed": 202,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_202/A",
+      "threshold": 0.05484892800450325,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_202.json",
+      "threshold_key": "arms.A.threshold"
+    },
+    {
+      "id": "kcbert_C_s202",
+      "family": "kcbert_C",
+      "seed": 202,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_202/C",
+      "threshold": 0.025701817125082016,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_202.json",
+      "threshold_key": "arms.C.threshold"
+    },
+    {
+      "id": "kcbert_A_s303",
+      "family": "kcbert_A",
+      "seed": 303,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_303/A",
+      "threshold": 0.7561625242233276,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_303.json",
+      "threshold_key": "arms.A.threshold"
+    },
+    {
+      "id": "kcbert_C_s303",
+      "family": "kcbert_C",
+      "seed": 303,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_303/C",
+      "threshold": 0.9935429096221924,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_303.json",
+      "threshold_key": "arms.C.threshold"
+    },
+    {
+      "id": "kcbert_A_s404",
+      "family": "kcbert_A",
+      "seed": 404,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_404/A",
+      "threshold": 0.18772479891777039,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_404.json",
+      "threshold_key": "arms.A.threshold"
+    },
+    {
+      "id": "kcbert_C_s404",
+      "family": "kcbert_C",
+      "seed": 404,
+      "model_dir": "models/research/kcbert_url_free_repeats_20260910/seed_404/C",
+      "threshold": 0.06510892510414124,
+      "threshold_source": "reports/generated/kcbert_url_free_repeats_20260910_seed_404.json",
+      "threshold_key": "arms.C.threshold"
+    },
+    {
+      "id": "u5_BASE_s42",
+      "family": "u5_BASE",
+      "seed": 42,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_42/BASE/model",
+      "threshold": 0.032907191663980484,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.BASE.seeds[seed=42].threshold"
+    },
+    {
+      "id": "u5_BASE_s101",
+      "family": "u5_BASE",
+      "seed": 101,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_101/BASE/model",
+      "threshold": 0.04392397403717041,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.BASE.seeds[seed=101].threshold"
+    },
+    {
+      "id": "u5_BASE_s202",
+      "family": "u5_BASE",
+      "seed": 202,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_202/BASE/model",
+      "threshold": 0.34177523851394653,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.BASE.seeds[seed=202].threshold"
+    },
+    {
+      "id": "u5_BASE_s303",
+      "family": "u5_BASE",
+      "seed": 303,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_303/BASE/model",
+      "threshold": 0.8011899590492249,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.BASE.seeds[seed=303].threshold"
+    },
+    {
+      "id": "u5_BASE_s404",
+      "family": "u5_BASE",
+      "seed": 404,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_404/BASE/model",
+      "threshold": 0.020644234493374825,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.BASE.seeds[seed=404].threshold"
+    },
+    {
+      "id": "u5_DUP_s42",
+      "family": "u5_DUP",
+      "seed": 42,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_42/DUP/model",
+      "threshold": 0.025057008489966393,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.DUP.seeds[seed=42].threshold"
+    },
+    {
+      "id": "u5_DUP_s101",
+      "family": "u5_DUP",
+      "seed": 101,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_101/DUP/model",
+      "threshold": 0.060474295169115067,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.DUP.seeds[seed=101].threshold"
+    },
+    {
+      "id": "u5_DUP_s202",
+      "family": "u5_DUP",
+      "seed": 202,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_202/DUP/model",
+      "threshold": 0.9857763648033142,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.DUP.seeds[seed=202].threshold"
+    },
+    {
+      "id": "u5_DUP_s303",
+      "family": "u5_DUP",
+      "seed": 303,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_303/DUP/model",
+      "threshold": 0.022119643166661263,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.DUP.seeds[seed=303].threshold"
+    },
+    {
+      "id": "u5_DUP_s404",
+      "family": "u5_DUP",
+      "seed": 404,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_404/DUP/model",
+      "threshold": 0.026118576526641846,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.DUP.seeds[seed=404].threshold"
+    },
+    {
+      "id": "u5_FLIP_s42",
+      "family": "u5_FLIP",
+      "seed": 42,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_42/FLIP/model",
+      "threshold": 0.24815484881401062,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.FLIP.seeds[seed=42].threshold"
+    },
+    {
+      "id": "u5_FLIP_s101",
+      "family": "u5_FLIP",
+      "seed": 101,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_101/FLIP/model",
+      "threshold": 0.040639765560626984,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.FLIP.seeds[seed=101].threshold"
+    },
+    {
+      "id": "u5_FLIP_s202",
+      "family": "u5_FLIP",
+      "seed": 202,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_202/FLIP/model",
+      "threshold": 0.3011839687824249,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.FLIP.seeds[seed=202].threshold"
+    },
+    {
+      "id": "u5_FLIP_s303",
+      "family": "u5_FLIP",
+      "seed": 303,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_303/FLIP/model",
+      "threshold": 0.05737035721540451,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.FLIP.seeds[seed=303].threshold"
+    },
+    {
+      "id": "u5_FLIP_s404",
+      "family": "u5_FLIP",
+      "seed": 404,
+      "model_dir": "private:local_kcbert_u5_20260918_v1/results/seed_404/FLIP/model",
+      "threshold": 0.040333524346351624,
+      "threshold_source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "threshold_key": "arm_statistics.FLIP.seeds[seed=404].threshold"
+    }
+  ],
+  "input_fields": {
+    "kisa": "primary_model_input",
+    "normal": "text_normalized"
+  },
+  "guards": [
+    "No external network, URL navigation or new downloads",
+    "Original models/reports/previous one-example experiment remain unchanged",
+    "Only metadata and aggregates public; private rows in new 0700 directory/0600 files",
+    "Freeze source/model/tokenizer/threshold/report/runner hashes before execution and verify on resume",
+    "Check support and other KISA tokenized inputs for equality; if a collision exists remove matching holdout from transfer metric and report it",
+    "Report per-model baseline, common-other-eight detections and actual recoveries, all model-specific baseline misses excluding support, all prior detections excluding support, normal250 transitions",
+    "Expected 22 KISA and 250 normal; finite probabilities and unique IDs; zero denominator rate is null",
+    "No tuning threshold, LR, epoch count or choosing favourable support; all nine folds and fixed checkpoints reported",
+    "Completed folds reusable only with identical bound hashes and content hashes; partial failure cannot pass --check",
+    "For u5_DUP_s42 replay baseline and compare original prior experiment within tolerance 1e-5; do not require exact cross-run adapted bit equality on MPS"
+  ],
+  "limitations": [
+    "Different models trained on different historical data; this is adaptation sensitivity, not a fair architecture ranking",
+    "Same samples and repeated seeds are not independent evidence",
+    "Normal candidates include original train/validation source labels and are not operational FPR",
+    "One-positive-example and fixed low learning rate is one chosen adaptation recipe; non-improvement does not imply retraining impossible"
+  ]
+}

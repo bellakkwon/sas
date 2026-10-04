@@ -1,0 +1,784 @@
+{
+  "version": "20261004_team_v1",
+  "sources": [
+    {
+      "source": "reports/generated/model_comparison.json",
+      "output": "data/aggregates/model_comparison.json",
+      "kind": "aggregate",
+      "sha256": "273e5997f9f3b6be9e60b77a4542813a68b7d257c55cd3f9d4a061d54adc94ce",
+      "bytes": 7685,
+      "output_sha256": "273e5997f9f3b6be9e60b77a4542813a68b7d257c55cd3f9d4a061d54adc94ce",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "output": "data/aggregates/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "kind": "aggregate",
+      "sha256": "92ce02458b4dc4e0c9371ad50626a96c681594dd829cff4af1a40bc221201fba",
+      "bytes": 15525,
+      "output_sha256": "92ce02458b4dc4e0c9371ad50626a96c681594dd829cff4af1a40bc221201fba",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/matched_kcbert_u5_unused_eval_20260918_v1.json",
+      "output": "data/aggregates/matched_kcbert_u5_unused_eval_20260918_v1.json",
+      "kind": "aggregate",
+      "sha256": "7f4ed4413ea8447a7915489168d31846a95c7eae126578cb48bfe908d301b4a8",
+      "bytes": 1139,
+      "output_sha256": "7f4ed4413ea8447a7915489168d31846a95c7eae126578cb48bfe908d301b4a8",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/external_kisa_evaluation_20260921.json",
+      "output": "data/aggregates/external_kisa_evaluation_20260921.json",
+      "kind": "aggregate",
+      "sha256": "8a472577f80b5146e967ff7df2e068b8c3b90d1617f0dcc766abe8188df6eee6",
+      "bytes": 3834,
+      "output_sha256": "5ea330e906f8cb7e0b747daca53df7b7b388863d4d1dfe417120603ead390819",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "reports/generated/kisa_ocr_diagnostics_20260921.json",
+      "output": "data/aggregates/kisa_ocr_diagnostics_20260921.json",
+      "kind": "aggregate",
+      "sha256": "3cda8e3fbd66db8393e235e3d800448be870993ebdbfb0af46c4885437df7761",
+      "bytes": 5461,
+      "output_sha256": "3cda8e3fbd66db8393e235e3d800448be870993ebdbfb0af46c4885437df7761",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/u5_error_diagnostics_20260920.json",
+      "output": "data/aggregates/u5_error_diagnostics_20260920.json",
+      "kind": "aggregate",
+      "sha256": "97583f08c755a13343987d925066dfb289b8151c3f69740831e77148173f77ba",
+      "bytes": 16306,
+      "output_sha256": "5579ac28b2d0a7a0b32d08fcb0091b172e6804c72e04e091e4276d96881608cb",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "reports/generated/jev_kcbert_redacted_20260920.json",
+      "output": "data/aggregates/jev_kcbert_redacted_20260920.json",
+      "kind": "aggregate",
+      "sha256": "2002656e75077be83f016cd8378a00489338e3221b54b1573d90ed812aee8030",
+      "bytes": 19021,
+      "output_sha256": "2002656e75077be83f016cd8378a00489338e3221b54b1573d90ed812aee8030",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/jev_kcbert_fusion_20260920.json",
+      "output": "data/aggregates/jev_kcbert_fusion_20260920.json",
+      "kind": "aggregate",
+      "sha256": "0957198e34d301956aab0d7f2ed44268a72da94c1e39955e8dff7db8b46f99fe",
+      "bytes": 15010,
+      "output_sha256": "0957198e34d301956aab0d7f2ed44268a72da94c1e39955e8dff7db8b46f99fe",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/kisa_one_example_20261004.json",
+      "output": "data/aggregates/kisa_one_example_20261004.json",
+      "kind": "aggregate",
+      "sha256": "31bf19f2c8763169c92d272e455af8dbdb342e2a97becb09d4567e780000def5",
+      "bytes": 46389,
+      "output_sha256": "31bf19f2c8763169c92d272e455af8dbdb342e2a97becb09d4567e780000def5",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/kisa_all_models_neural_20261004.json",
+      "output": "data/aggregates/kisa_all_models_neural_20261004.json",
+      "kind": "aggregate",
+      "sha256": "3fd01c1c8d2993e597e96fd44ef449b853605d7d36ce3b9d94298a648c97ef4d",
+      "bytes": 1887926,
+      "output_sha256": "3fd01c1c8d2993e597e96fd44ef449b853605d7d36ce3b9d94298a648c97ef4d",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/kisa_all_models_linear_20261004.json",
+      "output": "data/aggregates/kisa_all_models_linear_20261004.json",
+      "kind": "aggregate",
+      "sha256": "38a8f3aa61ab1089034f50985b3708e409fb207a0ebcbc0d40a3c30adfe757a6",
+      "bytes": 5499758,
+      "output_sha256": "38a8f3aa61ab1089034f50985b3708e409fb207a0ebcbc0d40a3c30adfe757a6",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/kisa_all_models_summary_20261004.json",
+      "output": "data/aggregates/kisa_all_models_summary_20261004.json",
+      "kind": "aggregate",
+      "sha256": "9b9a8b4432bb0542bc44421d5899cbb555660e757f3c27606bc9005d4cbbb0c6",
+      "bytes": 4404234,
+      "output_sha256": "9b9a8b4432bb0542bc44421d5899cbb555660e757f3c27606bc9005d4cbbb0c6",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/kisa_few_example_20261004.json",
+      "output": "data/aggregates/kisa_few_example_20261004.json",
+      "kind": "aggregate",
+      "sha256": "51c68cee9ad263782bdd8dac1e23115c124eb6b5fdfedffa13dd231f6fe5754a",
+      "bytes": 25430162,
+      "output_sha256": "51c68cee9ad263782bdd8dac1e23115c124eb6b5fdfedffa13dd231f6fe5754a",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/training_augmentation_summary.json",
+      "output": "data/aggregates/training_augmentation_summary.json",
+      "kind": "aggregate",
+      "sha256": "b2af739d3265899b0ce6ae2350712913d93f403d52f16d08dd96f9f21804e44f",
+      "bytes": 1449,
+      "output_sha256": "b2af739d3265899b0ce6ae2350712913d93f403d52f16d08dd96f9f21804e44f",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/counterfactual_augmentation.json",
+      "output": "data/aggregates/counterfactual_augmentation.json",
+      "kind": "aggregate",
+      "sha256": "54a570647c803f6bee18a495aa559d7f8a4f3a11a031a8bc73db7f99d410e8e2",
+      "bytes": 1312,
+      "output_sha256": "54a570647c803f6bee18a495aa559d7f8a4f3a11a031a8bc73db7f99d410e8e2",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/url_baseline.json",
+      "output": "data/aggregates/url_baseline.json",
+      "kind": "aggregate",
+      "sha256": "2ffe9de07e1f1917f19b98e8bff6c0badd76a6e764e408c7b69de5e4e55b6b57",
+      "bytes": 2707,
+      "output_sha256": "2ffe9de07e1f1917f19b98e8bff6c0badd76a6e764e408c7b69de5e4e55b6b57",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/external_intake_index_20260920.json",
+      "output": "data/aggregates/external_intake_index_20260920.json",
+      "kind": "aggregate",
+      "sha256": "b53be324eb16c950068eaf165da75258ed15c7e25b4713208acf500813b0d219",
+      "bytes": 1684,
+      "output_sha256": "b53be324eb16c950068eaf165da75258ed15c7e25b4713208acf500813b0d219",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/normal_candidate_review_20260921.json",
+      "output": "data/aggregates/normal_candidate_review_20260921.json",
+      "kind": "aggregate",
+      "sha256": "ba42b3df378ad7fee46949a5694de855fa09792c4aec77315624009175d8dbab",
+      "bytes": 2006,
+      "output_sha256": "ba42b3df378ad7fee46949a5694de855fa09792c4aec77315624009175d8dbab",
+      "transform": "none"
+    },
+    {
+      "source": "docs/KISA_ONE_EXAMPLE_RESULT_20261004.md",
+      "output": "docs/research/KISA_ONE_EXAMPLE_RESULT_20261004.md",
+      "kind": "document",
+      "sha256": "276d75917b364a3e65c3b2f1db2cdac3b8fe578bc4dd537ef44db484dec4715d",
+      "bytes": 9079,
+      "output_sha256": "ce87a0d55db2723b3c9e52dadd40f69d0ac16bd1e10932774f54acd49fe4b5f6",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/KISA_ALL_MODELS_RESULT_20261004.md",
+      "output": "docs/research/KISA_ALL_MODELS_RESULT_20261004.md",
+      "kind": "document",
+      "sha256": "f0103d1643b93febb254516705fee9f8cdfd2820a5d8f93f98f448c64222b017",
+      "bytes": 13056,
+      "output_sha256": "8b37315c92ae19c2fbc5e455e4ad4e5f8e16b1028ffb5c8b39a024777133b882",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/KISA_ALL_MODELS_LINEAR_RESULT_20261004.md",
+      "output": "docs/research/KISA_ALL_MODELS_LINEAR_RESULT_20261004.md",
+      "kind": "document",
+      "sha256": "a22728d639bdec6a3472337fa89a827734c2a69bf6eab24547ae91d56341fd4f",
+      "bytes": 19728,
+      "output_sha256": "a22728d639bdec6a3472337fa89a827734c2a69bf6eab24547ae91d56341fd4f",
+      "transform": "none"
+    },
+    {
+      "source": "docs/KISA_ALL_MODELS_NEURAL_RESULT_20261004.md",
+      "output": "docs/research/KISA_ALL_MODELS_NEURAL_RESULT_20261004.md",
+      "kind": "document",
+      "sha256": "520473c4d43a27dcdc2cfc75d497cecdd2a70410dd57019941b8c690567b2dc3",
+      "bytes": 6303,
+      "output_sha256": "4e820a4ab1385b8cc774948689dc6307b5506f5887791f2f2281806fb37b9f75",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/KISA_FEW_EXAMPLE_RESULT_20261004.md",
+      "output": "docs/research/KISA_FEW_EXAMPLE_RESULT_20261004.md",
+      "kind": "document",
+      "sha256": "e5e8346ed5cf2db0eb9592ee6eea1402dd9bd575fb8805951ff6c35cae654099",
+      "bytes": 15842,
+      "output_sha256": "9f255735a8f1a03dade109807097198fd98a495a7f4d965def361c9cc9cfa249",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/EXTERNAL_KISA_EVALUATION_20260921.md",
+      "output": "docs/research/EXTERNAL_KISA_EVALUATION_20260921.md",
+      "kind": "document",
+      "sha256": "f86ba0bae6478a92618dea08bccf429f797ff9a31ba3416fc5b12b2bf333215d",
+      "bytes": 4121,
+      "output_sha256": "f86ba0bae6478a92618dea08bccf429f797ff9a31ba3416fc5b12b2bf333215d",
+      "transform": "none"
+    },
+    {
+      "source": "docs/KISA_OCR_DIAGNOSTICS_20260921.md",
+      "output": "docs/research/KISA_OCR_DIAGNOSTICS_20260921.md",
+      "kind": "document",
+      "sha256": "1cd2522c66a5a9126f84a498270a064f7707c6515409180c2b837db55875c268",
+      "bytes": 2597,
+      "output_sha256": "bdb944c610ab84647bcf8eac6c4ccbaa9c03d624ff737e2ea1fa528035b56016",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/KISA_DIAGNOSTIC_INTERPRETATION_20260921.md",
+      "output": "docs/research/KISA_DIAGNOSTIC_INTERPRETATION_20260921.md",
+      "kind": "document",
+      "sha256": "969116732b9a33cc2cbc09a44bc21f221728a8744ee93410334675f4a158d3c7",
+      "bytes": 7116,
+      "output_sha256": "969116732b9a33cc2cbc09a44bc21f221728a8744ee93410334675f4a158d3c7",
+      "transform": "none"
+    },
+    {
+      "source": "docs/NORMAL_CANDIDATE_REVIEW_20260921.md",
+      "output": "docs/research/NORMAL_CANDIDATE_REVIEW_20260921.md",
+      "kind": "document",
+      "sha256": "56895d785263269db483fac995e0dbdbbdbd9d8cff4cc17a3a9432492476eb5e",
+      "bytes": 2143,
+      "output_sha256": "8d5dabecc3039b8ddcbaeb0e28849d0c74fea564aaac5a6c155dd84d7ce898c8",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/DATA_LINEAGE.md",
+      "output": "docs/research/DATA_LINEAGE.md",
+      "kind": "document",
+      "sha256": "38234626dda510e2217596d87debca4079572c4a9d79a4bd770d9b8f0a3e1ac2",
+      "bytes": 14578,
+      "output_sha256": "327018b0ceda70d5535d8fe75e25be6d348ab3b012ab28c4cf43096520951cdf",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/TRAINING_DATA_STATUS.md",
+      "output": "docs/research/TRAINING_DATA_STATUS.md",
+      "kind": "document",
+      "sha256": "b262cfc1a390ab496bb9664d31297b1ecd7e55d1d16d2c32b8271fbb372e4098",
+      "bytes": 2614,
+      "output_sha256": "b262cfc1a390ab496bb9664d31297b1ecd7e55d1d16d2c32b8271fbb372e4098",
+      "transform": "none"
+    },
+    {
+      "source": "docs/DATA_CATALOG_20260920.md",
+      "output": "docs/research/DATA_CATALOG_20260920.md",
+      "kind": "document",
+      "sha256": "ccd448bbf509f1e9cd3c1040e0088dd85a3b71d7199be4a3e448cdedad08e590",
+      "bytes": 5570,
+      "output_sha256": "d9b31610e976b872fe01a5c71c9b5cd4da96c50d4de8083bfbaeeadd6553df3f",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/URL_FREE_TEXT_REVIEW_GUIDE.md",
+      "output": "docs/research/URL_FREE_TEXT_REVIEW_GUIDE.md",
+      "kind": "document",
+      "sha256": "c0b4444686b4b5e47ee6aa2ab54ac8abeb1be6c937bb48ef27e0b15f4cf2a6bf",
+      "bytes": 4088,
+      "output_sha256": "c0b4444686b4b5e47ee6aa2ab54ac8abeb1be6c937bb48ef27e0b15f4cf2a6bf",
+      "transform": "none"
+    },
+    {
+      "source": "docs/cards/DATA_CARD.md",
+      "output": "docs/research/cards/DATA_CARD.md",
+      "kind": "document",
+      "sha256": "7995deb365b77fc9525c939ba7b178ba7b06c47776689f61ba8c010147720bc0",
+      "bytes": 6287,
+      "output_sha256": "7995deb365b77fc9525c939ba7b178ba7b06c47776689f61ba8c010147720bc0",
+      "transform": "none"
+    },
+    {
+      "source": "docs/cards/DATASET_SPLIT_CARD.md",
+      "output": "docs/research/cards/DATASET_SPLIT_CARD.md",
+      "kind": "document",
+      "sha256": "3aa7590b59040a4c2bac702244ef6d981161964f69d46542a17bc7cd492217d2",
+      "bytes": 5760,
+      "output_sha256": "3aa7590b59040a4c2bac702244ef6d981161964f69d46542a17bc7cd492217d2",
+      "transform": "none"
+    },
+    {
+      "source": "docs/cards/MODEL_CARD.md",
+      "output": "docs/research/cards/MODEL_CARD.md",
+      "kind": "document",
+      "sha256": "409fd53ca3eb214d6967c92634db0638a3703710a52f4adfb8699c62256b56d4",
+      "bytes": 13675,
+      "output_sha256": "409fd53ca3eb214d6967c92634db0638a3703710a52f4adfb8699c62256b56d4",
+      "transform": "none"
+    },
+    {
+      "source": "docs/paper/MATCHED_KCBERT_U5_PROTOCOL_20260918.md",
+      "output": "docs/research/paper/MATCHED_KCBERT_U5_PROTOCOL_20260918.md",
+      "kind": "document",
+      "sha256": "7b1054429350b43176bd059f28df4ef14d885ea0e4f7a33bb8fb83bc4c787394",
+      "bytes": 2133,
+      "output_sha256": "7b1054429350b43176bd059f28df4ef14d885ea0e4f7a33bb8fb83bc4c787394",
+      "transform": "none"
+    },
+    {
+      "source": "docs/paper/MATCHED_KCBERT_FINAL_REVIEW_20260917.md",
+      "output": "docs/research/paper/MATCHED_KCBERT_FINAL_REVIEW_20260917.md",
+      "kind": "document",
+      "sha256": "09dcbeb356fef261177a16a7a96559c62e2bfa1c20e576040935d97b445700e7",
+      "bytes": 5522,
+      "output_sha256": "45ecf576b9e8b3c5c53b47ad7c5cc7e4dbdd276e2af3645048acc536fd0524cf",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/paper/MATCHED_KCBERT_UNCERTAINTY_AND_ERROR_ANALYSIS_20260917.md",
+      "output": "docs/research/paper/MATCHED_KCBERT_UNCERTAINTY_AND_ERROR_ANALYSIS_20260917.md",
+      "kind": "document",
+      "sha256": "f63fe6537e1da05bfd9a9cfc997e7c02fd1a9679876d472795651e26b7a02942",
+      "bytes": 11761,
+      "output_sha256": "8a2204e994b3a8c8ceb01f96b30ec6ff8e23d8d2473f969b1631effdc6254154",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/experiments/KISA_ONE_EXAMPLE_PLAN_20261004.json",
+      "output": "research_reference/docs/experiments/KISA_ONE_EXAMPLE_PLAN_20261004.json",
+      "kind": "reference",
+      "sha256": "9215ddfaf73e69e043fa43a633c79aaff6e528e2cce21022fa2a5aa946587aa0",
+      "bytes": 5652,
+      "output_sha256": "fe00a7daf96659a51fc8d1f1dc087dac22203b37776b8972b6caa25a1782e023",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/experiments/KISA_ALL_MODELS_NEURAL_PLAN_20261004.json",
+      "output": "research_reference/docs/experiments/KISA_ALL_MODELS_NEURAL_PLAN_20261004.json",
+      "kind": "reference",
+      "sha256": "c272f72dae47afc33feed8f1ec046d488d9db7ce5afdb15d12c18eaf11e6720f",
+      "bytes": 13106,
+      "output_sha256": "c272f72dae47afc33feed8f1ec046d488d9db7ce5afdb15d12c18eaf11e6720f",
+      "transform": "none"
+    },
+    {
+      "source": "docs/experiments/KISA_ALL_MODELS_LINEAR_PLAN_20261004.json",
+      "output": "research_reference/docs/experiments/KISA_ALL_MODELS_LINEAR_PLAN_20261004.json",
+      "kind": "reference",
+      "sha256": "3c1b31567762f1d8f9cef9681875f7b3f0cdcf402330ffdce055617202c28809",
+      "bytes": 115933,
+      "output_sha256": "3c1b31567762f1d8f9cef9681875f7b3f0cdcf402330ffdce055617202c28809",
+      "transform": "none"
+    },
+    {
+      "source": "docs/experiments/KISA_FEW_EXAMPLE_PLAN_20261004.json",
+      "output": "research_reference/docs/experiments/KISA_FEW_EXAMPLE_PLAN_20261004.json",
+      "kind": "reference",
+      "sha256": "200f8a7f14265afe36d1c2fae59bacd5ec6806fc26eb12e7a4ec4871a4a65a51",
+      "bytes": 4994,
+      "output_sha256": "2260ff00a67ec55cc3c81ea905ad51f63331178923744693c42f765bb2860b7e",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/experiments/KISA_OCR_DIAGNOSTICS_PLAN_20260921.md",
+      "output": "research_reference/docs/experiments/KISA_OCR_DIAGNOSTICS_PLAN_20260921.md",
+      "kind": "reference",
+      "sha256": "5591a962cf5f417e72e70941f6ffc18e7e520ab3490c83552ca986ae9476e4b8",
+      "bytes": 10428,
+      "output_sha256": "8097c68809c2fcfb21cebb5ca46ed539707d4cc0a6d4e752b22143e770f2359b",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "docs/experiments/EXTERNAL_KISA_EVAL_PLAN_20260921.md",
+      "output": "research_reference/docs/experiments/EXTERNAL_KISA_EVAL_PLAN_20260921.md",
+      "kind": "reference",
+      "sha256": "8379dd1cd5e6aa89b3c510e9d58332ea3e81d0f59fe97594adc3cf24ef4b1226",
+      "bytes": 10759,
+      "output_sha256": "161a7095fe83c9b0f8fde95032f786ea8490fd4df5c6fd01c54216590da575ae",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "scripts/run_kisa_one_example_20261004.py",
+      "output": "research_reference/scripts/run_kisa_one_example_20261004.py",
+      "kind": "reference",
+      "sha256": "c6d79df632827d2ca64f68966dc3ee425f704cfac6166f04f3608227393941cb",
+      "bytes": 77176,
+      "output_sha256": "c6d79df632827d2ca64f68966dc3ee425f704cfac6166f04f3608227393941cb",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_kisa_all_models_neural_20261004.py",
+      "output": "research_reference/scripts/run_kisa_all_models_neural_20261004.py",
+      "kind": "reference",
+      "sha256": "baa66fec401f41c964405ea498e111108d715a62d576f91f9acefa7aba8e71b7",
+      "bytes": 79810,
+      "output_sha256": "baa66fec401f41c964405ea498e111108d715a62d576f91f9acefa7aba8e71b7",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_kisa_all_models_linear_20261004.py",
+      "output": "research_reference/scripts/run_kisa_all_models_linear_20261004.py",
+      "kind": "reference",
+      "sha256": "1ef2f221cd4d5aff2a08d627ab60f3f68633184709cfd8da23347da7fe28c54f",
+      "bytes": 25703,
+      "output_sha256": "1ef2f221cd4d5aff2a08d627ab60f3f68633184709cfd8da23347da7fe28c54f",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/verify_kisa_all_models_neural_20261004.py",
+      "output": "research_reference/scripts/verify_kisa_all_models_neural_20261004.py",
+      "kind": "reference",
+      "sha256": "34392420eed6092f7cd7320bc1b70c6bdc906be88232fdbb684e417acd4ac95b",
+      "bytes": 2293,
+      "output_sha256": "34392420eed6092f7cd7320bc1b70c6bdc906be88232fdbb684e417acd4ac95b",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_kisa_few_example_neural_20261004.py",
+      "output": "research_reference/scripts/run_kisa_few_example_neural_20261004.py",
+      "kind": "reference",
+      "sha256": "0c43c6cb4344489bb1b73dfa85bb19d4a1988519dd20791f88b2dbbfdccf9a1b",
+      "bytes": 16519,
+      "output_sha256": "0c43c6cb4344489bb1b73dfa85bb19d4a1988519dd20791f88b2dbbfdccf9a1b",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_kisa_few_example_linear_20261004.py",
+      "output": "research_reference/scripts/run_kisa_few_example_linear_20261004.py",
+      "kind": "reference",
+      "sha256": "d1c185b589cda09013d08d34fb03cf22f38a973c7f95f9aba9c125fcd2322517",
+      "bytes": 6220,
+      "output_sha256": "d1c185b589cda09013d08d34fb03cf22f38a973c7f95f9aba9c125fcd2322517",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/kisa_few_example_common_20261004.py",
+      "output": "research_reference/scripts/kisa_few_example_common_20261004.py",
+      "kind": "reference",
+      "sha256": "2b672a02a76e2205409d4c313bdc1e1167508e3effccbaefb8d429c76f0186b4",
+      "bytes": 10827,
+      "output_sha256": "192e31189f4858a07af527a7810adaca99341d192ea3171ce2aee40fec206330",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "scripts/analyze_kisa_few_example_20261004.py",
+      "output": "research_reference/scripts/analyze_kisa_few_example_20261004.py",
+      "kind": "reference",
+      "sha256": "bc73481be909dff7d6cb4f1019837d7abc41eeca9fb2870abf4d4e0b550a3ce0",
+      "bytes": 20614,
+      "output_sha256": "bc73481be909dff7d6cb4f1019837d7abc41eeca9fb2870abf4d4e0b550a3ce0",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_matched_kcbert_u5_20260918.py",
+      "output": "research_reference/scripts/run_matched_kcbert_u5_20260918.py",
+      "kind": "reference",
+      "sha256": "0e078945fb7614481dc368ac4ff6aef2308aac7a416150ad413a1f8ac62890ec",
+      "bytes": 14989,
+      "output_sha256": "0e078945fb7614481dc368ac4ff6aef2308aac7a416150ad413a1f8ac62890ec",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_matched_kcbert_portable_20260917.py",
+      "output": "research_reference/scripts/run_matched_kcbert_portable_20260917.py",
+      "kind": "reference",
+      "sha256": "a8e819bb40140ca8af2d76ec74597c47ae2e7399db129e7326490825628a3e65",
+      "bytes": 27175,
+      "output_sha256": "a8e819bb40140ca8af2d76ec74597c47ae2e7399db129e7326490825628a3e65",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/kcbert_private_store_20260917.py",
+      "output": "research_reference/scripts/kcbert_private_store_20260917.py",
+      "kind": "reference",
+      "sha256": "dd0ca2757581879ff4acc7530fd767b352507fc0062cbb4f882975acf0f3d035",
+      "bytes": 8875,
+      "output_sha256": "dd0ca2757581879ff4acc7530fd767b352507fc0062cbb4f882975acf0f3d035",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/train_text_baselines.py",
+      "output": "research_reference/scripts/train_text_baselines.py",
+      "kind": "reference",
+      "sha256": "aa96905bb4a9a1c3ecc532038bdbffc34b2768f41c62fa0d56b1b7d28766a0bf",
+      "bytes": 10990,
+      "output_sha256": "aa96905bb4a9a1c3ecc532038bdbffc34b2768f41c62fa0d56b1b7d28766a0bf",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/train_url_baseline.py",
+      "output": "research_reference/scripts/train_url_baseline.py",
+      "kind": "reference",
+      "sha256": "a80018011a59ef13c405a289989244ceeda108d6a9b33e271e8e1d66f9c84d3a",
+      "bytes": 11078,
+      "output_sha256": "a80018011a59ef13c405a289989244ceeda108d6a9b33e271e8e1d66f9c84d3a",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/prepare_training_augmentation.py",
+      "output": "research_reference/scripts/prepare_training_augmentation.py",
+      "kind": "reference",
+      "sha256": "e1dad0f24bccb405ed7c794d0c42eee296077d20c468dec5031535a09355efa9",
+      "bytes": 2240,
+      "output_sha256": "e1dad0f24bccb405ed7c794d0c42eee296077d20c468dec5031535a09355efa9",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/prepare_counterfactual_augmentation.py",
+      "output": "research_reference/scripts/prepare_counterfactual_augmentation.py",
+      "kind": "reference",
+      "sha256": "4355b898af1a7da000f99f11ac9de8b1cdcdb9bf7014e64e9b99c4668066850c",
+      "bytes": 6633,
+      "output_sha256": "4355b898af1a7da000f99f11ac9de8b1cdcdb9bf7014e64e9b99c4668066850c",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/evaluate_external_kisa_20260921.py",
+      "output": "research_reference/scripts/evaluate_external_kisa_20260921.py",
+      "kind": "reference",
+      "sha256": "75d4f6316abb2c27f1c4c7635807a0fdf7ad553b8bf51dc56424e29bed10a63f",
+      "bytes": 40785,
+      "output_sha256": "75d4f6316abb2c27f1c4c7635807a0fdf7ad553b8bf51dc56424e29bed10a63f",
+      "transform": "none"
+    },
+    {
+      "source": "scripts/run_kisa_ocr_diagnostics_20260921.py",
+      "output": "research_reference/scripts/run_kisa_ocr_diagnostics_20260921.py",
+      "kind": "reference",
+      "sha256": "2fa00218c302d907c4ae04c9e5345594618b22d08d8c52fd881deb9bb071701d",
+      "bytes": 71349,
+      "output_sha256": "2d9e08d960b0fcdde211bc6d855ac39cd2f59bcfff4cd69c0b5311a68b636cb9",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "tmp/kisa_all_models_20261004/verify_and_summarize.py",
+      "output": "research_reference/reviewers/all_models/verify_and_summarize.py",
+      "kind": "reference",
+      "sha256": "7b9bae9b443aad38ebc3eeadd08ad4afc90389e0e245e65b4fad81f5fbeebcc7",
+      "bytes": 27236,
+      "output_sha256": "91a936931c4b8b2725823c75421ced374554281e752cb80e7ee9196367aef2d5",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "tmp/kisa_all_models_20261004/verify_linear_updates.py",
+      "output": "research_reference/reviewers/all_models/verify_linear_updates.py",
+      "kind": "reference",
+      "sha256": "5996c1243633ae0fffffad792289da43509423f3eb4e51183472cb2a0b84a1ff",
+      "bytes": 2236,
+      "output_sha256": "40e772bcde8ab2273446deefbc4cade23c4577f9a14a3006a16498bac398127c",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "tmp/kisa_all_models_20261004/verify_input_collisions.py",
+      "output": "research_reference/reviewers/all_models/verify_input_collisions.py",
+      "kind": "reference",
+      "sha256": "f085c1c10db81358636cc0c4dd52b956dce2b5eec21a22d7d06afd501c36f64e",
+      "bytes": 2775,
+      "output_sha256": "98c3a6d9f70e067df458a059f4930219a80bed96e7f98f1fc1051cc3bc4ed5e4",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "tmp/kisa_few_example_20261004/verify_actual_updates.py",
+      "output": "research_reference/reviewers/few_example/verify_actual_updates.py",
+      "kind": "reference",
+      "sha256": "c80682e6a022f2c4d002ce7dd960cd778cfba36ccd1f04b245297264e52efcd3",
+      "bytes": 4721,
+      "output_sha256": "0a58bc1123e98bf3575d64d773fb28435a99b59392a8b2ec04c87e6f1bdc9e96",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "src/scamlens/__init__.py",
+      "output": "research_reference/src/scamlens/__init__.py",
+      "kind": "reference",
+      "sha256": "83c86d1eb6921293c6ab3537b70854554d2cbaa51c8b3135113fff8e96f1c372",
+      "bytes": 83,
+      "output_sha256": "98c53d05e58a15750a23c9990c5b7c23004edd507d574b2f9762a92cf783fe97",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "src/scamlens/preprocessing.py",
+      "output": "research_reference/src/scamlens/preprocessing.py",
+      "kind": "reference",
+      "sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd",
+      "bytes": 11250,
+      "output_sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/url_features.py",
+      "output": "research_reference/src/scamlens/url_features.py",
+      "kind": "reference",
+      "sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9",
+      "bytes": 3223,
+      "output_sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/robustness.py",
+      "output": "research_reference/src/scamlens/robustness.py",
+      "kind": "reference",
+      "sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309",
+      "bytes": 1653,
+      "output_sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/sms_action_features.py",
+      "output": "research_reference/src/scamlens/sms_action_features.py",
+      "kind": "reference",
+      "sha256": "e21ba8c7dc902ba7c236618afadb7502e7ff1812b464904bc54e3dd9d4a5e5ed",
+      "bytes": 6377,
+      "output_sha256": "e21ba8c7dc902ba7c236618afadb7502e7ff1812b464904bc54e3dd9d4a5e5ed",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/fage.py",
+      "output": "research_reference/src/scamlens/fage.py",
+      "kind": "reference",
+      "sha256": "2917dbe819f5101799d718091d918221c31ba933bf442183629080dc46c8555c",
+      "bytes": 4031,
+      "output_sha256": "2917dbe819f5101799d718091d918221c31ba933bf442183629080dc46c8555c",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/preprocessing.py",
+      "output": "python/src/scamlens/preprocessing.py",
+      "kind": "offline_code",
+      "sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd",
+      "bytes": 11250,
+      "output_sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/url_features.py",
+      "output": "python/src/scamlens/url_features.py",
+      "kind": "offline_code",
+      "sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9",
+      "bytes": 3223,
+      "output_sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9",
+      "transform": "none"
+    },
+    {
+      "source": "src/scamlens/robustness.py",
+      "output": "python/src/scamlens/robustness.py",
+      "kind": "offline_code",
+      "sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309",
+      "bytes": 1653,
+      "output_sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309",
+      "transform": "none"
+    },
+    {
+      "source": "tests/test_preprocessing.py",
+      "output": "python/tests/test_preprocessing.py",
+      "kind": "synthetic_test",
+      "sha256": "f3bafd3cd16bbd610a8a3ad38897cf218487ad466562744f118a66bc1ac0faa6",
+      "bytes": 6469,
+      "output_sha256": "f3bafd3cd16bbd610a8a3ad38897cf218487ad466562744f118a66bc1ac0faa6",
+      "transform": "none"
+    },
+    {
+      "source": "tests/test_url_features.py",
+      "output": "python/tests/test_url_features.py",
+      "kind": "synthetic_test",
+      "sha256": "c3258cd5c02a58c98187af429f72ba4a8cd973ae2e9e2a8c0396cdedfb619395",
+      "bytes": 1099,
+      "output_sha256": "c3258cd5c02a58c98187af429f72ba4a8cd973ae2e9e2a8c0396cdedfb619395",
+      "transform": "none"
+    },
+    {
+      "source": "tests/test_robustness.py",
+      "output": "python/tests/test_robustness.py",
+      "kind": "synthetic_test",
+      "sha256": "af80245879638b8578b89698acb24e247b5cb71362dbb56b009a7b3792f8dad5",
+      "bytes": 563,
+      "output_sha256": "af80245879638b8578b89698acb24e247b5cb71362dbb56b009a7b3792f8dad5",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/messages.csv",
+      "output": "data/samples/messages.csv",
+      "kind": "synthetic",
+      "sha256": "507e13d0adfce47af729c1611a3753ba2206294bfb6c107eb1a536f0171cef33",
+      "bytes": 775,
+      "output_sha256": "c2e8180a0cd7bfc11ebf8ce6004ef2a3b8e0852de5201d427987bc8f08661a41",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "data/samples/hard_negative_messages.csv",
+      "output": "data/samples/hard_negative_messages.csv",
+      "kind": "synthetic",
+      "sha256": "21cd6515d27622ec22de383a4e782a1ad153bc6f512d112afb4a477d42bf938a",
+      "bytes": 1049,
+      "output_sha256": "21cd6515d27622ec22de383a4e782a1ad153bc6f512d112afb4a477d42bf938a",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/consented_sms_import_template.csv",
+      "output": "data/samples/consented_sms_import_template.csv",
+      "kind": "synthetic",
+      "sha256": "3c3c06f2b895b36986ec4d689f794cfb148b12cd8ed4f9de69e5f1bb68fbbb6b",
+      "bytes": 97,
+      "output_sha256": "3c3c06f2b895b36986ec4d689f794cfb148b12cd8ed4f9de69e5f1bb68fbbb6b",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/url_free_malicious_import_template.csv",
+      "output": "data/samples/url_free_malicious_import_template.csv",
+      "kind": "synthetic",
+      "sha256": "06de9a594cc02cc52484a2877edea8bdca73839a88ed1204da9bfa42c8110a3d",
+      "bytes": 125,
+      "output_sha256": "06de9a594cc02cc52484a2877edea8bdca73839a88ed1204da9bfa42c8110a3d",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/voice_phishing_transcript_import_template.csv",
+      "output": "data/samples/voice_phishing_transcript_import_template.csv",
+      "kind": "synthetic",
+      "sha256": "4eff5e3a28d343ab8ce29bc03650f7b499712d555f62df440d5db36f3e57d7d8",
+      "bytes": 748,
+      "output_sha256": "4eff5e3a28d343ab8ce29bc03650f7b499712d555f62df440d5db36f3e57d7d8",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/voice_phishing_pattern_catalog.csv",
+      "output": "data/samples/voice_phishing_pattern_catalog.csv",
+      "kind": "synthetic",
+      "sha256": "b03b55f2e326907b9a1767f0409223dece015e777796d1ff0b8a10189ec75da0",
+      "bytes": 5696,
+      "output_sha256": "b03b55f2e326907b9a1767f0409223dece015e777796d1ff0b8a10189ec75da0",
+      "transform": "none"
+    },
+    {
+      "source": "data/samples/scam_journeys.jsonl",
+      "output": "data/samples/scam_journeys.jsonl",
+      "kind": "synthetic",
+      "sha256": "46e2d95dfbd12f091b2ea6ac89f99316e9a3dc00b20b00a93c9fcd8bbe114b9c",
+      "bytes": 6091,
+      "output_sha256": "46e2d95dfbd12f091b2ea6ac89f99316e9a3dc00b20b00a93c9fcd8bbe114b9c",
+      "transform": "none"
+    },
+    {
+      "source": "reports/generated/canva_notes_20261004.json",
+      "output": "presentation/notes_manifest.json",
+      "kind": "presentation",
+      "sha256": "72375f29f6c3b11879ae490ff20d4e32de3c9a045c01c020b985ca48aa7554f7",
+      "bytes": 51797,
+      "output_sha256": "72375f29f6c3b11879ae490ff20d4e32de3c9a045c01c020b985ca48aa7554f7",
+      "transform": "none"
+    },
+    {
+      "source": "tmp/presentations/canva_notes_20261004/verified_pages.json",
+      "output": "presentation/pages.json",
+      "kind": "presentation",
+      "sha256": "c39df12b877cb632ea7e933c244f9ed28f322d6bd3d59f558c7a2d4b8940ba2e",
+      "bytes": 44361,
+      "output_sha256": "fa358f3284cde9e527621126902dcac5c661f3501f99e4757215fa2a2e6431d8",
+      "transform": "machine paths replaced, phone-shaped document values masked, links localized and/or trailing whitespace normalized; reference only"
+    },
+    {
+      "source": "scripts/public_release_templates_20260919/LICENSE_NOTICE.tpl",
+      "output": "LICENSE_NOTICE.md",
+      "kind": "document",
+      "sha256": "29853f531c87d85d92ae34fa8b0eb3eb2e242fbd2921212391b2abfcc870d124",
+      "bytes": 1598,
+      "output_sha256": "29853f531c87d85d92ae34fa8b0eb3eb2e242fbd2921212391b2abfcc870d124",
+      "transform": "none"
+    }
+  ],
+  "boundaries": [
+    "No raw SMS, row probabilities, private candidate IDs, weights, credentials or local logs",
+    "KISA redistribution not permitted; no raw KISA included",
+    "Current presentation is Canva plus saved text/notes; no current PPTX/PDF export claim"
+  ]
+}

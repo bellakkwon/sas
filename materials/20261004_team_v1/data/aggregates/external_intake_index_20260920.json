@@ -1,0 +1,55 @@
+{
+  "intake_version": "20260920_v1",
+  "status": "intake_verified_not_evaluated",
+  "evaluation_state": "quarantined_not_evaluated",
+  "input_digests": {
+    "reports/generated/external_intake_kisa_20260920.json": "91e65ee04ceae22ff0cac084731d551dd0bd8921aee597d85d74cc7feb958ca5",
+    "private_root/main_precheck.json": "cce5befd1890935e2ae9e315c82bf5b1d26af8e4d58ead29e8d72043d103dfae",
+    "private_root/main_synthetic_exact_acceptance.json": "33fb85db7d6605151f2e18caec976b9c78a5e857d76862bb0cb4a6de744208ee",
+    "private_root/final_acceptance.json": "99e44d234ad3a39b8e94c84a8aac8330ce39fb7471dc52f8ea2e55090caa9cf1"
+  },
+  "kisa": {
+    "source": "user-supplied KISA export, offline ZIP inspected; C-TAS webpage inaccessible to main",
+    "date_semantics": "source-record datetime semantics not confirmed",
+    "fpr_evaluable": false,
+    "august": {
+      "rows": 109,
+      "dates": [
+        "2026-08-04",
+        "2026-08-30"
+      ]
+    },
+    "september": {
+      "rows": 9,
+      "dates": [
+        "2026-09-01",
+        "2026-09-19"
+      ]
+    },
+    "union": {
+      "rows": 118,
+      "unique_raw": 75,
+      "unique_normalized": 44
+    },
+    "unique_templates": {
+      "prior_exact": 18,
+      "near_match_0_90": 1,
+      "screened_candidates": 25
+    }
+  },
+  "synthetic_krmob": {
+    "family": "KR-MOB family, v1 intake compared to v2; synthetic data not real test data",
+    "license": "Creative Commons Attribution-NonCommercial 4.0 International",
+    "v1": {
+      "incidents": 100,
+      "events": 987,
+      "sms_events": 121,
+      "samples": 104,
+      "normalized": 103
+    },
+    "overlap_with_v2": {
+      "normalized": 1,
+      "raw": 0
+    }
+  }
+}

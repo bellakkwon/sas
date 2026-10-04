@@ -1,0 +1,5 @@
+message_id,text_raw_masked,label,message_category,url_defanged,real_or_synthetic
+sample-normal-001,"[카드사] [DATETIME] [AMOUNT]원이 승인되었습니다. 본인이 아닌 경우 공식 앱에서 확인하세요.",normal,finance,,synthetic
+sample-normal-002,"[택배사] [DATE] 배송 예정입니다. 공식 앱에서 배송 현황을 확인하세요.",normal,delivery,,synthetic
+sample-smish-001,"[배송센터] 주소 오류로 반송 예정입니다. 즉시 hxxps://delivery-check[.]invalid/a 에서 확인하세요.",smishing,delivery,hxxps://delivery-check[.]invalid/a,synthetic
+sample-smish-002,"[은행] 계 좌 정 지 예정. hxxp://secure-update[.]invalid/login 에서 본인인증하세요.",smishing,finance,hxxp://secure-update[.]invalid/login,synthetic

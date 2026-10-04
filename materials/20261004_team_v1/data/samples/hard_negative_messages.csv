@@ -1,0 +1,6 @@
+text,label,message_category,brand,source,collected_at,real_or_synthetic,collection_basis,annotation_confidence,review_status
+"[카드사] 해외결제 승인 안내입니다. 자세한 내역은 앱에서 확인하세요.",normal,card_payment,,scamlens_synthetic_sample,2026-07-31,synthetic,synthetic,1.0,verified
+"[은행] 본인확인 절차가 완료되었습니다. 문의는 공식 고객센터를 이용하세요.",normal,banking_auth,,scamlens_synthetic_sample,2026-07-31,synthetic,synthetic,1.0,verified
+"[택배] 배송이 완료되었습니다. 배송조회 hxxps://delivery[.]invalid/track",normal,delivery,,scamlens_synthetic_sample,2026-07-31,synthetic,synthetic,1.0,verified
+"[공공기관] 민원 처리 결과가 등록되었습니다. 공식 앱에서 확인하세요.",normal,public_service,,scamlens_synthetic_sample,2026-07-31,synthetic,synthetic,1.0,verified
+"[서비스] 인증번호 [CODE]를 타인에게 알려주지 마세요.",normal,account_security,,scamlens_synthetic_sample,2026-07-31,synthetic,synthetic,1.0,verified

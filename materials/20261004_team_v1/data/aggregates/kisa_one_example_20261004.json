@@ -1,0 +1,1807 @@
+{
+  "schema_version": 1,
+  "experiment_id": "kisa_one_example_20261004",
+  "version": "20261004_v1",
+  "plan_path": "docs/experiments/KISA_ONE_EXAMPLE_PLAN_20261004.json",
+  "role": "post_hoc_known_error_transfer_diagnostic_not_independent_test",
+  "model_seed": 42,
+  "model_arm": "DUP",
+  "threshold": 0.025057008489966393,
+  "baseline_summary": {
+    "kisa_n": 22,
+    "kisa_detected": 13,
+    "misses": 9,
+    "normal_n": 250,
+    "normal_alerts": 11,
+    "threshold": 0.025057008489966393
+  },
+  "baseline_replay": {
+    "kisa_max_diff": 1.1102230246251565e-16,
+    "normal_max_diff": 5.820766091346741e-10,
+    "passed": true
+  },
+  "folds": [
+    {
+      "fold_id": "fold_K01",
+      "support_case_id": "K01",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K01",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 68,
+            "new_alerts": 57,
+            "resolved_alerts": 0,
+            "net_alert_change": 57
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K01",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 240,
+            "new_alerts": 229,
+            "resolved_alerts": 0,
+            "net_alert_change": 229
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K01",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K02",
+      "support_case_id": "K02",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K02",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 70,
+            "new_alerts": 59,
+            "resolved_alerts": 0,
+            "net_alert_change": 59
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K02",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 242,
+            "new_alerts": 231,
+            "resolved_alerts": 0,
+            "net_alert_change": 231
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K02",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 246,
+            "new_alerts": 235,
+            "resolved_alerts": 0,
+            "net_alert_change": 235
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K03",
+      "support_case_id": "K03",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K03",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 66,
+            "new_alerts": 55,
+            "resolved_alerts": 0,
+            "net_alert_change": 55
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K03",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 240,
+            "new_alerts": 229,
+            "resolved_alerts": 0,
+            "net_alert_change": 229
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K03",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K04",
+      "support_case_id": "K04",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K04",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 76,
+            "new_alerts": 65,
+            "resolved_alerts": 0,
+            "net_alert_change": 65
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K04",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 239,
+            "new_alerts": 228,
+            "resolved_alerts": 0,
+            "net_alert_change": 228
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K04",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K05",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K05",
+      "support_case_id": "K05",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K05",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 68,
+            "new_alerts": 57,
+            "resolved_alerts": 0,
+            "net_alert_change": 57
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K05",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 239,
+            "new_alerts": 228,
+            "resolved_alerts": 0,
+            "net_alert_change": 228
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K05",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K06",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K06",
+      "support_case_id": "K06",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K06",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 73,
+            "new_alerts": 62,
+            "resolved_alerts": 0,
+            "net_alert_change": 62
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K06",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 240,
+            "new_alerts": 229,
+            "resolved_alerts": 0,
+            "net_alert_change": 229
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K06",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K07",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 246,
+            "new_alerts": 235,
+            "resolved_alerts": 0,
+            "net_alert_change": 235
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K07",
+      "support_case_id": "K07",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K07",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 68,
+            "new_alerts": 57,
+            "resolved_alerts": 0,
+            "net_alert_change": 57
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K07",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 240,
+            "new_alerts": 229,
+            "resolved_alerts": 0,
+            "net_alert_change": 229
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K07",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K08",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K08",
+      "support_case_id": "K08",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K08",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 72,
+            "new_alerts": 61,
+            "resolved_alerts": 0,
+            "net_alert_change": 61
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K08",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 239,
+            "new_alerts": 228,
+            "resolved_alerts": 0,
+            "net_alert_change": 228
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K08",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K09"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    },
+    {
+      "fold_id": "fold_K09",
+      "support_case_id": "K09",
+      "primary_step": 10,
+      "steps": {
+        "1": {
+          "support": {
+            "case_id": "K09",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 65,
+            "new_alerts": 54,
+            "resolved_alerts": 0,
+            "net_alert_change": 54
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "5": {
+          "support": {
+            "case_id": "K09",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 240,
+            "new_alerts": 229,
+            "resolved_alerts": 0,
+            "net_alert_change": 229
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        },
+        "10": {
+          "support": {
+            "case_id": "K09",
+            "baseline_decision": 0,
+            "adapted_decision": 1,
+            "learned": true
+          },
+          "held_out_misses": {
+            "denominator": 8,
+            "recovered_count": 8,
+            "recovery_rate": 1.0,
+            "recovered_cases": [
+              "K01",
+              "K02",
+              "K03",
+              "K04",
+              "K05",
+              "K06",
+              "K07",
+              "K08"
+            ]
+          },
+          "retention": {
+            "denominator": 13,
+            "retained_count": 13,
+            "retention_rate": 1.0,
+            "newly_missed_count": 0,
+            "newly_missed_cases": []
+          },
+          "normal_regression": {
+            "denominator": 250,
+            "baseline_alerts": 11,
+            "total_alerts": 245,
+            "new_alerts": 234,
+            "resolved_alerts": 0,
+            "net_alert_change": 234
+          },
+          "summary_21_cases": {
+            "denominator": 21,
+            "detected_count": 21,
+            "detected_rate": 1.0
+          },
+          "summary_22_cases": {
+            "denominator": 22,
+            "detected_count": 22,
+            "detected_rate": 1.0
+          },
+          "verdicts": {
+            "any_held_out_recovery": true,
+            "all_eight_recovery": true,
+            "clean_recovery": false
+          }
+        }
+      }
+    }
+  ],
+  "pseudonymous_matrix": {
+    "columns": [
+      "K01",
+      "K02",
+      "K03",
+      "K04",
+      "K05",
+      "K06",
+      "K07",
+      "K08",
+      "K09",
+      "K10",
+      "K11",
+      "K12",
+      "K13",
+      "K14",
+      "K15",
+      "K16",
+      "K17",
+      "K18",
+      "K19",
+      "K20",
+      "K21",
+      "K22"
+    ],
+    "baseline_decisions": {
+      "K01": 0,
+      "K02": 0,
+      "K03": 0,
+      "K04": 0,
+      "K05": 0,
+      "K06": 0,
+      "K07": 0,
+      "K08": 0,
+      "K09": 0,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1,
+      "K13": 1,
+      "K14": 1,
+      "K15": 1,
+      "K16": 1,
+      "K17": 1,
+      "K18": 1,
+      "K19": 1,
+      "K20": 1,
+      "K21": 1,
+      "K22": 1
+    },
+    "primary_step10_decisions_by_fold": {
+      "fold_K01": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K02": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K03": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K04": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K05": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K06": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K07": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K08": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      },
+      "fold_K09": {
+        "K01": 1,
+        "K02": 1,
+        "K03": 1,
+        "K04": 1,
+        "K05": 1,
+        "K06": 1,
+        "K07": 1,
+        "K08": 1,
+        "K09": 1,
+        "K10": 1,
+        "K11": 1,
+        "K12": 1,
+        "K13": 1,
+        "K14": 1,
+        "K15": 1,
+        "K16": 1,
+        "K17": 1,
+        "K18": 1,
+        "K19": 1,
+        "K20": 1,
+        "K21": 1,
+        "K22": 1
+      }
+    }
+  },
+  "overall_summary": {
+    "total_folds": 9,
+    "folds_with_any_recovery": 9,
+    "folds_with_all_eight_recovery": 9,
+    "folds_with_clean_recovery": 0,
+    "primary_step": 10,
+    "trajectory_steps": [
+      1,
+      5,
+      10
+    ]
+  },
+  "limitations": [
+    "All cases were selected after observing existing errors; this is a retrospective adaptation diagnostic.",
+    "The eight evaluation misses are unseen by that fold's update but not new to the research project.",
+    "All nine missed messages exceeded 128 tokens in the existing diagnostic; retain original truncation for this experiment.",
+    "Single model seed and single fixed learning recipe; a negative result does not rule out other training methods.",
+    "Existing normal candidates include train/validation source rows and are not independently confirmed real normal SMS.",
+    "KISA labels remain source-provided smishing labels; no label edits and no claimed independent incident verification."
+  ]
+}

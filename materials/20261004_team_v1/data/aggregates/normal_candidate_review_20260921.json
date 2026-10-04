@@ -1,0 +1,53 @@
+{
+  "artifact": "normal_candidate_review_20260921",
+  "status": "main_review_accepted",
+  "purpose": "development_only_ai_content_review",
+  "provenance": {
+    "rows": 250,
+    "annotation_sha256": "b7a4b4ac34a2169e738b4c9a8ba34c6c2b9fecbfc587a77d1d99987d0a67fa04",
+    "source_sha256": "a429f382ec6f499c30c572457970eaf9e92b1ba8a6055b40c5ccdc7dd5992b99",
+    "blind_input_sha256": "a499e84a46fa77291dd6c3cd09fadf25615b75fa4a4b12e70e7cf394d22842c7",
+    "source_selection_model_informed": true,
+    "human_consensus": false,
+    "actual_normal_verified": false,
+    "eligible_for_independent_evaluation": false,
+    "source_unchanged": true
+  },
+  "counts": {
+    "ambiguous_requires_human": 7,
+    "explicit_risky_request": 0,
+    "normal_notification_consistent": 237,
+    "off_topic_non_notification": 6
+  },
+  "source_message_category_counts": {
+    "account_security": 50,
+    "banking_auth": 50,
+    "card_payment": 50,
+    "delivery": 50,
+    "public_service": 50
+  },
+  "residual_pii_suspected_count": 30,
+  "residual_pii_type_counts": {
+    "counselor_name": 2,
+    "courier_and_address": 1,
+    "courier_name": 1,
+    "meeting_passcode": 1,
+    "messenger_contact_id": 1,
+    "missing_person_name_and_description": 7,
+    "partial_masked_account_id": 4,
+    "partial_masked_email": 2,
+    "partial_masked_phone_and_email": 1,
+    "partially_masked_account_id": 2,
+    "partially_masked_name_and_card": 1,
+    "plain_credential": 1,
+    "tracking_number": 3,
+    "unmasked_coupon_code": 1,
+    "verification_code": 2
+  },
+  "limitations": [
+    "AI review is not final ground truth or independent sampling.",
+    "Existing development/model-selected data never becomes an independent evaluation set merely through human consensus; a separately authorized sampling and evaluation protocol is required.",
+    "All candidates remain human-review pending and ineligible for independent evaluation.",
+    "URLs were treated as opaque strings; no network access or link validation was performed."
+  ]
+}

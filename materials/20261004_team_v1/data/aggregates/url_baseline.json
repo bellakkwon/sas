@@ -1,0 +1,109 @@
+{
+  "input": "data/raw/PhiUSIIL_Phishing_URL_Dataset.csv",
+  "input_rows": 235795,
+  "deduplicated_rows": 235370,
+  "duplicate_url_rows_removed": 425,
+  "conflicting_url_groups_excluded": 0,
+  "label_mapping": {
+    "UCI_1": "legitimate",
+    "UCI_0": "phishing_positive"
+  },
+  "feature_policy": "recomputed lexical features only",
+  "split_policy": "full-hostname grouped stratified split",
+  "hostname_groups": 220077,
+  "hostname_group_leakage": 0,
+  "feature_columns": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "path_depth",
+    "digit_ratio",
+    "special_ratio",
+    "subdomain_count",
+    "has_ip_literal",
+    "has_port",
+    "has_punycode",
+    "has_at_symbol",
+    "is_malformed",
+    "suspicious_token_count",
+    "hostname_entropy"
+  ],
+  "network_access": false,
+  "threshold_policy": {
+    "selection_split": "validation",
+    "maximum_false_positive_rate": 0.05,
+    "objective": "maximize recall subject to FPR constraint"
+  },
+  "split_rows": {
+    "train": 168251,
+    "validation": 33730,
+    "test": 33389
+  },
+  "validation_default": {
+    "threshold": 0.5,
+    "precision": 0.940053,
+    "recall": 0.66384,
+    "f1": 0.778163,
+    "macro_f1": 0.825642,
+    "pr_auc": 0.88268,
+    "false_positive_rate": 0.031483,
+    "confusion_matrix": {
+      "tn": 18735,
+      "fp": 609,
+      "fn": 4836,
+      "tp": 9550
+    }
+  },
+  "validation_selected": {
+    "threshold": 0.42,
+    "precision": 0.912089,
+    "recall": 0.684415,
+    "f1": 0.782018,
+    "macro_f1": 0.826095,
+    "pr_auc": 0.88268,
+    "false_positive_rate": 0.049059,
+    "confusion_matrix": {
+      "tn": 18395,
+      "fp": 949,
+      "fn": 4540,
+      "tp": 9846
+    }
+  },
+  "test_default": {
+    "threshold": 0.5,
+    "precision": 0.933293,
+    "recall": 0.649733,
+    "f1": 0.766116,
+    "macro_f1": 0.816996,
+    "pr_auc": 0.878413,
+    "false_positive_rate": 0.034416,
+    "confusion_matrix": {
+      "tn": 18517,
+      "fp": 660,
+      "fn": 4978,
+      "tp": 9234
+    }
+  },
+  "test_selected": {
+    "threshold": 0.42,
+    "precision": 0.906593,
+    "recall": 0.66859,
+    "f1": 0.769611,
+    "macro_f1": 0.817216,
+    "pr_auc": 0.878413,
+    "false_positive_rate": 0.051051,
+    "confusion_matrix": {
+      "tn": 18198,
+      "fp": 979,
+      "fn": 4710,
+      "tp": 9502
+    }
+  },
+  "features_output": "data/processed/phiusiil_lexical_features.csv",
+  "model_output": "models/url/lexical_hist_gradient_boosting.joblib",
+  "limitations": [
+    "The split is grouped by full hostname but is not time-based.",
+    "URLs are evaluated as strings only; domain age and live reputation are absent.",
+    "Results should not be compared directly with models using webpage-source features."
+  ]
+}

@@ -1,0 +1,21 @@
+pattern_id,family,lure_summary,observable_indicators,requested_action,source_org,source_date,source_url,usage_status
+VP001,court_registered_mail,법원 등기 또는 등기 반송을 명분으로 연락,법원 사칭|등기 반송|개인정보 확인,개인정보 제공 또는 앱 설치,대한민국 법원,2025-06-16,https://www.scourt.go.kr/portal/dcboard/DcNewsViewAction.work?cbub_code=000420&gubun=41&pageIndex=1&searchOption=&searchWord=&seqnum=17910,taxonomy_only
+VP002,court_registered_mail,법원 영장 담당 부서를 사칭해 사건 확인을 압박,영장 부서 사칭|사건 연루 주장|긴급성,개인정보 제공 또는 통화 지속,대한민국 법원,2025-06-16,https://www.scourt.go.kr/portal/dcboard/DcNewsViewAction.work?cbub_code=000420&gubun=41&pageIndex=1&searchOption=&searchWord=&seqnum=17910,taxonomy_only
+VP003,law_enforcement_impersonation,검찰·경찰·금감원 등 수사기관을 사칭,범죄 연루 주장|기관 간 통화 전환|보안 유지 요구,금융자산 확인 또는 자금 이동,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/campaign/index.html,taxonomy_only
+VP004,government_official_impersonation,실제 기관명이나 공무원 정보를 제시해 신뢰를 형성,기관명|직책|직인 언급|대표번호가 아닌 연락,개인정보 제공 또는 회신,경찰청,2026-05-20,https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1007&q_bbscttSn=20260520094732676,taxonomy_only
+VP005,card_delivery_bait,신청하지 않은 카드 배송을 미끼로 사고예방센터 연결을 유도,미신청 카드|배송기사|사고예방센터,표시된 번호로 재통화,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/campaign/index.html,taxonomy_only
+VP006,loan_refinancing,저금리 또는 대환대출을 제시하며 기존 대출 상환을 요구,저금리|정책자금|조건부 승인|기존대출 상환,선입금 또는 추가 대출,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/campaign/index.html,taxonomy_only
+VP007,child_impersonation,자녀나 지인을 사칭해 급한 상황을 주장,휴대전화 고장|임시 연락처|긴급 부탁,개인정보 또는 자금 제공,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/campaign/index.html,taxonomy_only
+VP008,kidnapping_extortion,가족이나 지인이 납치됐다고 협박,비명 또는 위협|연락 차단|시간 압박,금전 전달,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/campaign/index.html,taxonomy_only
+VP009,personal_information_request,본인 확인이나 사고 예방을 명목으로 민감정보를 요구,계좌|카드|인증정보|신분증 요구,민감정보 제공,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP010,remote_control_app,보안 점검이나 사건 확인을 명목으로 앱 설치를 유도,앱 설치|원격제어|보안앱 사칭,앱 설치 또는 권한 허용,대한민국 법원·경찰청,2025-06-16,https://www.scourt.go.kr/portal/dcboard/DcNewsViewAction.work?cbub_code=000420&gubun=41&pageIndex=1&searchOption=&searchWord=&seqnum=17910,taxonomy_only
+VP011,government_support_impersonation,정부지원금이나 환급을 빙자,지원 대상 선정|환급|기한 압박,개인정보 제공 또는 수수료 납부,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP012,parcel_payment,택배 또는 배송 문제를 빙자해 결제를 요구,주소 오류|배송 보류|소액 결제,결제 또는 링크 접속,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP013,mobile_payment_impersonation,휴대전화 소액결제 발생을 미끼로 상담 전화를 유도,미승인 결제|취소 안내|상담센터,재통화 또는 개인정보 제공,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP014,high_yield_job,고수익 단기 아르바이트나 송금 업무로 위장,고수익|단순 송금|현금 전달,계좌 대여 또는 현금 전달,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP015,gift_card_payment,급한 결제를 이유로 상품권 구매를 요구,대리구매|상품권 번호|긴급 부탁,상품권 구매 또는 번호 전달,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP016,investment_advisory,투자 리딩이나 고수익을 약속,수익 보장|전문가 사칭|추가입금,투자금 송금,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP017,overseas_employment,해외 취업이나 고수익 일자리를 명분으로 접근,해외근무|선발비|비자비,선납금 또는 개인정보 제공,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP018,intimate_video_extortion,영상 유포를 빌미로 협박,연락처 탈취|유포 위협|시간 압박,금전 송금,경찰청 통합대응단,2026-07-31,https://www.counterscam112.go.kr/,taxonomy_only
+VP019,cash_pickup,수사 또는 자산보호를 명분으로 현금 전달을 지시,현금 인출|수거 직원|보안 유지,현금 직접 전달,경찰청,2018-05-24,https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1002&q_bbscttSn=1B000001120299000,taxonomy_only
+VP020,isolation_and_coaching,제3자의 도움을 차단하고 금융기관 질문에 답할 내용을 지시,비밀 수사|조용한 장소|은행 질문 대응,통화 유지와 지시 이행,경찰청,2018-05-24,https://www.police.go.kr/user/bbs/BD_selectBbs.do?q_bbsCode=1002&q_bbscttSn=1B000001120299000,taxonomy_only

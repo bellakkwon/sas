@@ -1,0 +1,507 @@
+{
+  "metadata": {
+    "title": "ScamLens KcBERT U5 Error Diagnostics Summary",
+    "created_at": "2026-09-20",
+    "eval_dataset": "unused_eval.csv (U5 test partition)",
+    "official_eval_json": "reports/generated/matched_kcbert_u5_unused_eval_20260918_v1.json",
+    "test_sample_count": 2317,
+    "label_distribution": {
+      "normal": 1665,
+      "smishing": 652
+    },
+    "arms_evaluated": [
+      "BASE",
+      "DUP",
+      "FLIP"
+    ],
+    "seeds_evaluated": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "corpus_label_note": "Corpus labels are research ground truth; legitimacy not independently verified."
+  },
+  "reconciliation_summary": {
+    "BASE": {
+      "42": {
+        "threshold": 0.032907191663980484,
+        "tp": 629,
+        "tn": 1650,
+        "fp": 15,
+        "fn": 23,
+        "n": 2317,
+        "accuracy": 0.983599482088908,
+        "precision": 0.9767080745341615,
+        "recall": 0.9647239263803681,
+        "fpr": 0.009009009009009009,
+        "f1": 0.970679012345679,
+        "brier": 0.014176495643398516,
+        "mean_margin": 0.2368321307342865,
+        "std_margin": 0.440841104663694
+      },
+      "101": {
+        "threshold": 0.04392397403717041,
+        "tp": 644,
+        "tn": 1653,
+        "fp": 12,
+        "fn": 8,
+        "n": 2317,
+        "accuracy": 0.9913681484678464,
+        "precision": 0.9817073170731707,
+        "recall": 0.9877300613496932,
+        "fpr": 0.007207207207207207,
+        "f1": 0.9847094801223242,
+        "brier": 0.0073449908554500684,
+        "mean_margin": 0.23445913804152677,
+        "std_margin": 0.44650687520345683
+      },
+      "202": {
+        "threshold": 0.34177523851394653,
+        "tp": 631,
+        "tn": 1664,
+        "fp": 1,
+        "fn": 21,
+        "n": 2317,
+        "accuracy": 0.990504963314631,
+        "precision": 0.9984177215189873,
+        "recall": 0.9677914110429447,
+        "fpr": 0.0006006006006006006,
+        "f1": 0.9828660436137072,
+        "brier": 0.008829768110061689,
+        "mean_margin": -0.0689242341055495,
+        "std_margin": 0.44380031930556413
+      },
+      "303": {
+        "threshold": 0.8011899590492249,
+        "tp": 642,
+        "tn": 1658,
+        "fp": 7,
+        "fn": 10,
+        "n": 2317,
+        "accuracy": 0.9926629261976694,
+        "precision": 0.9892141756548536,
+        "recall": 0.9846625766871165,
+        "fpr": 0.004204204204204204,
+        "f1": 0.9869331283627979,
+        "brier": 0.006322129846985227,
+        "mean_margin": -0.5197615129760296,
+        "std_margin": 0.44794896294387737
+      },
+      "404": {
+        "threshold": 0.020644234493374825,
+        "tp": 643,
+        "tn": 1650,
+        "fp": 15,
+        "fn": 9,
+        "n": 2317,
+        "accuracy": 0.9896417781614156,
+        "precision": 0.9772036474164134,
+        "recall": 0.9861963190184049,
+        "fpr": 0.009009009009009009,
+        "f1": 0.981679389312977,
+        "brier": 0.008883890323323197,
+        "mean_margin": 0.25656730314717147,
+        "std_margin": 0.4454353596961583
+      }
+    },
+    "DUP": {
+      "42": {
+        "threshold": 0.025057008489966393,
+        "tp": 642,
+        "tn": 1657,
+        "fp": 8,
+        "fn": 10,
+        "n": 2317,
+        "accuracy": 0.9922313336210618,
+        "precision": 0.9876923076923076,
+        "recall": 0.9846625766871165,
+        "fpr": 0.004804804804804805,
+        "f1": 0.9861751152073732,
+        "brier": 0.01095006789996298,
+        "mean_margin": 0.2496112327330281,
+        "std_margin": 0.4448439741085886
+      },
+      "101": {
+        "threshold": 0.060474295169115067,
+        "tp": 640,
+        "tn": 1658,
+        "fp": 7,
+        "fn": 12,
+        "n": 2317,
+        "accuracy": 0.991799741044454,
+        "precision": 0.9891808346213292,
+        "recall": 0.9815950920245399,
+        "fpr": 0.004204204204204204,
+        "f1": 0.985373364126251,
+        "brier": 0.007945430889026944,
+        "mean_margin": 0.21658378942823958,
+        "std_margin": 0.4460175958430046
+      },
+      "202": {
+        "threshold": 0.9857763648033142,
+        "tp": 634,
+        "tn": 1661,
+        "fp": 4,
+        "fn": 18,
+        "n": 2317,
+        "accuracy": 0.990504963314631,
+        "precision": 0.9937304075235109,
+        "recall": 0.9723926380368099,
+        "fpr": 0.0024024024024024023,
+        "f1": 0.9829457364341085,
+        "brier": 0.006834967562183192,
+        "mean_margin": -0.7072101578296045,
+        "std_margin": 0.4470715839189073
+      },
+      "303": {
+        "threshold": 0.022119643166661263,
+        "tp": 635,
+        "tn": 1656,
+        "fp": 9,
+        "fn": 17,
+        "n": 2317,
+        "accuracy": 0.9887785930082003,
+        "precision": 0.9860248447204969,
+        "recall": 0.9739263803680982,
+        "fpr": 0.005405405405405406,
+        "f1": 0.9799382716049383,
+        "brier": 0.010558327729686115,
+        "mean_margin": 0.25138047763783833,
+        "std_margin": 0.4437208216621353
+      },
+      "404": {
+        "threshold": 0.026118576526641846,
+        "tp": 640,
+        "tn": 1656,
+        "fp": 9,
+        "fn": 12,
+        "n": 2317,
+        "accuracy": 0.9909365558912386,
+        "precision": 0.9861325115562404,
+        "recall": 0.9815950920245399,
+        "fpr": 0.005405405405405406,
+        "f1": 0.9838585703305149,
+        "brier": 0.008590209664467954,
+        "mean_margin": 0.24933027978018552,
+        "std_margin": 0.4455431340019747
+      }
+    },
+    "FLIP": {
+      "42": {
+        "threshold": 0.24815484881401062,
+        "tp": 642,
+        "tn": 1656,
+        "fp": 9,
+        "fn": 10,
+        "n": 2317,
+        "accuracy": 0.991799741044454,
+        "precision": 0.9861751152073732,
+        "recall": 0.9846625766871165,
+        "fpr": 0.005405405405405406,
+        "f1": 0.985418265541059,
+        "brier": 0.0069200275563330105,
+        "mean_margin": 0.03156274458245411,
+        "std_margin": 0.4468273347230789
+      },
+      "101": {
+        "threshold": 0.040639765560626984,
+        "tp": 635,
+        "tn": 1658,
+        "fp": 7,
+        "fn": 17,
+        "n": 2317,
+        "accuracy": 0.9896417781614156,
+        "precision": 0.9890965732087228,
+        "recall": 0.9739263803680982,
+        "fpr": 0.004204204204204204,
+        "f1": 0.98145285935085,
+        "brier": 0.014588318692866229,
+        "mean_margin": 0.22655110329974637,
+        "std_margin": 0.43952004452461163
+      },
+      "202": {
+        "threshold": 0.3011839687824249,
+        "tp": 640,
+        "tn": 1662,
+        "fp": 3,
+        "fn": 12,
+        "n": 2317,
+        "accuracy": 0.9935261113508848,
+        "precision": 0.995334370139969,
+        "recall": 0.9815950920245399,
+        "fpr": 0.0018018018018018018,
+        "f1": 0.9884169884169884,
+        "brier": 0.00712668373116271,
+        "mean_margin": -0.026220772793686543,
+        "std_margin": 0.4430016003548492
+      },
+      "303": {
+        "threshold": 0.05737035721540451,
+        "tp": 626,
+        "tn": 1658,
+        "fp": 7,
+        "fn": 26,
+        "n": 2317,
+        "accuracy": 0.9857574449719465,
+        "precision": 0.9889415481832543,
+        "recall": 0.9601226993865031,
+        "fpr": 0.004204204204204204,
+        "f1": 0.9743190661478599,
+        "brier": 0.014945310940029218,
+        "mean_margin": 0.21310698960344873,
+        "std_margin": 0.4423162369169665
+      },
+      "404": {
+        "threshold": 0.040333524346351624,
+        "tp": 637,
+        "tn": 1653,
+        "fp": 12,
+        "fn": 15,
+        "n": 2317,
+        "accuracy": 0.9883470004315926,
+        "precision": 0.9815100154083205,
+        "recall": 0.9769938650306749,
+        "fpr": 0.007207207207207207,
+        "f1": 0.9792467332820907,
+        "brier": 0.014743386999966345,
+        "mean_margin": 0.22838927025118264,
+        "std_margin": 0.4408248824167239
+      }
+    }
+  },
+  "tokenizer_truncation_audit": {
+    "max_length": 128,
+    "total_truncated_records": 331,
+    "truncated_normal": 274,
+    "truncated_smishing": 57,
+    "truncation_rate_pct": 14.29,
+    "dup_event_accounting": {
+      "nontruncated": {
+        "total_events": 2975,
+        "tp": 2954,
+        "fn": 21,
+        "recall_pct": 99.2941,
+        "fnr_pct": 0.7059,
+        "tn": 6931,
+        "fp": 24,
+        "fpr_pct": 0.3451
+      },
+      "truncated": {
+        "total_events": 285,
+        "tp": 237,
+        "fn": 48,
+        "recall_pct": 83.1579,
+        "fnr_pct": 16.8421,
+        "tn": 1357,
+        "fp": 13,
+        "fpr_pct": 0.9489
+      }
+    },
+    "causal_disclaimer": "Observed correlation only; cohort confounding (text length, topics, imbalance) is present."
+  },
+  "persistent_errors_dup": {
+    "persistent_fp_5_of_5": 4,
+    "persistent_fn_5_of_5": 7,
+    "total_unique_fp_messages": 14,
+    "total_unique_fn_messages": 30,
+    "total_fp_events": 37,
+    "total_fn_events": 69,
+    "all_15_models_fn_intersection": 6
+  },
+  "threshold_stability_analysis": {
+    "dup_seed_202_threshold": 0.9857763648033142,
+    "dup_other_seeds_threshold_min": 0.022119643166661263,
+    "dup_other_seeds_threshold_max": 0.060474295169115067,
+    "guidance": "Do not treat raw margins across seeds as calibrated confidence or causal proof."
+  },
+  "paired_transitions_dup_to_flip": [
+    {
+      "seed": 42,
+      "error_type": "FP",
+      "denominator": 1665,
+      "dup_count": 8,
+      "flip_count": 9,
+      "net_change": 1,
+      "resolved": 0,
+      "new": 1,
+      "persistent": 8,
+      "neither": 1656
+    },
+    {
+      "seed": 42,
+      "error_type": "FN",
+      "denominator": 652,
+      "dup_count": 10,
+      "flip_count": 10,
+      "net_change": 0,
+      "resolved": 2,
+      "new": 2,
+      "persistent": 8,
+      "neither": 640
+    },
+    {
+      "seed": 101,
+      "error_type": "FP",
+      "denominator": 1665,
+      "dup_count": 7,
+      "flip_count": 7,
+      "net_change": 0,
+      "resolved": 2,
+      "new": 2,
+      "persistent": 5,
+      "neither": 1656
+    },
+    {
+      "seed": 101,
+      "error_type": "FN",
+      "denominator": 652,
+      "dup_count": 12,
+      "flip_count": 17,
+      "net_change": 5,
+      "resolved": 1,
+      "new": 6,
+      "persistent": 11,
+      "neither": 634
+    },
+    {
+      "seed": 202,
+      "error_type": "FP",
+      "denominator": 1665,
+      "dup_count": 4,
+      "flip_count": 3,
+      "net_change": -1,
+      "resolved": 2,
+      "new": 1,
+      "persistent": 2,
+      "neither": 1660
+    },
+    {
+      "seed": 202,
+      "error_type": "FN",
+      "denominator": 652,
+      "dup_count": 18,
+      "flip_count": 12,
+      "net_change": -6,
+      "resolved": 7,
+      "new": 1,
+      "persistent": 11,
+      "neither": 633
+    },
+    {
+      "seed": 303,
+      "error_type": "FP",
+      "denominator": 1665,
+      "dup_count": 9,
+      "flip_count": 7,
+      "net_change": -2,
+      "resolved": 2,
+      "new": 0,
+      "persistent": 7,
+      "neither": 1656
+    },
+    {
+      "seed": 303,
+      "error_type": "FN",
+      "denominator": 652,
+      "dup_count": 17,
+      "flip_count": 26,
+      "net_change": 9,
+      "resolved": 3,
+      "new": 12,
+      "persistent": 14,
+      "neither": 623
+    },
+    {
+      "seed": 404,
+      "error_type": "FP",
+      "denominator": 1665,
+      "dup_count": 9,
+      "flip_count": 12,
+      "net_change": 3,
+      "resolved": 3,
+      "new": 6,
+      "persistent": 6,
+      "neither": 1650
+    },
+    {
+      "seed": 404,
+      "error_type": "FN",
+      "denominator": 652,
+      "dup_count": 12,
+      "flip_count": 15,
+      "net_change": 3,
+      "resolved": 1,
+      "new": 4,
+      "persistent": 11,
+      "neither": 636
+    }
+  ],
+  "net_transition_events": {
+    "fp": {
+      "dup_total": 37,
+      "flip_total": 38,
+      "net_change": 1
+    },
+    "fn": {
+      "dup_total": 69,
+      "flip_total": 80,
+      "net_change": 11
+    }
+  },
+  "unique_ever_transitions": {
+    "FP": {
+      "resolved": 7,
+      "new": 7,
+      "persistent": 12
+    },
+    "FN": {
+      "resolved": 11,
+      "new": 20,
+      "persistent": 22
+    }
+  },
+  "synthetic_illustrative_cards": [
+    {
+      "card_id": "ILLUST-FP-01",
+      "title": "단문 배송 완료 알림 가상 예시 (Short Delivery Notice Reconstruction)",
+      "illustrative_reconstruction_text": "[배송알림] 고객님의 물품이 경비실에 보관되었습니다. 확인: delivery.example.invalid/track",
+      "reconstruction_nature": "Explicitly illustrative synthetic text. Not scored by models.",
+      "measured_outputs": "none",
+      "observed_real_corpus_theme": "Delivery-notice wording and URL marker; corpus label normal, real legitimacy unverified",
+      "explanation_hypothesis": "가설(Hypothesis): 단문 구조 내 배송/보관 어휘와 링크가 함께 등장할 때 모델이 위험 패턴으로 분류할 가능성이 관찰됨. 실제 어텐션 가중치나 인과는 측정되지 않았으며 모델 간 로짓 보정 상태에 따른 차이일 수 있음.",
+      "defensive_consideration": "출처가 확인된 정상 배송 자료를 별도 개발 자료에 보강하고 신규 평가 자료로 검증. 발신자·문구만으로 자동 허용하지 않음."
+    },
+    {
+      "card_id": "ILLUST-FP-02",
+      "title": "법적 고지 안내문 가상 예시 (Statutory Privacy Notice Reconstruction)",
+      "illustrative_reconstruction_text": "[고지] 정보통신망법에 따른 연간 개인정보 이용내역 안내. 세부사항: privacy.example.invalid/notice",
+      "reconstruction_nature": "Explicitly illustrative synthetic text. Not scored by models.",
+      "measured_outputs": "none",
+      "observed_real_corpus_theme": "Privacy-use notice wording with URL marker; corpus label normal",
+      "explanation_hypothesis": "가설(Hypothesis): 연례 법정 고지 문구와 URL 조합이 기관 사칭형 스미싱 데이터와 어휘적으로 중복되어 오탐이 발생할 수 있음.",
+      "defensive_consideration": "정기 법정 고지 양식의 사전 식별 및 기업 공인 알림 서비스 연동."
+    },
+    {
+      "card_id": "ILLUST-FN-01",
+      "title": "원시 IPv4 주소 사용 스미싱 가상 예시 (Bare IPv4 Discrepancy Reconstruction)",
+      "illustrative_reconstruction_text": "[건강검진] 검진 결과 통지서 확인: 192.0.2.1/check",
+      "reconstruction_nature": "Explicitly illustrative synthetic text. Not scored by models.",
+      "measured_outputs": "none",
+      "observed_real_corpus_theme": "Smishing containing dot-separated IPv4 address with metadata has_url=0 (label malicious)",
+      "explanation_hypothesis": "가설(Hypothesis): URL 파서가 도메인 접두사(http:// 등)가 없는 점 표기 IP를 감지하지 못해 has_url=0으로 플래그된 경우, 링크 탐지 특성에 의존하는 모델에서 미탐이 발생할 수 있음.",
+      "defensive_consideration": "새 개발 자료에서 IP 표기 추출 규칙의 적용 범위와 오탐을 검증. 기존 U5 입력·라벨·임계값은 수정하지 않음."
+    },
+    {
+      "card_id": "ILLUST-FN-02",
+      "title": "장문 공지 후미 링크 배치 가상 예시 (Long Text Truncation Cohort Reconstruction)",
+      "illustrative_reconstruction_text": "[공지] 정부지원 저금리 대출 상품 상세 안내입니다. [공지] 정부지원 저금리 대출 상품 상세 안내입니다. [공지] 정부지원 저금리 대출 상품 상세 안내입니다. [공지] 정부지원 저금리 대출 상품 상세 안내입니다. [공지] 정부지원 저금리 대출 상품 상세 안내입니다. 신청링크: assist.example.invalid/apply",
+      "reconstruction_nature": "Explicitly illustrative synthetic text. Not scored by models.",
+      "measured_outputs": "none",
+      "observed_real_corpus_theme": "Long policy/benefit-notice wording in corpus-malicious rows; payload position and actual legitimacy not established",
+      "explanation_hypothesis": "가설(Hypothesis): KcBERT의 최대 시퀀스 길이인 128 토큰을 초과하는 텍스트에서 악성 링크가 후미에 위치할 경우 토크나이저에 의해 절단되어 모델 가시 창 밖에 머물러 미탐이 발생할 수 있음 (코호트 교란 요인 고려 필요).",
+      "defensive_consideration": "특수 토큰 예산을 고려한 앞·뒤 구간 결합 또는 링크/연락처 보존을 개발셋에서 비교."
+    }
+  ]
+}

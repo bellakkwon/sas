@@ -1,0 +1,26 @@
+{
+  "status": "augmented",
+  "input": "data/processed/messages_split.csv",
+  "original_train_rows": 12100,
+  "counterfactual_rows_added": 11987,
+  "rows_unchanged_and_dropped": 9,
+  "rows_emptied_and_dropped": 104,
+  "augmented_train_rows": 24087,
+  "held_out_rows_untouched": 4673,
+  "prior_before": {
+    "malicious_given_url": 0.682096,
+    "malicious_given_no_url": 0.038633
+  },
+  "prior_after": {
+    "malicious_given_url": 0.299421,
+    "malicious_given_no_url": 0.293651
+  },
+  "note": "The counterfactual rows make link presence uninformative about the label by construction; the priors after augmentation should sit near the base rate.",
+  "limitations": [
+    "A normal message with a link marker bolted on is text no sender would produce. The model is being taught invariance using inputs outside the real distribution, which can cost accuracy on real ones.",
+    "Only the URL marker is intervened on. Other spurious cues in the corpus are untouched.",
+    "Messages whose body was nothing but the URL marker cannot be flipped without becoming empty, so they contribute no counterfactual twin.",
+    "Train doubles in size, so a like-for-like comparison needs the same epoch count rather than the same number of gradient steps."
+  ],
+  "output": "data/processed/messages_split_counterfactual.csv"
+}

@@ -23,6 +23,9 @@ class LayoutRegression(unittest.TestCase):
         paths = {layout.MANIFEST, *manifest["current_guides"], *manifest["active_sha256"],
                  *manifest["preserved_sha256"], *manifest["archived_sha256"],
                  *manifest["aggregate_sources"], "docs/SAS_FOLLOWUP_RUN_GUIDE_20260921.md"}
+        # Current root guides now link to the dated team documentation.
+        paths.update(p.relative_to(ROOT).as_posix() for p in
+                     (ROOT / "materials/20261004_team_v1").rglob("*.md"))
         for relative in paths:
             target = cls.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)

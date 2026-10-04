@@ -558,7 +558,7 @@
     "materials/20260921_final_v1/presentation/RESEARCH_REPORT.md": "c6c67517bd44ed1d93fdba0f87184fcbcdf2e708de4ad2f7529a044a905847e3",
     "materials/20260921_final_v1/presentation/SPEAKER_SCRIPT.md": "b79c3d8d879b79d1ba7d30ee64b49f7b866b5d6fb5bbeaaed07141f2fbc12ef9",
     "materials/20260921_final_v1/presentation/index.html": "4a5e58568a97cfb9c14bf7a844c909da2326b924a0d7c20488fe235236b9e5e4",
-    "materials/README.md": "88dde6a56a1b5f6737815a55761298242e80c5c7a8a9cd91132a6638fd53c02d",
+    "materials/README.md": "b4401602b9acd9820e6d5b4602c9b2adc0edcab67131c08c8f50cf42f65e9acb",
     "reports/README.md": "2c8591788495d2509e780562b43618160a023a4b6e5664de79482dce9b7807ff",
     "reports/generated/failure_decomposition.json": "706c8e1d0333b20eeb3f4bcf1e246b6fd1b17a4a1337c0d53f643bd42d2384d1",
     "reports/generated/robustness_evaluation.json": "fec76427b5c3114c3183b88611875937dbda795fe12f96fd6dd6a4aaf01db74b",
@@ -568,7 +568,8 @@
     "reports/generated/sas_fage_export.json": "6131a156e4942ff7a65379a1517b641abc07908e753f38767cd5129054e906f4",
     "reports/generated/sas_inventory_20260914.json": "80d407fcd892a4c10383a1e8121dd577f358f1acaed6b8c24b34f31d8917dc73",
     "reports/generated/sas_support_export.json": "fad151587edac617ec758b404c5fb2d80397707e837b7c8bc758a252be11c292",
-    "scripts/verify_materials.py": "83aedf10d93006196aff6a435e48594ebf0d104252ff1bf2ea966189a05e5a55"
+    "scripts/verify_materials.py": "83aedf10d93006196aff6a435e48594ebf0d104252ff1bf2ea966189a05e5a55",
+    "archive/team_share_navigation_20261004/materials__README.md.txt": "88dde6a56a1b5f6737815a55761298242e80c5c7a8a9cd91132a6638fd53c02d"
   },
   "current_guides": [
     "README.md",
@@ -618,5 +619,11 @@
     "sas/31_final_visualization.sas": "8639557a241c46f7012a2ec238e4f4233c3c27bc2a01ada1e6a23d385b4d5aa5",
     "sas/32_publish_final_to_cas.sas": "21ddf41705ee267541bbdfed6e5f70ad83fd9a26732dab926ec6e1446803ba0b",
     "sas/99_ZIP_FOLLOWUP_OUTPUTS.sas": "d92002044906619325311afdadf6b4e808327bc71410033907e616aabe4e0bc2"
+  },
+  "navigation_updates_20261004": {
+    "reason": "Latest team-material navigation; original README bytes archived",
+    "archive": "archive/team_share_navigation_20261004",
+    "only_existing_manifest_hash_updated": "materials/README.md",
+    "active_SAS_and_old_aggregate_hashes_changed": false
   }
 }

@@ -1,0 +1,587 @@
+{
+  "version": "20261004_team_v1",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 68,
+      "sha256": "c25a964d3b6b0dc6a3b5fb30d2f3626af004c295d74afd78277c3c48dd34839f"
+    },
+    {
+      "path": "LICENSE_NOTICE.md",
+      "bytes": 1598,
+      "sha256": "29853f531c87d85d92ae34fa8b0eb3eb2e242fbd2921212391b2abfcc870d124"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3587,
+      "sha256": "fca2dc64ad0dd01a2de8230c8b8141730f9f3951a0e7598b399efa4a5cf6773e"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 37596,
+      "sha256": "a1442520f8fe7ced3a7241ede9af2cf5ad960a23c5f18e1bf8cce5b85f6dc990"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 911,
+      "sha256": "6c7b9e52897955fb1350cb755f16cb2923e1387fa54007f898f4be2a7db1e157"
+    },
+    {
+      "path": "data/aggregates/README.md",
+      "bytes": 1272,
+      "sha256": "6ba309d7cf193aa997e39399a885c59366a79d598dcf7b095cf2dfbbe86b2cc4"
+    },
+    {
+      "path": "data/aggregates/counterfactual_augmentation.json",
+      "bytes": 1312,
+      "sha256": "54a570647c803f6bee18a495aa559d7f8a4f3a11a031a8bc73db7f99d410e8e2"
+    },
+    {
+      "path": "data/aggregates/external_intake_index_20260920.json",
+      "bytes": 1684,
+      "sha256": "b53be324eb16c950068eaf165da75258ed15c7e25b4713208acf500813b0d219"
+    },
+    {
+      "path": "data/aggregates/external_kisa_evaluation_20260921.json",
+      "bytes": 3835,
+      "sha256": "5ea330e906f8cb7e0b747daca53df7b7b388863d4d1dfe417120603ead390819"
+    },
+    {
+      "path": "data/aggregates/jev_kcbert_fusion_20260920.json",
+      "bytes": 15010,
+      "sha256": "0957198e34d301956aab0d7f2ed44268a72da94c1e39955e8dff7db8b46f99fe"
+    },
+    {
+      "path": "data/aggregates/jev_kcbert_redacted_20260920.json",
+      "bytes": 19021,
+      "sha256": "2002656e75077be83f016cd8378a00489338e3221b54b1573d90ed812aee8030"
+    },
+    {
+      "path": "data/aggregates/kisa_all_models_linear_20261004.json",
+      "bytes": 5499758,
+      "sha256": "38a8f3aa61ab1089034f50985b3708e409fb207a0ebcbc0d40a3c30adfe757a6"
+    },
+    {
+      "path": "data/aggregates/kisa_all_models_neural_20261004.json",
+      "bytes": 1887926,
+      "sha256": "3fd01c1c8d2993e597e96fd44ef449b853605d7d36ce3b9d94298a648c97ef4d"
+    },
+    {
+      "path": "data/aggregates/kisa_all_models_summary_20261004.json",
+      "bytes": 4404234,
+      "sha256": "9b9a8b4432bb0542bc44421d5899cbb555660e757f3c27606bc9005d4cbbb0c6"
+    },
+    {
+      "path": "data/aggregates/kisa_few_example_20261004.json",
+      "bytes": 25430162,
+      "sha256": "51c68cee9ad263782bdd8dac1e23115c124eb6b5fdfedffa13dd231f6fe5754a"
+    },
+    {
+      "path": "data/aggregates/kisa_ocr_diagnostics_20260921.json",
+      "bytes": 5461,
+      "sha256": "3cda8e3fbd66db8393e235e3d800448be870993ebdbfb0af46c4885437df7761"
+    },
+    {
+      "path": "data/aggregates/kisa_one_example_20261004.json",
+      "bytes": 46389,
+      "sha256": "31bf19f2c8763169c92d272e455af8dbdb342e2a97becb09d4567e780000def5"
+    },
+    {
+      "path": "data/aggregates/matched_kcbert_u5_unused_eval_20260918_v1.json",
+      "bytes": 1139,
+      "sha256": "7f4ed4413ea8447a7915489168d31846a95c7eae126578cb48bfe908d301b4a8"
+    },
+    {
+      "path": "data/aggregates/matched_kcbert_u5_unused_test_20260918_v1.json",
+      "bytes": 15525,
+      "sha256": "92ce02458b4dc4e0c9371ad50626a96c681594dd829cff4af1a40bc221201fba"
+    },
+    {
+      "path": "data/aggregates/model_comparison.json",
+      "bytes": 7685,
+      "sha256": "273e5997f9f3b6be9e60b77a4542813a68b7d257c55cd3f9d4a061d54adc94ce"
+    },
+    {
+      "path": "data/aggregates/normal_candidate_review_20260921.json",
+      "bytes": 2006,
+      "sha256": "ba42b3df378ad7fee46949a5694de855fa09792c4aec77315624009175d8dbab"
+    },
+    {
+      "path": "data/aggregates/training_augmentation_summary.json",
+      "bytes": 1449,
+      "sha256": "b2af739d3265899b0ce6ae2350712913d93f403d52f16d08dd96f9f21804e44f"
+    },
+    {
+      "path": "data/aggregates/u5_error_diagnostics_20260920.json",
+      "bytes": 16307,
+      "sha256": "5579ac28b2d0a7a0b32d08fcb0091b172e6804c72e04e091e4276d96881608cb"
+    },
+    {
+      "path": "data/aggregates/url_baseline.json",
+      "bytes": 2707,
+      "sha256": "2ffe9de07e1f1917f19b98e8bff6c0badd76a6e764e408c7b69de5e4e55b6b57"
+    },
+    {
+      "path": "data/derived/README.md",
+      "bytes": 1219,
+      "sha256": "45674f4b10445e8bb5369df6dc4fdba409d134e39715dcf0055a331e4832ddd4"
+    },
+    {
+      "path": "data/derived/all_models_one_example.csv",
+      "bytes": 506821,
+      "sha256": "0cca3880ef7a1e92e90b03370462d472d77001d7b89cf651c975df910d7305fc"
+    },
+    {
+      "path": "data/derived/few_example.csv",
+      "bytes": 726653,
+      "sha256": "ca461f127c76bb9b04115111ed6f66f45403807279f5896e00ab9aa0735fb0b1"
+    },
+    {
+      "path": "data/derived/one_example.csv",
+      "bytes": 1154,
+      "sha256": "7aea3e8dea9d8ebaa63e7ec3f12138e83be2e1ef539564950015c39f101b9f2a"
+    },
+    {
+      "path": "data/derived/summary.json",
+      "bytes": 2192,
+      "sha256": "0224b687d561d1509e0936b624fa2f3dca6577273b3d1ac0a4b570227c9927ae"
+    },
+    {
+      "path": "data/samples/README.md",
+      "bytes": 811,
+      "sha256": "2eeefe57933e46a8520b7a8d0fc4fad81e1ff0121f53a8b827e9b22b66e11e07"
+    },
+    {
+      "path": "data/samples/consented_sms_import_template.csv",
+      "bytes": 97,
+      "sha256": "3c3c06f2b895b36986ec4d689f794cfb148b12cd8ed4f9de69e5f1bb68fbbb6b"
+    },
+    {
+      "path": "data/samples/hard_negative_messages.csv",
+      "bytes": 1049,
+      "sha256": "21cd6515d27622ec22de383a4e782a1ad153bc6f512d112afb4a477d42bf938a"
+    },
+    {
+      "path": "data/samples/messages.csv",
+      "bytes": 774,
+      "sha256": "c2e8180a0cd7bfc11ebf8ce6004ef2a3b8e0852de5201d427987bc8f08661a41"
+    },
+    {
+      "path": "data/samples/scam_journeys.jsonl",
+      "bytes": 6091,
+      "sha256": "46e2d95dfbd12f091b2ea6ac89f99316e9a3dc00b20b00a93c9fcd8bbe114b9c"
+    },
+    {
+      "path": "data/samples/url_free_malicious_import_template.csv",
+      "bytes": 125,
+      "sha256": "06de9a594cc02cc52484a2877edea8bdca73839a88ed1204da9bfa42c8110a3d"
+    },
+    {
+      "path": "data/samples/voice_phishing_pattern_catalog.csv",
+      "bytes": 5696,
+      "sha256": "b03b55f2e326907b9a1767f0409223dece015e777796d1ff0b8a10189ec75da0"
+    },
+    {
+      "path": "data/samples/voice_phishing_transcript_import_template.csv",
+      "bytes": 748,
+      "sha256": "4eff5e3a28d343ab8ce29bc03650f7b499712d555f62df440d5db36f3e57d7d8"
+    },
+    {
+      "path": "docs/EXECUTION_ORDER.md",
+      "bytes": 3515,
+      "sha256": "57b157467b117f9101928cc09d4203f3871044a2e89aa4b4634181a31cfa6922"
+    },
+    {
+      "path": "docs/GUIDELINES.md",
+      "bytes": 1974,
+      "sha256": "d62e1c8cb9feb42d94db745f983df50d60b4d36782146f7992e5439f67af790e"
+    },
+    {
+      "path": "docs/PRIVATE_INPUTS.md",
+      "bytes": 2008,
+      "sha256": "bd0c6bcaf5c888b49ac6bf2ba281371799595d317fb7a5727f0c501b78b49c45"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 640,
+      "sha256": "05a41520260447c1625740e13a3de969b0c42cbc687f73faa5656a6bac431c2e"
+    },
+    {
+      "path": "docs/RESULTS_SUMMARY.md",
+      "bytes": 1785,
+      "sha256": "2ed874bdadeb072cbd4bb0a69107d900548a1e96c1adca7fa8451ac8290f64b8"
+    },
+    {
+      "path": "docs/TEAM_CHECKLIST.md",
+      "bytes": 1129,
+      "sha256": "9d500d6ba9b5a77f84726825abf98500d134f7f2b0ebbf3d062ad915f74a76f2"
+    },
+    {
+      "path": "docs/research/DATA_CATALOG_20260920.md",
+      "bytes": 5623,
+      "sha256": "d9b31610e976b872fe01a5c71c9b5cd4da96c50d4de8083bfbaeeadd6553df3f"
+    },
+    {
+      "path": "docs/research/DATA_LINEAGE.md",
+      "bytes": 14604,
+      "sha256": "327018b0ceda70d5535d8fe75e25be6d348ab3b012ab28c4cf43096520951cdf"
+    },
+    {
+      "path": "docs/research/EXTERNAL_KISA_EVALUATION_20260921.md",
+      "bytes": 4121,
+      "sha256": "f86ba0bae6478a92618dea08bccf429f797ff9a31ba3416fc5b12b2bf333215d"
+    },
+    {
+      "path": "docs/research/KISA_ALL_MODELS_LINEAR_RESULT_20261004.md",
+      "bytes": 19728,
+      "sha256": "a22728d639bdec6a3472337fa89a827734c2a69bf6eab24547ae91d56341fd4f"
+    },
+    {
+      "path": "docs/research/KISA_ALL_MODELS_NEURAL_RESULT_20261004.md",
+      "bytes": 6302,
+      "sha256": "4e820a4ab1385b8cc774948689dc6307b5506f5887791f2f2281806fb37b9f75"
+    },
+    {
+      "path": "docs/research/KISA_ALL_MODELS_RESULT_20261004.md",
+      "bytes": 13161,
+      "sha256": "8b37315c92ae19c2fbc5e455e4ad4e5f8e16b1028ffb5c8b39a024777133b882"
+    },
+    {
+      "path": "docs/research/KISA_DIAGNOSTIC_INTERPRETATION_20260921.md",
+      "bytes": 7116,
+      "sha256": "969116732b9a33cc2cbc09a44bc21f221728a8744ee93410334675f4a158d3c7"
+    },
+    {
+      "path": "docs/research/KISA_FEW_EXAMPLE_RESULT_20261004.md",
+      "bytes": 15921,
+      "sha256": "9f255735a8f1a03dade109807097198fd98a495a7f4d965def361c9cc9cfa249"
+    },
+    {
+      "path": "docs/research/KISA_OCR_DIAGNOSTICS_20260921.md",
+      "bytes": 2596,
+      "sha256": "bdb944c610ab84647bcf8eac6c4ccbaa9c03d624ff737e2ea1fa528035b56016"
+    },
+    {
+      "path": "docs/research/KISA_ONE_EXAMPLE_RESULT_20261004.md",
+      "bytes": 9078,
+      "sha256": "ce87a0d55db2723b3c9e52dadd40f69d0ac16bd1e10932774f54acd49fe4b5f6"
+    },
+    {
+      "path": "docs/research/NORMAL_CANDIDATE_REVIEW_20260921.md",
+      "bytes": 2173,
+      "sha256": "8d5dabecc3039b8ddcbaeb0e28849d0c74fea564aaac5a6c155dd84d7ce898c8"
+    },
+    {
+      "path": "docs/research/README.md",
+      "bytes": 1090,
+      "sha256": "760916d765260ec70679504c1e617df35504e305d449ccaeed6d4af0be54663e"
+    },
+    {
+      "path": "docs/research/TRAINING_DATA_STATUS.md",
+      "bytes": 2614,
+      "sha256": "b262cfc1a390ab496bb9664d31297b1ecd7e55d1d16d2c32b8271fbb372e4098"
+    },
+    {
+      "path": "docs/research/URL_FREE_TEXT_REVIEW_GUIDE.md",
+      "bytes": 4088,
+      "sha256": "c0b4444686b4b5e47ee6aa2ab54ac8abeb1be6c937bb48ef27e0b15f4cf2a6bf"
+    },
+    {
+      "path": "docs/research/cards/DATASET_SPLIT_CARD.md",
+      "bytes": 5760,
+      "sha256": "3aa7590b59040a4c2bac702244ef6d981161964f69d46542a17bc7cd492217d2"
+    },
+    {
+      "path": "docs/research/cards/DATA_CARD.md",
+      "bytes": 6287,
+      "sha256": "7995deb365b77fc9525c939ba7b178ba7b06c47776689f61ba8c010147720bc0"
+    },
+    {
+      "path": "docs/research/cards/MODEL_CARD.md",
+      "bytes": 13675,
+      "sha256": "409fd53ca3eb214d6967c92634db0638a3703710a52f4adfb8699c62256b56d4"
+    },
+    {
+      "path": "docs/research/paper/MATCHED_KCBERT_FINAL_REVIEW_20260917.md",
+      "bytes": 5726,
+      "sha256": "45ecf576b9e8b3c5c53b47ad7c5cc7e4dbdd276e2af3645048acc536fd0524cf"
+    },
+    {
+      "path": "docs/research/paper/MATCHED_KCBERT_U5_PROTOCOL_20260918.md",
+      "bytes": 2133,
+      "sha256": "7b1054429350b43176bd059f28df4ef14d885ea0e4f7a33bb8fb83bc4c787394"
+    },
+    {
+      "path": "docs/research/paper/MATCHED_KCBERT_UNCERTAINTY_AND_ERROR_ANALYSIS_20260917.md",
+      "bytes": 11827,
+      "sha256": "8a2204e994b3a8c8ceb01f96b30ec6ff8e23d8d2473f969b1631effdc6254154"
+    },
+    {
+      "path": "presentation/README.md",
+      "bytes": 1169,
+      "sha256": "64436f81ad3c17e2403ed877473d73ac2e20cc9c6ad584806bdf3ed89b20c3d6"
+    },
+    {
+      "path": "presentation/SLIDE_CONTENT.md",
+      "bytes": 40957,
+      "sha256": "1db87d7f33e3caf6a6881227aeed88b5f4625f10b04757a09e74afb730190508"
+    },
+    {
+      "path": "presentation/SPEAKER_NOTES.md",
+      "bytes": 22135,
+      "sha256": "d2ee1845ccb83d9c7393deadaf347ffd428e4c2702646dec28291a0f1c3fd26e"
+    },
+    {
+      "path": "presentation/notes_manifest.json",
+      "bytes": 51797,
+      "sha256": "72375f29f6c3b11879ae490ff20d4e32de3c9a045c01c020b985ca48aa7554f7"
+    },
+    {
+      "path": "presentation/pages.json",
+      "bytes": 44356,
+      "sha256": "fa358f3284cde9e527621126902dcac5c661f3501f99e4757215fa2a2e6431d8"
+    },
+    {
+      "path": "python/README.md",
+      "bytes": 692,
+      "sha256": "5a01f2fa20fc99f1bd9c09064c0124d699e4bc831c23ab32358c869af7c55150"
+    },
+    {
+      "path": "python/pyproject.toml",
+      "bytes": 253,
+      "sha256": "93f9aa3beaadec91ce2020ed2d0a2b764f0eddd9208537a1413f5bbb66fc041d"
+    },
+    {
+      "path": "python/scripts/offline_demo.py",
+      "bytes": 752,
+      "sha256": "c7d3c1e87374c44fbd6b57483c0df5503557411602eb5936a04e8c382ad35831"
+    },
+    {
+      "path": "python/src/scamlens/__init__.py",
+      "bytes": 52,
+      "sha256": "aec79ee08f5acb263e464e72339c416861cef138cb7fe2c730b492b1af943abc"
+    },
+    {
+      "path": "python/src/scamlens/preprocessing.py",
+      "bytes": 11250,
+      "sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd"
+    },
+    {
+      "path": "python/src/scamlens/robustness.py",
+      "bytes": 1653,
+      "sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309"
+    },
+    {
+      "path": "python/src/scamlens/url_features.py",
+      "bytes": 3223,
+      "sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9"
+    },
+    {
+      "path": "python/tests/test_preprocessing.py",
+      "bytes": 6469,
+      "sha256": "f3bafd3cd16bbd610a8a3ad38897cf218487ad466562744f118a66bc1ac0faa6"
+    },
+    {
+      "path": "python/tests/test_robustness.py",
+      "bytes": 563,
+      "sha256": "af80245879638b8578b89698acb24e247b5cb71362dbb56b009a7b3792f8dad5"
+    },
+    {
+      "path": "python/tests/test_url_features.py",
+      "bytes": 1099,
+      "sha256": "c3258cd5c02a58c98187af429f72ba4a8cd973ae2e9e2a8c0396cdedfb619395"
+    },
+    {
+      "path": "research_reference/README.md",
+      "bytes": 2560,
+      "sha256": "df701bf98c3c1319009ff5e7f0d46ef98e7276ea5d41d480eef416d4c8786f37"
+    },
+    {
+      "path": "research_reference/docs/experiments/EXTERNAL_KISA_EVAL_PLAN_20260921.md",
+      "bytes": 10779,
+      "sha256": "161a7095fe83c9b0f8fde95032f786ea8490fd4df5c6fd01c54216590da575ae"
+    },
+    {
+      "path": "research_reference/docs/experiments/KISA_ALL_MODELS_LINEAR_PLAN_20261004.json",
+      "bytes": 115933,
+      "sha256": "3c1b31567762f1d8f9cef9681875f7b3f0cdcf402330ffdce055617202c28809"
+    },
+    {
+      "path": "research_reference/docs/experiments/KISA_ALL_MODELS_NEURAL_PLAN_20261004.json",
+      "bytes": 13106,
+      "sha256": "c272f72dae47afc33feed8f1ec046d488d9db7ce5afdb15d12c18eaf11e6720f"
+    },
+    {
+      "path": "research_reference/docs/experiments/KISA_FEW_EXAMPLE_PLAN_20261004.json",
+      "bytes": 4975,
+      "sha256": "2260ff00a67ec55cc3c81ea905ad51f63331178923744693c42f765bb2860b7e"
+    },
+    {
+      "path": "research_reference/docs/experiments/KISA_OCR_DIAGNOSTICS_PLAN_20260921.md",
+      "bytes": 10454,
+      "sha256": "8097c68809c2fcfb21cebb5ca46ed539707d4cc0a6d4e752b22143e770f2359b"
+    },
+    {
+      "path": "research_reference/docs/experiments/KISA_ONE_EXAMPLE_PLAN_20261004.json",
+      "bytes": 5557,
+      "sha256": "fe00a7daf96659a51fc8d1f1dc087dac22203b37776b8972b6caa25a1782e023"
+    },
+    {
+      "path": "research_reference/reviewers/all_models/verify_and_summarize.py",
+      "bytes": 27225,
+      "sha256": "91a936931c4b8b2725823c75421ced374554281e752cb80e7ee9196367aef2d5"
+    },
+    {
+      "path": "research_reference/reviewers/all_models/verify_input_collisions.py",
+      "bytes": 2764,
+      "sha256": "98c3a6d9f70e067df458a059f4930219a80bed96e7f98f1fc1051cc3bc4ed5e4"
+    },
+    {
+      "path": "research_reference/reviewers/all_models/verify_linear_updates.py",
+      "bytes": 2225,
+      "sha256": "40e772bcde8ab2273446deefbc4cade23c4577f9a14a3006a16498bac398127c"
+    },
+    {
+      "path": "research_reference/reviewers/few_example/verify_actual_updates.py",
+      "bytes": 4710,
+      "sha256": "0a58bc1123e98bf3575d64d773fb28435a99b59392a8b2ec04c87e6f1bdc9e96"
+    },
+    {
+      "path": "research_reference/sas/README.md",
+      "bytes": 1652,
+      "sha256": "851f9ef817d93a40a65d13b10100d9900c076259b152fd70148a282ab3713f29"
+    },
+    {
+      "path": "research_reference/scripts/analyze_kisa_few_example_20261004.py",
+      "bytes": 20614,
+      "sha256": "bc73481be909dff7d6cb4f1019837d7abc41eeca9fb2870abf4d4e0b550a3ce0"
+    },
+    {
+      "path": "research_reference/scripts/evaluate_external_kisa_20260921.py",
+      "bytes": 40785,
+      "sha256": "75d4f6316abb2c27f1c4c7635807a0fdf7ad553b8bf51dc56424e29bed10a63f"
+    },
+    {
+      "path": "research_reference/scripts/kcbert_private_store_20260917.py",
+      "bytes": 8875,
+      "sha256": "dd0ca2757581879ff4acc7530fd767b352507fc0062cbb4f882975acf0f3d035"
+    },
+    {
+      "path": "research_reference/scripts/kisa_few_example_common_20261004.py",
+      "bytes": 10808,
+      "sha256": "192e31189f4858a07af527a7810adaca99341d192ea3171ce2aee40fec206330"
+    },
+    {
+      "path": "research_reference/scripts/prepare_counterfactual_augmentation.py",
+      "bytes": 6633,
+      "sha256": "4355b898af1a7da000f99f11ac9de8b1cdcdb9bf7014e64e9b99c4668066850c"
+    },
+    {
+      "path": "research_reference/scripts/prepare_training_augmentation.py",
+      "bytes": 2240,
+      "sha256": "e1dad0f24bccb405ed7c794d0c42eee296077d20c468dec5031535a09355efa9"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_all_models_linear_20261004.py",
+      "bytes": 25703,
+      "sha256": "1ef2f221cd4d5aff2a08d627ab60f3f68633184709cfd8da23347da7fe28c54f"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_all_models_neural_20261004.py",
+      "bytes": 79810,
+      "sha256": "baa66fec401f41c964405ea498e111108d715a62d576f91f9acefa7aba8e71b7"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_few_example_linear_20261004.py",
+      "bytes": 6220,
+      "sha256": "d1c185b589cda09013d08d34fb03cf22f38a973c7f95f9aba9c125fcd2322517"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_few_example_neural_20261004.py",
+      "bytes": 16519,
+      "sha256": "0c43c6cb4344489bb1b73dfa85bb19d4a1988519dd20791f88b2dbbfdccf9a1b"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_ocr_diagnostics_20260921.py",
+      "bytes": 71325,
+      "sha256": "2d9e08d960b0fcdde211bc6d855ac39cd2f59bcfff4cd69c0b5311a68b636cb9"
+    },
+    {
+      "path": "research_reference/scripts/run_kisa_one_example_20261004.py",
+      "bytes": 77176,
+      "sha256": "c6d79df632827d2ca64f68966dc3ee425f704cfac6166f04f3608227393941cb"
+    },
+    {
+      "path": "research_reference/scripts/run_matched_kcbert_portable_20260917.py",
+      "bytes": 27175,
+      "sha256": "a8e819bb40140ca8af2d76ec74597c47ae2e7399db129e7326490825628a3e65"
+    },
+    {
+      "path": "research_reference/scripts/run_matched_kcbert_u5_20260918.py",
+      "bytes": 14989,
+      "sha256": "0e078945fb7614481dc368ac4ff6aef2308aac7a416150ad413a1f8ac62890ec"
+    },
+    {
+      "path": "research_reference/scripts/train_text_baselines.py",
+      "bytes": 10990,
+      "sha256": "aa96905bb4a9a1c3ecc532038bdbffc34b2768f41c62fa0d56b1b7d28766a0bf"
+    },
+    {
+      "path": "research_reference/scripts/train_url_baseline.py",
+      "bytes": 11078,
+      "sha256": "a80018011a59ef13c405a289989244ceeda108d6a9b33e271e8e1d66f9c84d3a"
+    },
+    {
+      "path": "research_reference/scripts/verify_kisa_all_models_neural_20261004.py",
+      "bytes": 2293,
+      "sha256": "34392420eed6092f7cd7320bc1b70c6bdc906be88232fdbb684e417acd4ac95b"
+    },
+    {
+      "path": "research_reference/src/scamlens/__init__.py",
+      "bytes": 82,
+      "sha256": "98c53d05e58a15750a23c9990c5b7c23004edd507d574b2f9762a92cf783fe97"
+    },
+    {
+      "path": "research_reference/src/scamlens/fage.py",
+      "bytes": 4031,
+      "sha256": "2917dbe819f5101799d718091d918221c31ba933bf442183629080dc46c8555c"
+    },
+    {
+      "path": "research_reference/src/scamlens/preprocessing.py",
+      "bytes": 11250,
+      "sha256": "a6a441c7dd81d01fbf24d6b05d7549bc48640d4f63fad8d1660c400fdf9ef5cd"
+    },
+    {
+      "path": "research_reference/src/scamlens/robustness.py",
+      "bytes": 1653,
+      "sha256": "bf3ae69f238fed7430107a9c300b6f92f533a95e79b04ba13b5dbffcf1c51309"
+    },
+    {
+      "path": "research_reference/src/scamlens/sms_action_features.py",
+      "bytes": 6377,
+      "sha256": "e21ba8c7dc902ba7c236618afadb7502e7ff1812b464904bc54e3dd9d4a5e5ed"
+    },
+    {
+      "path": "research_reference/src/scamlens/url_features.py",
+      "bytes": 3223,
+      "sha256": "a53d8536121e7de293b0b2c34fb8d22d0a21d33924b4a9dea4880726cc8500b9"
+    },
+    {
+      "path": "scripts/README.md",
+      "bytes": 636,
+      "sha256": "e15d40377eddd4f86f21b9d44fea0f29d3311cceec4d66c3c522c142b2bf3c9c"
+    },
+    {
+      "path": "scripts/reproduce_public.py",
+      "bytes": 6447,
+      "sha256": "50e14f741fa0e65f28ccdf250f886a70864e9e82c20c9fa3bc26c97a447d40de"
+    },
+    {
+      "path": "scripts/verify_bundle.py",
+      "bytes": 2984,
+      "sha256": "63b3131f8001b2190960cc5f77e5c2518ed8c842c0bc325e8cf334bbf0885353"
+    }
+  ],
+  "source_manifest": "SOURCE_MANIFEST.json",
+  "scope": "aggregates_synthetic_reference_code_current_presentation_text"
+}

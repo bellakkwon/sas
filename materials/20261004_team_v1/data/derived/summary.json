@@ -1,0 +1,91 @@
+{
+  "role": "saved_aggregate_recalculation_not_new_inference",
+  "baseline": {
+    "kisa_n": 22,
+    "kisa_detected": 13,
+    "misses": 9,
+    "normal_n": 250,
+    "normal_alerts": 11,
+    "threshold": 0.025057008489966393
+  },
+  "one_example": {
+    "folds": 9,
+    "untrained_recovered_range": [
+      8,
+      8
+    ],
+    "normal_alert_range": [
+      245,
+      246
+    ],
+    "clean_recovery": 0
+  },
+  "all_model_conditions": 263,
+  "all_models_primary": {
+    "observations": 2367,
+    "clean_recovery_observations": 1,
+    "clean_recovery_conditions": 1,
+    "support_was_missed_observations": 1218,
+    "support_was_missed_clean_recovery_observations": 0,
+    "neural_clean_recovery_observations": 0,
+    "complete_clean_recovery_observations": 0,
+    "missed_support_learned_and_common_eight_detected_with_clean_recovery": 0
+  },
+  "few_example_primary": {
+    "2": {
+      "conditions": 263,
+      "observations": 2367,
+      "recovery_range": [
+        0,
+        8
+      ],
+      "miss_denominator_range": [
+        0,
+        9
+      ],
+      "normal_alert_range": [
+        8,
+        248
+      ],
+      "new_normal_alert_range": [
+        0,
+        237
+      ],
+      "clean_recovery": 0,
+      "own_missed_supports_learned_clean_recovery": 0,
+      "full_common_clean_success": 0,
+      "clean_gain_over_every_single_control": 0,
+      "mean_additional_recovery_vs_one": 0.01394169835234474
+    },
+    "3": {
+      "conditions": 263,
+      "observations": 789,
+      "recovery_range": [
+        0,
+        7
+      ],
+      "miss_denominator_range": [
+        0,
+        8
+      ],
+      "normal_alert_range": [
+        8,
+        248
+      ],
+      "new_normal_alert_range": [
+        0,
+        237
+      ],
+      "clean_recovery": 0,
+      "own_missed_supports_learned_clean_recovery": 0,
+      "full_common_clean_success": 0,
+      "clean_gain_over_every_single_control": 0,
+      "mean_additional_recovery_vs_one": 0.009294465568229831
+    }
+  },
+  "limitations": [
+    "Known cases reused; not independent future campaigns",
+    "Normal candidates are development inputs, not operational FPR",
+    "Counts across folds are repeated observations, not unique SMS"
+  ]
+}

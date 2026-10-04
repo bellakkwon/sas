@@ -1,5 +1,27 @@
 # ScamLens
 
+## 최신 팀 공유 자료 — 2026-10-04
+
+**[팀 공유 README](materials/20261004_team_v1/README.md)**부터 읽으세요. 현재 연구 보고서,
+공개 집계 JSON·비교 CSV, 합성 데이터·반입 양식, 가이드라인, 폴더별 설명,
+Python/SAS 실행 순서와 Canva 54장 본문·발표자 대본을 정리했습니다.
+
+| 목적 | 시작 파일 |
+|---|---|
+| 처음 받은 팀원 | [최신 자료 안내](materials/20261004_team_v1/README.md) |
+| 현재 결과와 채택 판단 | [추가학습 결과 요약](materials/20261004_team_v1/docs/RESULTS_SUMMARY.md) |
+| 전체 실행 순서 | [실행 안내](materials/20261004_team_v1/docs/EXECUTION_ORDER.md) |
+| 데이터 출처·공개 범위 | [데이터 설명](materials/20261004_team_v1/data/README.md), [비공개 입력](materials/20261004_team_v1/docs/PRIVATE_INPUTS.md) |
+| 팀 작업 규칙 | [가이드라인](materials/20261004_team_v1/docs/GUIDELINES.md), [팀 체크리스트](materials/20261004_team_v1/docs/TEAM_CHECKLIST.md) |
+| 최신 발표·대본 | [Canva 및 발표 자료](materials/20261004_team_v1/presentation/README.md) |
+| SAS 서버 실행 | [현재 RUNBOOK](sas/RUNBOOK.md), [00_RUN_ALL.sas](sas/00_RUN_ALL.sas) |
+
+한 건 추가학습에서 유사 미탐 회복을 관찰했지만 정상 경고도 증가했습니다.
+최신 한·두·세 건 결과는 위 자료를 따르며, 새로운 캠페인 대응과 운영 채택은 별도 검증이 필요합니다.
+이 저장소는 공개 집계·합성 예시·코드·문서를 공유하며 원문·행별 점수·모델 가중치는 포함하지 않습니다.
+
+## 기존 연구 기반과 반환 결과 — 2026-09-21
+
 **정상 문자의 오탐과 스미싱의 미탐을 함께 검증하는 한국어 문자 탐지 연구**
 
 ScamLens는 문자 분류기가 정상 안내문을 스미싱으로 잘못 경보하는지(오탐, FP)와
@@ -180,7 +202,7 @@ JEV(외부 판정/특징)를 활용한 실험은 판정 대체와 특징 결합�
 
 | 자료 | 링크 |
 |---|---|
-| 최신 발표 PPT/PDF·대본 | [최신 발표 폴더](materials/20260921_final_v1/presentation/) |
+| 09-21 보존 발표 PPT/PDF·대본 | [당시 발표 폴더](materials/20260921_final_v1/presentation/) |
 | 결과·그림·해석 HTML | [결과 설명 문서](materials/20260921/explain/scamlens_results_explained_20260921.html) |
 | SAS 한 번에 실행 | [00_RUN_ALL.sas](sas/00_RUN_ALL.sas), [설정·실행 안내](sas/RUNBOOK.md) |
 | 폴더 정리 이력 | [SAS 프로그램·보관본 안내](docs/SAS_ORGANIZATION_20260929.md) |

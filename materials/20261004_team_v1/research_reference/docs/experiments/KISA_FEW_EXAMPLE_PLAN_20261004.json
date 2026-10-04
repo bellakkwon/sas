@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "experiment_id": "kisa_few_example_20261004",
+  "purpose": "Compare one, two and three known positive examples under fixed update budgets across the previously tested saved models; post-hoc diagnostic only",
+  "private_root": "${PRIVATE_ROOT}",
+  "output_dir": "kisa_few_example_20261004_v1",
+  "input_dir": "kisa_ocr_diagnostics_20260921_v1",
+  "neural_plan": "docs/experiments/KISA_ALL_MODELS_NEURAL_PLAN_20261004.json",
+  "linear_plan": "docs/experiments/KISA_ALL_MODELS_LINEAR_PLAN_20261004.json",
+  "prior_neural_output": "kisa_all_models_neural_20261004_v1",
+  "prior_linear_output": "kisa_all_models_linear_20261004_v1",
+  "groups": [
+    {
+      "id": "k2_K04_K07",
+      "size": 2,
+      "support_indices": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "k2_K04_K08",
+      "size": 2,
+      "support_indices": [
+        3,
+        7
+      ]
+    },
+    {
+      "id": "k2_K07_K08",
+      "size": 2,
+      "support_indices": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "k2_K03_K05",
+      "size": 2,
+      "support_indices": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": "k2_K03_K09",
+      "size": 2,
+      "support_indices": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "k2_K05_K09",
+      "size": 2,
+      "support_indices": [
+        4,
+        8
+      ]
+    },
+    {
+      "id": "k2_K01_K02",
+      "size": 2,
+      "support_indices": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "k2_K01_K06",
+      "size": 2,
+      "support_indices": [
+        0,
+        5
+      ]
+    },
+    {
+      "id": "k2_K02_K06",
+      "size": 2,
+      "support_indices": [
+        1,
+        5
+      ]
+    },
+    {
+      "id": "k3_K04_K07_K08",
+      "size": 3,
+      "support_indices": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "k3_K03_K05_K09",
+      "size": 3,
+      "support_indices": [
+        2,
+        4,
+        8
+      ]
+    },
+    {
+      "id": "k3_K01_K02_K06",
+      "size": 3,
+      "support_indices": [
+        0,
+        1,
+        5
+      ]
+    }
+  ],
+  "group_design": {
+    "seed": 42,
+    "method": "Python Random(42).shuffle indices0..8; partition into three triads; use all three pairs within each triad plus the triad itself",
+    "blocks": [
+      [
+        3,
+        6,
+        7
+      ],
+      [
+        2,
+        4,
+        8
+      ],
+      [
+        0,
+        1,
+        5
+      ]
+    ],
+    "pair_combinations": 9,
+    "triple_combinations": 3,
+    "not_exhaustive": true,
+    "case_appearances_by_size": {
+      "2": 2,
+      "3": 1
+    }
+  },
+  "design": {
+    "checkpoints": [
+      1,
+      5,
+      10
+    ],
+    "primary_step": 10,
+    "labels": "all support labels1; no normal replay",
+    "neural": {
+      "optimizer": "AdamW",
+      "learning_rate": 2e-05,
+      "weight_decay": 0.01,
+      "clip_norm": 1.0,
+      "seed": 42,
+      "loss_reduction": "mean over full support batch",
+      "max_length": 128,
+      "evaluation_batch_size": 16,
+      "reuse_frozen_baseline_and_one_example_controls": true
+    },
+    "linear": {
+      "optimizer": "plain SGD",
+      "learning_rate": 0.1,
+      "weight_decay": 0.0,
+      "clip_norm": 1.0,
+      "clip_convention": "joint coefficient and intercept norm of mean support gradient",
+      "loss_reduction": "mean over full support batch"
+    },
+    "expert_policy": "learned gates freeze original experts; fixed readouts combine separately adapted text experts and frozen URL",
+    "matched_controls": "For each group S, re-evaluate every original one-example prediction supported on an element of S using heldout KISA outside ALL of S; for triples also re-evaluate all three within-triad pair outputs on identical triple-heldout cases. Never include a training row in gain.",
+    "replay_tolerance": 1e-05,
+    "neural_reset": "original cached CPU weights, new AdamW and reset RNG per group; no chaining across support sizes",
+    "thresholds": "unchanged original thresholds",
+    "saved_adapted_weights": false
+  },
+  "guards": {
+    "neural_models": 27,
+    "linear_conditions": 236,
+    "kisa": 22,
+    "normal_candidates": 250,
+    "support_pool": 9,
+    "groups": 12
+  },
+  "limitations": [
+    "Known KISA cases selected from earlier DUP42 errors; every model own baseline differs.",
+    "This is a continuation selected after prior findings, not a prospective untouched test.",
+    "Only 9 of36 pairs and3 of84 triples; all cases covered evenly within each size but no exhaustive-combination claim.",
+    "Heldout denominators7 and6 change; matched controls explicitly exclude same support set.",
+    "Normal candidates199 train plus51 validation; source labels, not operational FPR.",
+    "Different family optimizers and input windows preclude architecture ranking.",
+    "Repeated model seeds, support groups and historical duplicate conditions are not independent observations.",
+    "Prior missing-weight, external JEV and URL HGB online-update exclusions remain unchanged."
+  ]
+}
